@@ -8,11 +8,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-
+  
   &:hover &__icon {
+    gap: 2rem;
     opacity: 1;
     width: 2rem;
+    margin-right: .5rem;
   }
 
   &__icon {
@@ -25,16 +26,19 @@
 
   &--black {
     color: v.$white-color;
-    background: v.$text-color;
+    background: v.$purple-color-dark;
 
     &::before {
       content: '';
       position: absolute;
-      top: 4px;
-      left: 4px;
-      right: -4px;
-      bottom: -4px;
-      background: linear-gradient(45deg, #8e2de2, #4a00e0);
+      top: 5px;
+      left: 5px;
+      right: -5px;
+      bottom: -5px;
+      background: linear-gradient(
+        to right,
+        #5C258D,#4389A2
+      );
       z-index: -1;
       filter: blur(8px);
       opacity: 0.7;
@@ -43,7 +47,7 @@
   }
 
   &--outline {
-    border: 3px solid v.$text-color;
+    color: v.$purple-color;
     background-color: v.$background-color;
   }
   

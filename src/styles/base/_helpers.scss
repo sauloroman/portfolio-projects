@@ -1,7 +1,8 @@
 @use '../abstracts/variables' as v;
 
 .container {
-  width: 85%;
+  width: 140rem;
+  max-width: 95%;
   margin: 0 auto;
 }
 
@@ -26,8 +27,13 @@
     height: 1rem;
   }
 
+  &--medium {
+    width: 2rem;
+    height: 2rem;
+  }
+
   &--big {
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
   }
 }

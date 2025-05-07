@@ -13,13 +13,19 @@ body {
 
 button, input, textarea {
   font-family: inherit;
-  font-size: 1.6rem;
 }
 
 .heading-special {
-  color: v.$text-color;
+  color: v.$purple-color-dark;
   font-weight: 900;
-  font-size: 7.2rem;
+  font-size: 4.8rem;
   line-height: 1.2;
-  text-shadow: 0 7px 7px rgba(0, 0, 0, .15);
+}
+
+.heading-section {
+  font-weight: 900;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
 }

@@ -3,13 +3,12 @@
 .portfolio-header {
   height: v.$header-height;
   display: flex;
-  padding: 0 2rem;
   justify-content: space-between;
   align-items: center;
 }
 
 .portfolio-hero {
-  height: calc( 95vh - v.$header-height );
+  height: calc( 80vh - v.$header-height );
   
   &__container {
     display: grid;
@@ -18,18 +17,26 @@
   }
   
   &__content {
-    height: calc( 95vh - v.$header-height );
+    height: calc( 80vh - v.$header-height );
     position: relative;
-    padding-left: 5rem;
     display: flex;
     align-items: center;
   }
 
   &__title {
-    animation: fadeFromLeft 2s ease;
+    animation: fadeFromRight 2s ease;
 
     span {
-      color: v.$purple-color;
+      display: inline-block; 
+      background: #5C258D;
+      background: linear-gradient(
+        to right,
+        #5C258D,#4389A2
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;   
     }
   }
   
@@ -43,7 +50,6 @@
   }
 
   &__image-box {
-    // border-radius: 20px;
     overflow: hidden;
 
     &:hover {
@@ -55,19 +61,18 @@
     animation: fadeIn 4s ease;
     transition: transform 2s ease;
     width: 100%;
-    height: calc( 95vh - v.$header-height );
+    height: calc( 80vh - v.$header-height );
   }
 
   &__text {
+    animation: fadeFromLeft 2s ease;
     font-weight: 600;
     margin-top: 5rem;
-    font-size: 1.8rem;
     width: 70%;
     color: v.$gray-color;
   }
 
   &__bottom {
-    margin-top: 5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -75,15 +80,15 @@
 
   &__buttons {
     display: flex;
-    gap: 3rem;
+    gap: 1.5rem;
 
-    button { width: 20rem;}
+    button { width: 18rem;}
   }
 
   &__dots {
     position: absolute;
     z-index: -1;
-    width: 35rem;
+    width: 30rem;
     right: -5%;
     top: 2%;
   }
@@ -105,7 +110,10 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(45deg, #8e2de2, #4a00e0);
+      background: linear-gradient(
+        to right,
+        #5C258D,#4389A2
+      );
       border-radius: 50%; // o cambia según la forma
       filter: blur(8px);
       opacity: 0;
@@ -117,5 +125,37 @@
       opacity: 0.7;
     }
   }
+  
+}
 
+.portfolio-tech {
+  padding: 10rem 0;
+  border-top: 1px solid #ddd;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 5rem;
+  }
+  
+  &__text {
+    color: v.$gray-color;
+    width: 80%;
+    font-weight: 500;
+  }
+
+  &__title {
+    margin-bottom: 3.2rem;
+  }
+
+  &__tech {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+    row-gap: 4rem;
+    font-size: 5rem;
+
+    i{ transition: all .4s ease;}
+  }
 }

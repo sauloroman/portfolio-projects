@@ -11,8 +11,7 @@ export const HeroSection: React.FC = () => {
           <div>
             <p className="portfolio-hero__name">
              Hi, My name is Roman Santillán 👋</p>
-            <h1 className='heading-special gradient portfolio-hero__title'><span>FullStack </span>
-              Web<br />Developer <div className="period period--big u-mr-1"></div></h1>
+            <h1 className='heading-special gradient portfolio-hero__title'><span>FullStack</span>Web<br />Developer</h1>
             <p className="portfolio-hero__text">
               I'm a Software Developer dedicated to fulfill and carry out ideas and business models. I'm so passionate about programming and design and I like seeing code as a tool to find more efficient solutions and ways of communication.
               <div className="period period--small u-ml-1"></div>
