@@ -1,0 +1,13 @@
+.portfolio-hero {
+  
+  &__container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 5rem;
+  }
+
+  &__image {
+    
+  }
+
+}
