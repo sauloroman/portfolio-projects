@@ -1,0 +1,33 @@
+@use '../abstracts/variables' as v;
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.gradient {
+  &--1 {
+    background: #4776E6;
+    background: linear-gradient(
+      to right,
+      #4776E6,#8E54E9
+    );
+  }
+}
+
+.period {
+
+  display: inline-block;
+  background-color: v.$purple-color;
+  border-radius: 5px;
+  
+  &--small {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  &--big {
+    width: 4rem;
+    height: 4rem;
+  }
+}

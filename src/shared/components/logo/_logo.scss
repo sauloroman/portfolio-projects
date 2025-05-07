@@ -1,0 +1,20 @@
+@use '../../../styles/abstracts/variables' as v;
+
+.logo {
+
+  display: flex;
+  gap: 1.2rem;
+  font-weight: bolder;
+
+  &__letter {
+    width: 3rem;
+    height: 3rem;
+    background-color: v.$purple-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: v.$white-color;
+    border-radius: 5px;
+  }
+
+}

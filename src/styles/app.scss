@@ -16,6 +16,9 @@
 // pages
 @use '../pages/portfolio/portfolio';
 
+// app components
+@use '../shared/components/logo/logo';
+
 
 // utilities
 @use './base/utilities';
