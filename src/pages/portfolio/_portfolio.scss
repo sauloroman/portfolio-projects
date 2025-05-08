@@ -1,23 +1,52 @@
 @use '../../styles/abstracts/variables' as v;
+@use '../../styles/abstracts/mixins' as m;
 
 .portfolio-header {
+  padding: 3rem 2rem;
   height: v.$header-height;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+
+  }
+  
+  &__link {
+    text-align: center;
+    transition: all .4s ease;
+    width: 12rem;
+    color: v.$purple-color-dark;
+    border-radius: 5px;
+    
+    &:hover {
+      font-weight: 900;
+      color: v.$purple-color;
+    }
+  }
+
+  &__button {
+    width: 15rem;
+  }
+
 }
 
 .portfolio-hero {
-  height: calc( 80vh - v.$header-height );
+  margin: 5rem 0;
   
   &__container {
     display: grid;
     grid-template-columns: 3fr 2fr;
+    place-items: center;
     gap: 5rem;
   }
   
   &__content {
-    height: calc( 80vh - v.$header-height );
+    padding: 5rem;
     position: relative;
     display: flex;
     align-items: center;
@@ -27,16 +56,7 @@
     animation: fadeFromRight 2s ease;
 
     span {
-      display: inline-block; 
-      background: #5C258D;
-      background: linear-gradient(
-        to right,
-        #5C258D,#4389A2
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      color: transparent;   
+      @include m.createTextBackground(#5C258D, #4389A2); 
     }
   }
   
@@ -61,7 +81,6 @@
     animation: fadeIn 4s ease;
     transition: transform 2s ease;
     width: 100%;
-    height: calc( 80vh - v.$header-height );
   }
 
   &__text {
@@ -129,9 +148,13 @@
 }
 
 .portfolio-tech {
-  padding: 10rem 0;
+  margin: 10rem 0;
+  background-color: v.$blue-dark-color;
+  padding: 10rem;
   border-top: 1px solid #ddd;
-
+  color: v.$background-color;
+  // border-radius: 2rem;
+  
   &__container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -140,22 +163,198 @@
   }
   
   &__text {
-    color: v.$gray-color;
+    color: v.$background-color;
     width: 80%;
-    font-weight: 500;
+    font-weight: 300;
   }
-
+  
   &__title {
     margin-bottom: 3.2rem;
   }
-
+  
   &__tech {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 2rem;
     row-gap: 4rem;
     font-size: 5rem;
-
+    
     i{ transition: all .4s ease;}
   }
+  
+  &__sub {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    font-weight: 900;
+    @include m.createTextBackground(  #E0EAFC,#CFDEF3); 
+  }
+
+}
+
+.portfolio-services {
+  border-top: 1px solid #ddd;
+  padding: 10rem 8rem;
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+  }
+
+  &__sub {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    font-weight: 900;
+    @include m.createTextBackground(#5C258D, #4389A2); 
+  }
+  
+  &__icons {
+    display: flex;
+    justify-content: center;
+    gap: 8rem;
+  }
+  
+  &__icon {
+    width: 35rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    img { width: 8rem;}
+    p { 
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: v.$gray-color;
+    }
+  }
+
+  &__box {
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, .2);
+    background-color: v.$blue-dark-color;
+    border-radius: 10px;
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.2rem;
+  }
+
+  &__figure {
+    font-size: 4rem;
+    color: v.$background-color;
+  }
+}
+
+.portfolio-projects {
+
+  padding: 10rem 0;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10rem;
+  }
+
+  &__sub {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    font-weight: 900;
+    @include m.createTextBackground(#5C258D, #4389A2); 
+  }
+
+  &__button {
+    width: 25rem;
+  }
+
+} 
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  margin-bottom: 3rem;
+  
+  &__content {
+    padding: 3rem 6rem;
+    border: 1px solid #ddd;
+    border-left: none;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  
+  &__figure {
+    overflow: hidden;
+  }
+
+  &__figure:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+
+  &__image {
+    transition: all .4s ease;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__title {
+    font-size: 3.2rem;
+    font-weight: 900;
+    margin-bottom: 1.6rem;
+    @include m.createTextBackground(#5C258D, #4389A2); 
+  }
+
+  &__text {
+    color: v.$gray-color;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+  &__tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 8rem;
+  }
+
+  &__item {
+    background-color: v.$blue-dark-color;
+    color: v.$background-color;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: 0 1.5rem;
+    border-radius: 100px;
+
+    img {
+      border-radius: 50%;
+      width: 1.8rem;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__button {
+    width: 12rem;
+  }
+
 }

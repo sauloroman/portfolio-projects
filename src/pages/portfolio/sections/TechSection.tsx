@@ -2,9 +2,10 @@ import React from 'react'
 
 export const TechSection: React.FC = () => {
   return (
-    <section className='portfolio-tech'>
+    <section id='tech' className='portfolio-tech'>
       <div className="portfolio-tech__container">
         <div className="portfolio-tech__content">
+          <span className='portfolio-tech__sub'>Technologies</span>
           <h2 className="heading-section portfolio-tech__title">
             <div className="period period--medium"></div>
             Skills and Knowledge
@@ -23,7 +24,7 @@ export const TechSection: React.FC = () => {
           <i className="devicon-react-original colored"></i>
           <i className="devicon-nodejs-plain-wordmark colored"></i>
           <i className="devicon-postgresql-plain colored"></i>
-          <i className="devicon-prisma-original colored"></i>
+          <i className="devicon-prisma-original"></i>
           <i className="devicon-jest-plain colored"></i>
           <i className="devicon-mongodb-plain colored"></i>
         </div>

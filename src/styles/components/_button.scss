@@ -8,6 +8,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.4rem;
+  text-transform: uppercase;
   
   &:hover &__icon {
     gap: 2rem;
@@ -24,7 +26,14 @@
     transition: all .5s ease;
   }
 
+  &--purple {
+    padding: 1rem;
+    color: v.$background-color;
+    background-color: #5C258D;
+  }
+
   &--black {
+    letter-spacing: 1px;
     color: v.$white-color;
     background: v.$purple-color-dark;
 
@@ -33,8 +42,8 @@
       position: absolute;
       top: 5px;
       left: 5px;
-      right: -5px;
-      bottom: -5px;
+      right: -10px;
+      bottom: -10px;
       background: linear-gradient(
         to right,
         #5C258D,#4389A2

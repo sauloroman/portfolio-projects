@@ -1,0 +1,12 @@
+@mixin createTextBackground( $bg, $bg-2 ) {
+  display: inline-block; 
+  background: $bg;
+  background: linear-gradient(
+    to right,
+    $bg, $bg-2
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; 
+}

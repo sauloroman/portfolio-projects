@@ -1,13 +1,11 @@
 import React from 'react'
 import imgHero from '../../../assets/img/photo-2.jpg'
-import dots from '../../../assets/img/dots.png'
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className='portfolio-hero'>
+    <section id='hero' className='portfolio-hero'>
       <div className="portfolio-hero__container">
         <div className="portfolio-hero__content">
-          <img loading='lazy' className='portfolio-hero__dots' src={dots} alt="Dots image" />
           <div>
             <p className="portfolio-hero__name">
              Hi, My name is Roman Santillán 👋</p>
@@ -19,8 +17,8 @@ export const HeroSection: React.FC = () => {
             <div className="portfolio-hero__bottom">
               <div className="portfolio-hero__buttons">
                 <button className='btn btn--black'>
-                  <i className='bx bx-message-square-dots btn__icon'></i>
-                  Contact me
+                  <i className='bx bx-briefcase btn__icon'></i>
+                  My Projects
                 </button>
                 <button className='btn btn--outline'>
                   <i className='bx bx-download btn__icon' ></i>
