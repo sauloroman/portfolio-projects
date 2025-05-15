@@ -70,6 +70,7 @@
   }
 
   &__image-box {
+    border-radius: 1rem;
     overflow: hidden;
 
     &:hover {
@@ -153,7 +154,7 @@
   padding: 10rem;
   border-top: 1px solid #ddd;
   color: v.$background-color;
-  // border-radius: 2rem;
+  border-radius: 1.5rem;
   
   &__container {
     display: grid;

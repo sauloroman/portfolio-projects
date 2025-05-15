@@ -28,7 +28,8 @@
   }
 
   &--green {
-    background-color: green;
+    background-color: v.$background-color;
+    transition: background .4s ease;
   }
 
   &--medium {

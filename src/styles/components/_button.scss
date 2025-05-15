@@ -32,6 +32,10 @@
     background-color: #5C258D;
   }
 
+  &--purple:hover {
+    div { background-color: v.$success-color; }
+  }
+
   &--black {
     letter-spacing: 1px;
     color: v.$white-color;
