@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import type { RootState } from "../store/store"
 import { startGettingProjects } from "../store/projects/project.thunk."
+import { setProjectOnPage } from "../store/projects/project.slice"
 
 export const useProjects = () => {
 
@@ -11,9 +12,14 @@ export const useProjects = () => {
     dispatch( startGettingProjects( ) )
   }
 
+  const onSetProjectPage = ( id: string ) => {
+    dispatch( setProjectOnPage( id ) )
+  }
+
   return {
     projects,
 
+    onSetProjectPage,
     onGetProjects,
   }
 

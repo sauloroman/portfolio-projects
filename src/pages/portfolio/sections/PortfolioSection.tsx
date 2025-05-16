@@ -8,16 +8,13 @@ export const PortfolioSection: React.FC = () => {
 
         <div className="portfolio-projects__top">
           <div>
-            <span className="portfolio-projects__sub">My Latest Projects</span>
+            <span className="portfolio-projects__sub">Latest Works</span>
             <h2 className="heading-section portfolio-projects__title">
               <div className="period period--medium"></div>
-              I create solutions with code
+              My Portfolio
+              <div className="period period--medium"></div>
             </h2>
           </div>
-          <button className='btn btn--black portfolio-projects__button'>
-            <i className='bx bx-code-alt btn__icon'></i>
-            View all projects
-          </button>
         </div>
 
         <ProjectList />

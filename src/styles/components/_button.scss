@@ -1,14 +1,15 @@
 @use '../abstracts/variables' as v;
 
 .btn {
-  padding: 1.5rem 2rem;
+  padding: 1rem 2rem;
   border-radius: 5px;
   font-weight: bold;
+
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
   
   &:hover &__icon {
@@ -32,8 +33,9 @@
     background-color: #5C258D;
   }
 
-  &--purple:hover {
-    div { background-color: v.$success-color; }
+  &--blue {
+    background-color: v.$blue-color;
+    color: v.$background-color;
   }
 
   &--black {
@@ -61,7 +63,7 @@
 
   &--outline {
     color: v.$purple-color;
-    background-color: v.$background-color;
+    background-color: v.$cover-color;
   }
   
 

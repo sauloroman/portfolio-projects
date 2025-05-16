@@ -15,12 +15,14 @@ export const PortfolioPage: React.FC = () => {
   }, [])
 
   return (
-    <div className='portfolio container'>
-      <HeaderSection />
-      <HeroSection />
-      <ServicesSection />
-      <TechSection />
-      <PortfolioSection />
+    <div className='portfolio'>
+      <div className="container">
+        <HeaderSection />
+        <HeroSection />
+        <ServicesSection />
+        <TechSection />
+        <PortfolioSection />
+      </div>
     </div>
   )
 }

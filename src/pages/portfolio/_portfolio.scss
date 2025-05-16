@@ -17,10 +17,12 @@
   }
   
   &__link {
+    text-transform: uppercase;
     text-align: center;
     transition: all .4s ease;
     width: 12rem;
-    color: v.$purple-color-dark;
+    font-size: 1.4rem;
+    color: v.$text-color;
     border-radius: 5px;
     
     &:hover {
@@ -30,14 +32,15 @@
   }
 
   &__button {
-    width: 15rem;
+    width: 18rem;
   }
 
 }
 
 .portfolio-hero {
-  margin: 5rem 0;
-  
+  padding: 5rem 0;
+  margin-bottom: 5rem;
+
   &__container {
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -100,9 +103,12 @@
 
   &__buttons {
     display: flex;
-    gap: 1.5rem;
-
+    gap: 4rem;
     button { width: 18rem;}
+  }
+
+  &__button {
+    width: 20rem;
   }
 
   &__dots {
@@ -130,11 +136,8 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(
-        to right,
-        #5C258D,#4389A2
-      );
-      border-radius: 50%; // o cambia según la forma
+      background: linear-gradient( to right,#5C258D,#4389A2);
+      border-radius: 50%;
       filter: blur(8px);
       opacity: 0;
       transition: opacity 0.3s ease;
@@ -150,10 +153,9 @@
 
 .portfolio-tech {
   margin: 10rem 0;
-  background-color: v.$blue-dark-color;
+  background-color: v.$cover-color;
   padding: 10rem;
   border-top: 1px solid #ddd;
-  color: v.$background-color;
   border-radius: 1.5rem;
   
   &__container {
@@ -164,9 +166,8 @@
   }
   
   &__text {
-    color: v.$background-color;
     width: 80%;
-    font-weight: 300;
+    font-weight: 500;
   }
   
   &__title {
@@ -178,7 +179,7 @@
     grid-template-columns: repeat(6, 1fr);
     gap: 2rem;
     row-gap: 4rem;
-    font-size: 5rem;
+    font-size: 4rem;
     
     i{ transition: all .4s ease;}
   }
@@ -188,13 +189,12 @@
     font-size: 1.8rem;
     letter-spacing: 1px;
     font-weight: 900;
-    @include m.createTextBackground(  #E0EAFC,#CFDEF3); 
+    @include m.createTextBackground(#5C258D, #4389A2); 
   }
 
 }
 
 .portfolio-services {
-  border-top: 1px solid #ddd;
   padding: 10rem 8rem;
 
   &__top {
@@ -232,14 +232,28 @@
       font-weight: 500;
       color: v.$gray-color;
     }
+
+  }
+
+  &__icon:nth-child(1) &__box {
+    background-color: #fbe8ee;
+    color: #9561AA;
+  }
+
+  &__icon:nth-child(2) &__box {
+    background-color: #fbece7;
+    color: #F15A2C;
+  }
+
+  &__icon:nth-child(3) &__box {
+    background-color: #fbf0cf;
+    color: #FDCE42;
   }
 
   &__box {
-    box-shadow: 10px 10px 5px rgba(0, 0, 0, .2);
-    background-color: v.$blue-dark-color;
-    border-radius: 10px;
-    width: 6rem;
-    height: 6rem;
+    border-radius: 50%;
+    width: 7rem;
+    height: 7rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -248,7 +262,6 @@
 
   &__figure {
     font-size: 4rem;
-    color: v.$background-color;
   }
 }
 
@@ -258,7 +271,7 @@
 
   &__top {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-bottom: 10rem;
   }
@@ -267,12 +280,14 @@
     text-transform: uppercase;
     font-size: 1.8rem;
     letter-spacing: 1px;
-    font-weight: 900;
     @include m.createTextBackground(#5C258D, #4389A2); 
+    display: flex;
+    justify-content: center;
+    font-weight: 900;
   }
 
   &__button {
-    width: 25rem;
+    width: 20rem;
   }
 
 } 
@@ -286,34 +301,40 @@
 .project-card {
   margin-bottom: 3rem;
   border-radius: 1rem;
-  padding: 1rem;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, .4);
-  border: 1px solid #ccc;
+  padding: 2rem;
+  box-shadow: 0 0 46px 0 rgba(0, 0, 0, 0.12);
+  transition: all .5s ease;
   
   &:hover {
     cursor: pointer;
+    transform: translateY(-15px);
+  }
+
+  &:hover &__figure {
+    img {
+      transform: scale(1.01);
+    }
   }
 
   &:hover &__title {
-    border-bottom-color: #4389A2;
+    color: v.$background-color;
+  }
+
+  &:hover &__title::after {
+    width: 100%;
+    opacity: 1;
   }
 
   &__content {
-    padding: 2rem;
     padding-top: 1rem;
     border-top: none;
     overflow: hidden;
   }
   
   &__figure {
-    height: 30rem;
+    border-radius: 10px;
+    height: 28rem;
     overflow: hidden;
-  }
-  
-  &__figure:hover {
-    img {
-      transform: scale(1.01);
-    }
   }
   
   &__image {
@@ -322,14 +343,42 @@
     width: 100%;
   }
 
+  &__name {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   &__title {
-    transition: border 1s ease;
-    padding-bottom: 2px;
-    border-bottom: 2px solid transparent;
-    font-size: 2.2rem;
-    font-weight: 900;
+    display: inline-block;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
-    @include m.createTextBackground(#5C258D, #4389A2); 
+    position: relative;
+    transition: all .4s ease;
+    padding: 0 1rem;
+    font-weight: 900;
+  }
+  
+  &__title::after {
+    z-index: -1;
+    transition: all .4s ease;
+    display: inline-block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    opacity: 0;
+    transform: skew(-7deg);
+    @include m.createBackgroundGradient(#5C258D, #4389A2);
+  }
+  
+  &__category {
+    color: v.$purple-color;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 900;
+    font-size: 1.2rem;
   }
 
   &__text {
@@ -346,10 +395,11 @@
   }
 
   &__item {
-    background-color: v.$blue-dark-color;
-    color: v.$background-color;
+    background-color: v.$background-color;
+    color: v.$text-color;
+    border: 1px solid #bbb;
     font-size: 1.2rem;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+    font-weight: bold;
     display: flex;
     align-items: center;
     gap: .5rem;

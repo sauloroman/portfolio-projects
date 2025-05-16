@@ -10,3 +10,10 @@
   background-clip: text;
   color: transparent; 
 }
+
+@mixin createBackgroundGradient( $bg, $bg-2 ) {
+  background: linear-gradient(
+    to right bottom,
+    $bg, $bg-2
+  );
+}

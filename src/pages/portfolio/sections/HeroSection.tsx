@@ -4,6 +4,7 @@ import imgHero from '../../../assets/img/photo-2.jpg'
 export const HeroSection: React.FC = () => {
   return (
     <section id='hero' className='portfolio-hero'>
+      <div className="portfolio-hero__cover"></div>
       <div className="portfolio-hero__container">
         <div className="portfolio-hero__content">
           <div>
@@ -16,14 +17,14 @@ export const HeroSection: React.FC = () => {
             </p>
             <div className="portfolio-hero__bottom">
               <div className="portfolio-hero__buttons">
-                <button className='btn btn--black'>
+                <a href='#portfolio' className='btn btn--purple portfolio-hero__button'>
                   <i className='bx bx-briefcase btn__icon'></i>
                   My Projects
-                </button>
-                <button className='btn btn--outline'>
+                </a>
+                <a href='#' className='btn btn--outline portfolio-hero__button'>
                   <i className='bx bx-download btn__icon' ></i>
                   Download CV
-                </button>
+                </a>
               </div>
               <div className="portfolio-hero__social-media">
                 <a href='#' className="portfolio-hero__social">

@@ -17,7 +17,7 @@ export const getCorrectIconName = ( tech: string ) => {
     case 'tanstack query':
       return 'https://images.seeklogo.com/logo-png/43/1/react-query-logo-png_seeklogo-435661.png'
     case 'redux':
-      return 'devicon-redux-original'
+      return 'devicon-redux-original colored'
   }
 
 }
