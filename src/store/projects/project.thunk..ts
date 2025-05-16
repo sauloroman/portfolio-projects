@@ -23,6 +23,7 @@ export const startGettingProjects = () => {
           id: doc.id, 
           title: data.title,
           description: data.description,
+          descriptionCard: data.descriptionCard,
           githubRepository: data.githubRepository,
           url: data.url,
           images: data.images,

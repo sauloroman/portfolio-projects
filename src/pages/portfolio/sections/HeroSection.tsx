@@ -29,7 +29,7 @@ export const HeroSection: React.FC = () => {
                 <a href='#' className="portfolio-hero__social">
                   <i className='bx bxl-linkedin-square' ></i>
                 </a>
-                <a href='#' className="portfolio-hero__social">
+                <a target='_blank' href='https://github.com/sauloroman' className="portfolio-hero__social">
                   <i className='bx bxl-github' ></i>
                 </a>
                 <a href='#' className="portfolio-hero__social">

@@ -4,17 +4,20 @@ export const getCorrectIconName = ( tech: string ) => {
 
   switch( techLowerCase ) {
     case 'react':
-      return 'devicon-react-original'
+      return 'devicon-react-original colored'
     case 'html5': 
-      return 'devicon-html5-plain'
+      return 'devicon-html5-plain colored'
     case 'css3':
-      return 'devicon-css3-plain'
+    case 'css styled components':
+      return 'devicon-css3-plain colored'
     case 'javascript':
-      return 'devicon-javascript-plain'
+      return 'devicon-javascript-plain colored'
     case 'typescript':
-      return 'devicon-typescript-plain'
+      return 'devicon-typescript-plain colored'
     case 'tanstack query':
       return 'https://images.seeklogo.com/logo-png/43/1/react-query-logo-png_seeklogo-435661.png'
+    case 'redux':
+      return 'devicon-redux-original'
   }
 
 }

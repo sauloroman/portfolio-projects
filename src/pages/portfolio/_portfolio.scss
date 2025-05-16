@@ -278,34 +278,44 @@
 } 
 
 .project-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }
 
 .project-card {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  place-items: center;
   margin-bottom: 3rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, .4);
+  border: 1px solid #ccc;
   
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover &__title {
+    border-bottom-color: #4389A2;
+  }
+
   &__content {
-    padding: 3rem 6rem;
-    border: 1px solid #ddd;
-    border-left: none;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    padding: 2rem;
+    padding-top: 1rem;
+    border-top: none;
+    overflow: hidden;
   }
   
   &__figure {
+    height: 30rem;
     overflow: hidden;
   }
-
+  
   &__figure:hover {
     img {
-      transform: scale(1.1);
+      transform: scale(1.01);
     }
   }
-
+  
   &__image {
     transition: all .4s ease;
     height: 100%;
@@ -313,9 +323,12 @@
   }
 
   &__title {
-    font-size: 3.2rem;
+    transition: border 1s ease;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    font-size: 2.2rem;
     font-weight: 900;
-    margin-bottom: 1.6rem;
+    margin-bottom: 1rem;
     @include m.createTextBackground(#5C258D, #4389A2); 
   }
 
@@ -323,18 +336,19 @@
     color: v.$gray-color;
     font-weight: 500;
     margin-bottom: 2rem;
+    font-size: 1.4rem;
   }
 
   &__tech {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    margin-bottom: 8rem;
   }
 
   &__item {
     background-color: v.$blue-dark-color;
     color: v.$background-color;
+    font-size: 1.2rem;
     box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
     display: flex;
     align-items: center;

@@ -16,7 +16,7 @@ export const ProjectTechnologyItem: React.FC<ProjectTechnologyItemProps> = ({
       {
         icon?.startsWith('https://')
         ? (<img src={icon} alt={tech} />)
-        : (<i className={`${icon} colored`}></i>)
+        : (<i className={`${icon}`}></i>)
       }
       {tech}
     </li>
