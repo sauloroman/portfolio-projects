@@ -30,7 +30,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
   const onGoProjectPage = () => {
     onNavigatePage(`/project/${project.id}`)
-    onSetProjectPage(project.id)
+    localStorage.setItem('projectOnPagePortfolio', JSON.stringify(project));
+    onSetProjectPage(project)
   }
 
   return (

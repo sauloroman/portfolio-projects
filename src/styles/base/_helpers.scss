@@ -47,3 +47,33 @@
     height: 3rem;
   }
 }
+
+.logo {
+
+  display: flex;
+  gap: 1.2rem;
+  font-weight: bolder;
+
+  &__letter {
+    width: 3rem;
+    height: 3rem;
+    background-color: v.$purple-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: v.$white-color;
+    border-radius: 5px;
+  }
+
+}
+
+.button-return {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  font-weight: 500;
+  color: v.$purple-color;
+}

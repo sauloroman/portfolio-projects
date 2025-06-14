@@ -26,10 +26,8 @@ export const projectsSlice = createSlice({
       state.projects = payload
     },
 
-    setProjectOnPage: ( state, { payload }: PayloadAction<string> ) => {
-      const project = state.projects.find( project => project.id === payload )
-      if ( !project ) state.projectOnPage = null
-      state.projectOnPage = project!
+    setProjectOnPage: ( state, { payload }: PayloadAction<Project> ) => {
+      state.projectOnPage = payload
     }
 
   }

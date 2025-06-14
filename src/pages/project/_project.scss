@@ -1,0 +1,94 @@
+@use '../../styles/abstracts/variables' as v;
+
+.project {
+
+    &__name {
+        background-color: v.$cover-color;;
+        height: 30rem;
+    }
+
+
+}
+
+.project-header {
+    padding: 1.6rem 0;;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.project-cover {
+    background-color: v.$cover-color;
+    padding: 5.8rem 0;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.6rem;;
+    }
+
+    &__title {
+        font-weight: bolder;
+        font-size: 4.2rem;
+        text-align: center;
+        color: v.$purple-color-dark;
+        display: flex;
+        gap: 1.6rem;
+        align-items: center;
+    }
+
+    &__desc {
+        width: 65%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__breadcrumb {
+        display: flex;
+        gap: 2rem;;
+        color: v.$purple-color-dark;
+        font-weight: 700;
+
+        span {
+            color: v.$purple-color;
+        }
+    }
+
+}
+
+.project-main {
+    width: 130rem;
+    margin: 0 auto;
+    padding: 4rem 0;
+
+    &__container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;   
+        gap: 5rem;
+    }
+}
+
+.project-content {
+    background-color: #fff;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    &__img {
+        max-width: 100%;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+}
+
+.project-aside {
+    background-color: #fff;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}

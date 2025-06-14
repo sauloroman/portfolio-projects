@@ -8,8 +8,13 @@ export const useNavPage = () => {
     navigate( page )
   }
 
+  const onNavigateHomePage =  () => {
+    navigate( '/' ) 
+  }
+
   return {
-    onNavigatePage
+    onNavigatePage,
+    onNavigateHomePage
   }
 
 }
