@@ -1,4 +1,5 @@
 @use '../../styles/abstracts/variables' as v;
+@use '../../styles/abstracts/mixins' as m;
 
 .project {
 
@@ -29,14 +30,14 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 1.6rem;;
+        gap: 1.6rem;
+        margin-bottom: 3rem;
     }
 
     &__title {
         font-weight: bolder;
-        font-size: 4.2rem;
         text-align: center;
-        color: v.$purple-color-dark;
+        @include m.createTextBackground(#5C258D, #4389A2); 
         display: flex;
         gap: 1.6rem;
         align-items: center;
@@ -53,17 +54,53 @@
         gap: 2rem;;
         color: v.$purple-color-dark;
         font-weight: 700;
+        margin-bottom: 3rem;
 
         span {
-            color: v.$purple-color;
+            color: v.$background-color;
+            padding: 0 1rem;
+            transform: skewX(-5deg);
+            @include m.createBackgroundGradient(#5C258D, #4389A2);
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 2rem;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+
+        span { 
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: v.$success-color;
+            position: relative;
+            animation: pulse 1.5s infinite;
+        
+            &::after {
+              content: '';
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+              background-color: v.$success-color;
+              transform: translate(-50%, -50%);
+              animation: ripple 1.5s infinite;
+              opacity: 0.6;
+            }
         }
     }
 
 }
 
 .project-main {
-    width: 130rem;
-    margin: 0 auto;
     padding: 4rem 0;
 
     &__container {
@@ -75,8 +112,6 @@
 
 .project-content {
     background-color: #fff;
-    padding: 2rem;
-    border: 1px solid #ddd;
     border-radius: 10px;
 
     &__img {
@@ -84,11 +119,125 @@
         margin: 0 auto;
         border-radius: 10px;
     }
+
+    &__subtitle {
+        font-size: 3.2rem;
+        margin: 2rem 0;
+        color: v.$purple-color-dark;
+    }
 }
 
 .project-aside {
+    height: fit-content;
     background-color: #fff;
     padding: 2rem;
     border: 1px solid #ddd;
     border-radius: 10px;
+
+    &__details {
+        padding: 2rem;
+        border-radius: 10px;
+        background-color: v.$cover-color;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__title {
+        font-size: 1.6rem;
+        color: v.$purple-color-dark;
+    }
+
+    &__type {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+
+        span { 
+            padding: 0 1rem;
+            border-radius: 100px;
+            color: #F15A2C;
+            border: 1px solid currentColor;
+            font-size: 1.4rem;
+            background-color: #fbece7;
+        }
+    }
+
+    &__tech {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__imgPhone {
+        margin: 0 auto;
+        width: 80%;
+    }
+
+}
+
+.project-images {
+
+    padding-bottom: 4rem;
+
+    &__title {
+        color: v.$purple-color-dark;
+        font-size: 3.2rem;
+        margin-bottom: 3.2rem;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+    }
+
+    &__box {
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .4s ease;
+        position: relative;
+    }
+
+    &__overlay {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: v.$cover-color;
+        opacity: 0;
+        transition: all .4s ease;
+
+        a { 
+            width: 20rem;
+        }
+
+        i {
+            font-size: 2rem;
+        }
+    }
+
+    &__overlay-content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__box:hover &__overlay {
+        opacity: 1;
+    }
+
+    &__img {
+        border-radius: 10px;
+        width: 70%;
+    }
 }

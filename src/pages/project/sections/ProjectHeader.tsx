@@ -6,8 +6,8 @@ export const ProjectHeader: React.FC = () => {
   return (
     <div className='project-header container'>
         <div className="project-header__container">
-            <Logo />
             <ButtonReturn />
+            <Logo />
         </div>
     </div>
   )

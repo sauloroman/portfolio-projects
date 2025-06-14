@@ -3,6 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { PortfolioPage, ProjectPage, Projects } from '../pages'
 
 export const RouterApp: React.FC = () => {
+
   return (
     <BrowserRouter>
       <Routes>

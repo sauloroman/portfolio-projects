@@ -6,9 +6,9 @@ export const ButtonReturn: React.FC = () => {
   const { onNavigateHomePage } = useNavPage();
 
   return (
-    <button className='button-return' onClick={onNavigateHomePage}>
-        &larr;
-        <p>Regresar a inicio</p>
+    <button className='btn btn--outline' onClick={onNavigateHomePage}>
+        <i className='bxr bx-chevron-left btn__icon'></i> 
+        <p>Regresar</p>
     </button>
   )
 }

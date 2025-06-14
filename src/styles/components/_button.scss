@@ -62,8 +62,9 @@
   }
 
   &--outline {
+    border: 1px solid currentColor;
     color: v.$purple-color;
-    background-color: v.$cover-color;
+    background-color: transparent;
   }
   
 

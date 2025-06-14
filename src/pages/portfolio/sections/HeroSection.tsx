@@ -22,7 +22,7 @@ export const HeroSection: React.FC = () => {
                   My Projects
                 </a>
                 <a href='#' className='btn btn--outline portfolio-hero__button'>
-                  <i className='bx bx-download btn__icon' ></i>
+                  <i className='bxr  bx-arrow-big-down-line btn__icon'></i> 
                   Download CV
                 </a>
               </div>
