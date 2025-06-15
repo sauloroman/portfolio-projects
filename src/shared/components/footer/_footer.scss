@@ -1,0 +1,82 @@
+@use '../../../styles/abstracts/variables' as v;
+
+.footer {
+  padding: 12rem 0;
+  background-color: v.$cover-color;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__item:not(:last-child) {
+    padding: 2rem 4rem 4rem 0;
+    border-right: 2px solid #ddd;
+  }
+
+  &__item-title {
+    text-align: right;
+    font-size: 2rem;
+    color: v.$purple-color-dark;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+
+  &__nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+  &__option {
+    color: v.$purple-color-dark;
+    text-align: right;
+    span { 
+      font-weight: 500; 
+    }
+  }
+
+  &__link {
+    color: v.$purple-color-dark;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    font-weight: 500;
+    
+    &-icon {
+      font-size: 2rem;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 2rem;
+
+    p {
+      font-size: 2rem;
+      text-transform: uppercase;
+      color: v.$purple-color-dark;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+  }
+
+  &__author {
+
+    font-weight: 500;
+
+    cite {
+      color: v.$purple-color;
+      font-style: normal;
+      font-weight: 700;
+    }
+  }
+
+}

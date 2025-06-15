@@ -1,7 +1,13 @@
 import React from 'react'
 import { Logo } from '../../../shared/components'
+import { GrContact } from "react-icons/gr";
+import { useUI } from '../../../hooks';
+import { ModalNames } from '../../../store/ui/ui.slice';
 
 export const HeaderSection: React.FC = () => {
+  
+  const { onOpenModal } = useUI()
+  
   return (
     <header className='portfolio-header'>
       <Logo />
@@ -14,8 +20,8 @@ export const HeaderSection: React.FC = () => {
         <a className='portfolio-header__link' href="#about">About</a>
       </nav>
 
-      <button className='portfolio-header__button btn btn--purple'>
-        <i className='bx bx-right-arrow-alt btn__icon' ></i>
+      <button onClick={() => onOpenModal( ModalNames.contact ) } className='portfolio-header__button btn btn--purple'>
+        <GrContact className='btn__icon' /> 
         Contact me
       </button>
     </header>

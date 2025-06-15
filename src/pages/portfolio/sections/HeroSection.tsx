@@ -1,5 +1,8 @@
 import React from 'react'
 import imgHero from '../../../assets/img/photo-2.jpg'
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { IoBriefcase  } from "react-icons/io5";
+import { MdFileDownload } from "react-icons/md";
 
 export const HeroSection: React.FC = () => {
   return (
@@ -18,23 +21,23 @@ export const HeroSection: React.FC = () => {
             <div className="portfolio-hero__bottom">
               <div className="portfolio-hero__buttons">
                 <a href='#portfolio' className='btn btn--purple portfolio-hero__button'>
-                  <i className='bx bx-briefcase btn__icon'></i>
+                  <IoBriefcase className='btn__icon' />
                   My Projects
                 </a>
                 <a href='#' className='btn btn--outline portfolio-hero__button'>
-                  <i className='bxr  bx-arrow-big-down-line btn__icon'></i> 
+                  <MdFileDownload className='btn__icon' />
                   Download CV
                 </a>
               </div>
               <div className="portfolio-hero__social-media">
-                <a href='#' className="portfolio-hero__social">
-                  <i className='bx bxl-linkedin-square' ></i>
+                <a target='_blank' href='https://www.linkedin.com/in/roman-santillan-desarrolladorfrontend/' className="portfolio-hero__social">
+                  <FaLinkedin />
                 </a>
                 <a target='_blank' href='https://github.com/sauloroman' className="portfolio-hero__social">
-                  <i className='bx bxl-github' ></i>
+                  <FaGithub />
                 </a>
-                <a href='#' className="portfolio-hero__social">
-                  <i className='bx bxs-envelope' ></i>
+                <a target='_blank' href='mailto: romansantillan1998@outlook.com' className="portfolio-hero__social">
+                  <FaEnvelope />
                 </a>
               </div>
             </div>

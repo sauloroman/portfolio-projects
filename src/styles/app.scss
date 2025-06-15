@@ -12,6 +12,9 @@
 // components
 @use './components/button';
 @use './components/card';
+@use './components/form';
+@use '../shared/components/footer/footer';
+@use '../shared/components/modal/modal';
 
 // pages
 @use '../pages/portfolio/portfolio';

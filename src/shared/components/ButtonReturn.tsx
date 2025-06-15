@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavPage } from '../../hooks'
+import { MdKeyboardReturn } from "react-icons/md";
 
 export const ButtonReturn: React.FC = () => {
 
@@ -7,7 +8,7 @@ export const ButtonReturn: React.FC = () => {
 
   return (
     <button className='btn btn--outline' onClick={onNavigateHomePage}>
-        <i className='bxr bx-chevron-left btn__icon'></i> 
+        <MdKeyboardReturn className='btn__icon' />
         <p>Regresar</p>
     </button>
   )

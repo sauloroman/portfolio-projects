@@ -1,0 +1,49 @@
+@use '../abstracts/variables' as v;
+
+.form {
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+  &__label {
+    color: v.$purple-color-dark;
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &__input {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: transparent;
+    font-size: 1.6rem;
+  }
+
+  &__textarea {
+    height: 15rem;
+    font-size: 1.6rem;
+  }
+
+  &__buttons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  &__button {
+    border: 1px solid transparent;
+    width: 15rem;
+    padding: 1rem;
+  }
+
+}
