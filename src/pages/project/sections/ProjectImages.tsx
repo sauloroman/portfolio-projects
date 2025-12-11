@@ -3,15 +3,16 @@ import { TbWorld } from "react-icons/tb";
 import { FaImage } from "react-icons/fa";
 
 interface ProjectImagesProps {
+  noMobile?: boolean,
   images: string[],
   url: string,
 }
 
-export const ProjectImages: React.FC<ProjectImagesProps> = ({ images, url }) => {
+export const ProjectImages: React.FC<ProjectImagesProps> = ({ images, url, noMobile = false }) => {
   return (
     <section className="container project-images">
         <h2 className="project-images__title">Project Images</h2>
-        <ul className="project-images__list">
+        <ul className={` ${noMobile ? 'project-images__list-no-mobile' : 'project-images__list'}`}>
           {
             images?.map( (image, i) => (
               i >= 2 &&
@@ -29,6 +30,7 @@ export const ProjectImages: React.FC<ProjectImagesProps> = ({ images, url }) => 
                   </div>
                 </div>
                 <img 
+                  loading='lazy'
                   className='project-images__img' 
                   src={ image } 
                   alt="Projectt image cellphone" 

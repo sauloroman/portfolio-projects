@@ -40,45 +40,6 @@
 .portfolio-hero {
   padding: 5rem 0;
 
-  .floating-balls {
-    position: absolute;
-    inset: 0;
-    pointer-events: none; 
-    overflow: hidden;
-    z-index: -1;
-  }
-
-  .ball {
-    position: absolute;
-    width: 32rem;
-    height: 32rem;
-    border-radius: 50%;
-    opacity: 0.3;
-    filter: blur(30px);
-    animation: floatBall 2s infinite ease;
-
-    &--1 {
-      top: 5%;
-      left: -5%;
-      background: radial-gradient(circle, #FF7E29, #FFB347); // Naranja → Durazno suave
-      animation-duration: 14s;
-    }
-
-    &--2 {
-      bottom: 7%;
-      left: 35%;
-      background: radial-gradient(circle, #f9de2d, #fbca28); // Amarillo claro → Amarillo cálido
-      animation-duration: 11s;
-    }
-
-    &--3 {
-      top: 10%;
-      left: 50%;
-      background: radial-gradient(circle, #3023AE, #C86DD7); // Azul moderno → Azul profundo
-      animation-duration: 16s;
-    }
-  }
-
   &__container {
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -94,6 +55,7 @@
   }
 
   &__title {
+    font-size: 4.8rem;
     animation: fadeFromRight 2s ease;
 
     span {
@@ -231,7 +193,7 @@
 }
 
 .portfolio-services {
-  padding: 8rem;
+  padding: 8rem 0;
 
   &__top {
     display: flex;
@@ -253,7 +215,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 6rem;
+    gap: 2rem;
     position: relative;
   }
 

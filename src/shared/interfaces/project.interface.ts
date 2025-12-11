@@ -8,4 +8,5 @@ export interface Project {
   url: string,
   images: string[],
   technologies: string[],
+  noMobile: boolean
 }

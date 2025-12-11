@@ -28,7 +28,8 @@ export const startGettingProjects = () => {
           url: data.url,
           category: data.category,
           images: data.images,
-          technologies: data.technologies
+          technologies: data.technologies,
+          noMobile: data.noMobile
         })
       })
 

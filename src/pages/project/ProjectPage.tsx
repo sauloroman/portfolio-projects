@@ -45,6 +45,7 @@ export const ProjectPage: React.FC = () => {
       <ProjectImages 
         images={project?.images}
         url={ project.url }
+        noMobile={project.noMobile}
       />
 
       <Footer />

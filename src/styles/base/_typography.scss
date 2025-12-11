@@ -2,7 +2,7 @@
 @use '../abstracts/mixins' as m;
 
 html {
-  font-size: 62.5%;
+  font-size: 65.2%;
 
   @include m.responsiveDesign('laptop') {
    font-size: 56.5%; 
