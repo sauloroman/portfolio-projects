@@ -5,9 +5,7 @@ interface ProjectTechnologyItemProps {
   tech: string;
 }
 
-export const ProjectTechnologyItem: React.FC<ProjectTechnologyItemProps> = ({
-  tech,
-}) => {
+export const ProjectTechnologyItem: React.FC<ProjectTechnologyItemProps> = ({ tech }) => {
 
   const icon = getCorrectIconName( tech )
 

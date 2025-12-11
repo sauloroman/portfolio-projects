@@ -15,18 +15,23 @@ export const TechSection: React.FC = () => {
           </p>
         </div>
         <div className="portfolio-tech__tech">
-          <i className="devicon-html5-plain-wordmark colored"></i>
-          <i className="devicon-css3-plain-wordmark colored"></i>
-          <i className="devicon-javascript-plain colored"></i>
-          <i className="devicon-sass-original colored"></i>
-          <i className="devicon-tailwindcss-original colored"></i>
-          <i className="devicon-typescript-plain colored"></i>
-          <i className="devicon-react-original colored"></i>
-          <i className="devicon-nodejs-plain-wordmark colored"></i>
-          <i className="devicon-postgresql-plain colored"></i>
-          <i className="devicon-prisma-original"></i>
-          <i className="devicon-jest-plain colored"></i>
-          <i className="devicon-mongodb-plain colored"></i>
+          <i title="HTML5" className="devicon-html5-plain-wordmark colored"></i>
+          <i title="CSS3" className="devicon-css3-plain-wordmark colored"></i>
+          <i title="Javascript" className="devicon-javascript-plain colored"></i>
+          <i title="Typescript" className="devicon-typescript-plain colored"></i>
+          <i title="SASS" className="devicon-sass-original colored"></i>
+          <i title="TailwindCss" className="devicon-tailwindcss-original colored"></i>
+          <i title="React" className="devicon-react-original colored"></i>
+          <i title="Node" className="devicon-nodejs-plain-wordmark colored"></i>
+          <i title='SQL' className="devicon-azuresqldatabase-plain colored"></i>
+          <i title="MongoDB" className="devicon-mongodb-plain colored"></i>
+          <i title="Prisma" className="devicon-prisma-original"></i>
+          <i title="Jest" className="devicon-jest-plain colored"></i>
+          <i title="Java" className="devicon-java-plain colored"></i>
+          <i title='Firebase' className="devicon-firebase-plain colored"></i>
+          <i title="git" className="devicon-git-plain colored"></i>
+          <i title="github" className="devicon-github-original colored"></i>
+          
         </div>
       </div>
     </section>

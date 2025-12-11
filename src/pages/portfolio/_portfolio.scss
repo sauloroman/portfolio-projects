@@ -39,7 +39,45 @@
 
 .portfolio-hero {
   padding: 5rem 0;
-  margin-bottom: 5rem;
+
+  .floating-balls {
+    position: absolute;
+    inset: 0;
+    pointer-events: none; 
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .ball {
+    position: absolute;
+    width: 32rem;
+    height: 32rem;
+    border-radius: 50%;
+    opacity: 0.3;
+    filter: blur(30px);
+    animation: floatBall 2s infinite ease;
+
+    &--1 {
+      top: 5%;
+      left: -5%;
+      background: radial-gradient(circle, #FF7E29, #FFB347); // Naranja → Durazno suave
+      animation-duration: 14s;
+    }
+
+    &--2 {
+      bottom: 7%;
+      left: 35%;
+      background: radial-gradient(circle, #f9de2d, #fbca28); // Amarillo claro → Amarillo cálido
+      animation-duration: 11s;
+    }
+
+    &--3 {
+      top: 10%;
+      left: 50%;
+      background: radial-gradient(circle, #3023AE, #C86DD7); // Azul moderno → Azul profundo
+      animation-duration: 16s;
+    }
+  }
 
   &__container {
     display: grid;
@@ -73,7 +111,6 @@
   }
 
   &__image-box {
-    border-radius: 1rem;
     overflow: hidden;
 
     &:hover {
@@ -178,7 +215,7 @@
     grid-template-columns: repeat(6, 1fr);
     gap: 2rem;
     row-gap: 4rem;
-    font-size: 4rem;
+    font-size: 5rem;
     
     i{ transition: all .4s ease;}
   }
@@ -194,14 +231,14 @@
 }
 
 .portfolio-services {
-  padding: 10rem 8rem;
+  padding: 8rem;
 
   &__top {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5rem;
+    margin-bottom: 8rem;
   }
 
   &__sub {
@@ -209,64 +246,137 @@
     font-size: 1.8rem;
     letter-spacing: 1px;
     font-weight: 900;
-    @include m.createTextBackground(#5C258D, #4389A2); 
+    @include m.createTextBackground(#5C258D, #4389A2);
   }
-  
+
   &__icons {
     display: flex;
     justify-content: center;
-    gap: 8rem;
+    flex-wrap: wrap;
+    gap: 6rem;
+    position: relative;
   }
-  
+
   &__icon {
-    width: 35rem;
+    flex: 1;
+    padding: 3rem;
+    width: 30rem;
+    border-radius: 14px;
+    background: #fff;
+    border: 2px solid #ddd;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    
-    img { width: 8rem;}
-    p { 
-      font-size: 1.6rem;
-      font-weight: 500;
-      color: v.$gray-color;
+    transition: .3s ease;
+    position: relative;
+
+    &:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 18px 34px rgba(0,0,0,0.12);
     }
 
+    &:nth-child(even) {
+      top: -20px;
+      background-color: v.$cover-color;
+    }
+
+    &:nth-child(odd) {
+      top: 20px;
+    }
+
+    &::after {
+      content: attr(data-number);
+      position: absolute;
+      top: -1.8rem;
+      left: 20%;
+      transform: translateX(-50%);
+
+      width: 4.8rem;
+      height: 4.8rem;
+      border-radius: 50%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff;
+
+      background: #5C258D;  
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+      animation: float 3s ease-in-out infinite;
+    }
+
+    &:nth-child(odd)::after {
+      background: linear-gradient(135deg, #5C258D, #4389A2);
+    }
+
+    &:nth-child(even)::after {
+      background: linear-gradient(135deg, #4389A2, #5C258D);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, -6px); }
+    }
+
+    h3 {
+      line-height: 1.4;
+      color: v.$blue-dark-color;
+      margin-top: 1rem;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1.6rem;
+      margin-top: 1.2rem;
+      line-height: 1.55;
+      font-weight: 500;
+      max-width: 90%;
+    }
   }
 
   &__icon:nth-child(1) &__box {
     background-color: #fbe8ee;
     color: #9561AA;
   }
-
   &__icon:nth-child(2) &__box {
     background-color: #fbece7;
     color: #F15A2C;
   }
-
   &__icon:nth-child(3) &__box {
     background-color: #fbf0cf;
     color: #FDCE42;
   }
+  &__icon:nth-child(4) &__box {
+    background-color: #e9f3ff;
+    color: #4287f5;
+  }
 
   &__box {
     border-radius: 50%;
-    width: 7rem;
-    height: 7rem;
+    width: 7.5rem;
+    height: 7.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
+    transition: .3s ease;
   }
 
   &__figure {
-    font-size: 4rem;
+    font-size: 3.8rem;
   }
 }
 
 .portfolio-projects {
 
-  padding: 10rem 0;
+  padding: 2rem 0;
 
   &__top {
     display: flex;
@@ -349,7 +459,7 @@
 
   &__title {
     display: inline-block;
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
     position: relative;
     transition: all .4s ease;
@@ -397,7 +507,7 @@
     background-color: v.$background-color;
     color: v.$text-color;
     border: 1px solid #bbb;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -407,7 +517,7 @@
 
     img {
       border-radius: 50%;
-      width: 1.8rem;
+      width: 2.4rem;
     }
   }
 

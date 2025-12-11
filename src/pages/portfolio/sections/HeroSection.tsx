@@ -3,6 +3,7 @@ import imgHero from '../../../assets/img/photo-2.jpg'
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { IoBriefcase  } from "react-icons/io5";
 import { MdFileDownload } from "react-icons/md";
+import { Title } from '../../project/components/Title';
 
 export const HeroSection: React.FC = () => {
   return (
@@ -11,9 +12,11 @@ export const HeroSection: React.FC = () => {
       <div className="portfolio-hero__container">
         <div className="portfolio-hero__content">
           <div>
-            <p className="portfolio-hero__name">
-             Hi, My name is Roman Santillán 👋</p>
-            <h1 className='heading-special gradient portfolio-hero__title'><span>FullStack</span>Web<br />Developer</h1>
+            <p className="portfolio-hero__name">Hi, My name is Roman Santillán 👋</p>
+            
+            <h1 className='heading-special gradient portfolio-hero__title'>
+                <Title />
+            </h1>
             <p className="portfolio-hero__text">
               I'm a Software Developer dedicated to fulfill and carry out ideas and business models. I'm so passionate about programming and design and I like seeing code as a tool to find more efficient solutions and ways of communication.
               <span className="period period--small u-ml-1"></span>

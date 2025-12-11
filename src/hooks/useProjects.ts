@@ -10,7 +10,7 @@ export const useProjects = () => {
   const { projects, projectOnPage } = useSelector( (state: RootState) => state.projects )
 
   const onGetProjects = () => {
-    dispatch( startGettingProjects( ) )
+    dispatch( startGettingProjects() )
   }
 
   const onSetProjectPage = ( project: Project ) => {
