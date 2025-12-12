@@ -5,7 +5,7 @@ import { useProjects } from '../../../hooks/useProjects'
 export const ProjectList: React.FC = () => {
   const { projects } = useProjects()
   return (
-    <ul className='project-list'>
+    <ul className='projects-list'>
       {
         projects.map( (project, i) => (
           <ProjectCard 

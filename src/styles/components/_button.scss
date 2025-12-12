@@ -33,15 +33,21 @@
     background-color: #5C258D;
   }
 
+  &--golden {
+    background: #CAC531;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F3F9A7, #CAC531);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F3F9A7, #CAC531); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+  }
+
   &--blue {
     background-color: v.$blue-color;
     color: v.$background-color;
   }
 
-  &--black {
+  &--black, &--purple-online {
     letter-spacing: 1px;
     color: v.$white-color;
-    background: v.$purple-color-dark;
 
     &::before {
       content: '';
@@ -59,6 +65,14 @@
       opacity: 0.7;
       border-radius: inherit;
     }
+  }
+
+  &--black {
+    background: v.$purple-color-dark;
+  }
+  
+  &--purple-online {
+    background: v.$purple-color;
   }
 
   &--outline {

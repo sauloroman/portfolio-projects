@@ -1,5 +1,6 @@
 import React from 'react';
 import { ProjectTechnologies } from '../../portfolio/components/ProjectTechnologies';
+import { getProjectBadgeName } from '../../../shared/helpers/get-badge';
 
 interface ProjectAsideProps {
   image: string,
@@ -8,6 +9,7 @@ interface ProjectAsideProps {
 }
 
 export const ProjectAside: React.FC<ProjectAsideProps> = ({category, image, technologies}) => {
+  const badge = getProjectBadgeName(category)
   return (
     <aside className="project-aside">
       <div className="project-aside__phone">
@@ -20,7 +22,7 @@ export const ProjectAside: React.FC<ProjectAsideProps> = ({category, image, tech
       <div className="project-aside__details">
         <div className="project-aside__type">
           <h3 className="project-aside__title">Category</h3>
-          <span>Project {category}</span>
+          <div className={`project-card__badge project-card__badge--${badge}`}>{category}</div>
         </div>
         <div className="project-aside__tech">
           <h3 className="project-aside__title">Technologies</h3>

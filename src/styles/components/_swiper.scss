@@ -1,0 +1,16 @@
+.swiper {
+
+    padding: 5rem;
+    padding-bottom: 8rem;
+
+    &__slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__img {
+        width: 80%;
+    }
+
+}

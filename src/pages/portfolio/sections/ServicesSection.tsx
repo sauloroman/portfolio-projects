@@ -18,7 +18,7 @@ export const ServicesSection: React.FC = () => {
 
         <div className="portfolio-services__icons">
 
-          <div className="portfolio-services__icon">
+          <div data-number="1" className="portfolio-services__icon">
             <div className="portfolio-services__box">
               <FaCode className='portfolio-services__figure' />
             </div>
@@ -26,7 +26,7 @@ export const ServicesSection: React.FC = () => {
             <p>High-quality, scalable web applications using clean, modern code practices.</p>
           </div>
 
-          <div className="portfolio-services__icon">
+          <div data-number="2" className="portfolio-services__icon">
             <div className="portfolio-services__box">
               <MdOutlineDesignServices className='portfolio-services__figure' />
             </div>
@@ -34,7 +34,7 @@ export const ServicesSection: React.FC = () => {
             <p>Clean, aesthetic and user-focused layouts designed to elevate brand identity.</p>
           </div>
 
-          <div className="portfolio-services__icon">
+          <div data-number="3" className="portfolio-services__icon">
             <div className="portfolio-services__box">
               <MdOutlinePhoneAndroid className='portfolio-services__figure' />
             </div>
@@ -42,7 +42,7 @@ export const ServicesSection: React.FC = () => {
             <p>Adaptive, seamless experiences across every screen and device.</p>
           </div>
 
-          <div className="portfolio-services__icon">
+          <div data-number="4" className="portfolio-services__icon">
             <div className="portfolio-services__box">
               <FaServer className='portfolio-services__figure' />
             </div>

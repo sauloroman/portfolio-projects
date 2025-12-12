@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import { useProjects } from '../../hooks'
-import { ProjectHeader } from './sections/ProjectHeader';
+import { ProjectHeader } from '../../shared/components/ProjectHeader';
 import { ProjectCover } from './sections/ProjectCover';
 import { ProjectContent } from './sections/ProjectContent';
 import { ProjectAside } from './sections/ProjectAside';
 import { Footer } from '../../shared/components/footer/Footer';
-import { ProjectImages } from './sections/ProjectImages';
+// import { ProjectImages } from './sections/ProjectImages';
+import { ProjectSwiper } from './sections/ProjectSwiper';
 
 export const ProjectPage: React.FC = () => {
 
@@ -19,7 +20,7 @@ export const ProjectPage: React.FC = () => {
 
   return (
     <div className='project'>
-      <ProjectHeader />
+      <ProjectHeader title={project.title} />
       <ProjectCover 
         github={project.githubRepository}
         url={project.url}
@@ -40,13 +41,18 @@ export const ProjectPage: React.FC = () => {
             technologies={ project?.technologies }
           />
         </div>
+        <ProjectSwiper 
+          items={project.images ?? []}
+          slidesPerView={project.noMobile ? 1 : 3} 
+          from={project.noMobile ? 0 : 1 }
+        />
       </main>
 
-      <ProjectImages 
+      {/* <ProjectImages 
         images={project?.images}
         url={ project.url }
         noMobile={project.noMobile}
-      />
+      /> */}
 
       <Footer />
     </div>

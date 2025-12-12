@@ -9,7 +9,7 @@ export const ButtonReturn: React.FC = () => {
   return (
     <button className='btn btn--outline' onClick={onNavigateHomePage}>
         <MdKeyboardReturn className='btn__icon' />
-        <p>Regresar</p>
+        <p>Home</p>
     </button>
   )
 }

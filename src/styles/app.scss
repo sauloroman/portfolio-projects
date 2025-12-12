@@ -13,12 +13,14 @@
 @use './components/button';
 @use './components/card';
 @use './components/form';
+@use './components/swiper';
 @use '../shared/components/footer/footer';
 @use '../shared/components/modal/modal';
 
 // pages
 @use '../pages/portfolio/portfolio';
 @use '../pages/project/project';
+@use '../pages/projects/projects';
 
 
 // utilities

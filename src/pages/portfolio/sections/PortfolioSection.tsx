@@ -1,7 +1,10 @@
 import React from 'react'
-import { ProjectList } from '../components/ProjectList'
+import { useNavPage } from '../../../hooks'
 
 export const PortfolioSection: React.FC = () => {
+
+  const { onNavigatePage } = useNavPage()
+
   return (
     <section id='portfolio' className='portfolio-projects'>
       <div className="portfolio-projects__container">
@@ -15,9 +18,13 @@ export const PortfolioSection: React.FC = () => {
               <div className="period period--medium"></div>
             </h2>
           </div>
+          <div>
+            <a onClick={() => onNavigatePage('/projects') } target='_blank' className='project-cover__link btn btn--purple-online'>
+              <span></span>
+              Check all my projects
+            </a>
+          </div>
         </div>
-
-        <ProjectList />
 
       </div>
     </section>

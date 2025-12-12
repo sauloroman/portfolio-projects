@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import type { Project } from '../../../shared/interfaces/project.interface';
 import { ProjectTechnologies } from './ProjectTechnologies';
 import { useNavPage, useProjects } from '../../../hooks';
+import { getProjectBadgeName } from '../../../shared/helpers/get-badge';
 
 interface ProjectCardProps {
   left?: boolean;
@@ -18,12 +19,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     title,
     category,
     technologies,
+    badge
   } = useMemo(
     () => ({
       category: project.category,
       coverImage: project.images[0],
       title: project.title,
       technologies: project.technologies,
+      badge: getProjectBadgeName(project.category)
     }),
     [project]
   );
@@ -46,7 +49,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       </div>
       <div className="project-card__content">
         <div className="project-card__name">
-          <p className="project-card__category">&mdash; {category}</p>
+          <p className={`project-card__badge project-card__badge--${badge}`}>{category}</p>
         </div>
         <h4 className="project-card__title">{title}</h4>
         <ProjectTechnologies technologies={technologies} />

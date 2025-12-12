@@ -342,7 +342,7 @@
 
   &__top {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 10rem;
   }
@@ -352,8 +352,6 @@
     font-size: 1.8rem;
     letter-spacing: 1px;
     @include m.createTextBackground(#5C258D, #4389A2); 
-    display: flex;
-    justify-content: center;
     font-weight: 900;
   }
 
@@ -362,135 +360,3 @@
   }
 
 } 
-
-.project-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-
-.project-card {
-  margin-bottom: 3rem;
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: 0 0 46px 0 rgba(0, 0, 0, 0.12);
-  transition: all .5s ease;
-  
-  &:hover {
-    cursor: pointer;
-    transform: translateY(-15px);
-  }
-
-  &:hover &__figure {
-    img {
-      transform: scale(1.01);
-    }
-  }
-
-  &:hover &__title {
-    color: v.$background-color;
-  }
-
-  &:hover &__title::after {
-    width: 100%;
-    opacity: 1;
-  }
-
-  &__content {
-    padding-top: 1rem;
-    border-top: none;
-    overflow: hidden;
-  }
-  
-  &__figure {
-    border-radius: 10px;
-    height: 28rem;
-    overflow: hidden;
-  }
-  
-  &__image {
-    transition: all .4s ease;
-    height: 100%;
-    width: 100%;
-  }
-
-  &__name {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  &__title {
-    display: inline-block;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    position: relative;
-    transition: all .4s ease;
-    padding: 0 1rem;
-    font-weight: 900;
-  }
-  
-  &__title::after {
-    z-index: -1;
-    transition: all .4s ease;
-    display: inline-block;
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 0;
-    opacity: 0;
-    transform: skew(-7deg);
-    @include m.createBackgroundGradient(#5C258D, #4389A2);
-  }
-  
-  &__category {
-    color: v.$purple-color;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 900;
-    font-size: 1.2rem;
-  }
-
-  &__text {
-    color: v.$gray-color;
-    font-weight: 500;
-    margin-bottom: 2rem;
-    font-size: 1.4rem;
-  }
-
-  &__tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  &__item {
-    background-color: v.$background-color;
-    color: v.$text-color;
-    border: 1px solid #bbb;
-    font-size: 1.6rem;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-    padding: 0 1.5rem;
-    border-radius: 100px;
-
-    img {
-      border-radius: 50%;
-      width: 2.4rem;
-    }
-  }
-
-  &__buttons {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  &__button {
-    width: 12rem;
-  }
-
-}
