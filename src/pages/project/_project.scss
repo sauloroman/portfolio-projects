@@ -2,14 +2,20 @@
 @use '../../styles/abstracts/mixins' as m;
 
 .project {
-    &__name {
-        background-color: v.$cover-color;;
-        height: 30rem;
-    }
+  &__name {
+    background-color: v.$cover-color;;
+    height: 30rem;
+  }
 }
 
 .project-header {
     padding: 1.6rem 0;;
+
+    &__buttons {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
 
     &__container {
         display: flex;
@@ -405,6 +411,10 @@
     gap: .5rem;
     padding: 0 1.5rem;
     border-radius: 100px;
+
+    &--bigger {
+      font-size: 1.8rem;
+    }
 
     img {
       border-radius: 50%;

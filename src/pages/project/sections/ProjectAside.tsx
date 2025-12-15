@@ -26,7 +26,10 @@ export const ProjectAside: React.FC<ProjectAsideProps> = ({category, image, tech
         </div>
         <div className="project-aside__tech">
           <h3 className="project-aside__title">Technologies</h3>
-          <ProjectTechnologies technologies={technologies ?? []} />
+          <ProjectTechnologies 
+            cardsBigger={true}
+            technologies={technologies ?? []} 
+          />
         </div>
       </div>
     </aside>

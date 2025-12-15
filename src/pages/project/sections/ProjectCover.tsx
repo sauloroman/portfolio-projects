@@ -26,10 +26,21 @@ export const ProjectCover: React.FC<ProjectCoverProps> = ({ title, description, 
                         <span>{title}</span>
                     </div>
                     <div className="project-cover__buttons">
-                        <a target='_blank' href={url} className='project-cover__link btn btn--black'>
-                            <span></span>
-                            Online
-                        </a>
+                        {
+                            url === ''
+                            ? (
+                                <a target='_blank' className='project-cover__link btn btn--black'>
+                                    <span></span>
+                                    Video
+                                </a>
+                            )
+                            : (
+                                <a target='_blank' href={url} className='project-cover__link btn btn--black'>
+                                    <span></span>
+                                    Online
+                                </a>
+                            )
+                        }
                         <a target='_blank' href={github} className='project-cover__link btn btn--black'>
                             <i className="devicon-github-original"></i>
                             GitHub

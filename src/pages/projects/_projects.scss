@@ -1,5 +1,60 @@
+@use '../../styles/abstracts/variables' as v;
+@use '../../styles/abstracts/mixins' as m;
+
 .projects-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
+
+.projects-hero {
+  padding: 4rem;
+  background-color: v.$cover-color;
+
+  &__content {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 5.2rem;
+    animation: fadeFromRight 2s ease;
+
+    span {
+      @include m.createTextBackground(#5C258D, #4389A2); 
+    }
+  }
+}
+
+.projects-container {
+  margin-top: 5rem;
+}
+
+.projects-filter {
+  margin-bottom: 5rem;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__list {
+    display: flex;
+    gap: 3.2rem;
+  }
+
+  &__item {
+    border-radius: .5rem;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0 1rem;
+    border: 2px solid v.$blue-dark-color;
+    transition: all .4s ease;
+  }
+
+  &__item:hover, &__item--active {
+    background-color: v.$blue-dark-color;
+    color: v.$white-color;
+  }
+}
+

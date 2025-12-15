@@ -1,5 +1,5 @@
 import React from 'react'
-import { Autoplay, Navigation, Pagination } from 'swiper/modules'
+import { Autoplay, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'swiper/swiper-bundle.css'
@@ -14,11 +14,10 @@ export const ProjectSwiper: React.FC<Props> = ({ items, slidesPerView = 2, from 
   return (
     <Swiper
         className='swiper'
-        modules={[ Autoplay, Pagination, Navigation ]}
+        modules={[ Autoplay, Pagination ]}
         autoplay
-        navigation
         pagination
-        spaceBetween={20}
+        spaceBetween={50}
         loop
         slidesPerView={slidesPerView}
     >

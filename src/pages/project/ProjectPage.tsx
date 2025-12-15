@@ -41,19 +41,21 @@ export const ProjectPage: React.FC = () => {
             technologies={ project?.technologies }
           />
         </div>
-        <ProjectSwiper 
-          items={project.images ?? []}
-          slidesPerView={project.noMobile ? 1 : 3} 
-          from={project.noMobile ? 0 : 1 }
-        />
+
+        <section>
+          <span className="portfolio-services__sub">Media</span>
+          <h2 className="heading-section project-images__title">
+            <div className="period period--medium"></div>
+              Project Images
+            <div className="period period--medium"></div>
+          </h2>
+          <ProjectSwiper 
+            items={project.images ?? []}
+            slidesPerView={project.noMobile ? 2 : 3} 
+            from={project.noMobile ? 0 : 1 }
+          />
+        </section>
       </main>
-
-      {/* <ProjectImages 
-        images={project?.images}
-        url={ project.url }
-        noMobile={project.noMobile}
-      /> */}
-
       <Footer />
     </div>
   )

@@ -2,7 +2,7 @@
 
 .btn {
   padding: 1rem 2rem;
-  border-radius: 5px;
+  border-radius: 10rem;
   font-weight: bold;
 
   position: relative;
@@ -28,7 +28,7 @@
   }
 
   &--purple {
-    padding: 1rem;
+    padding: 1rem 3rem;
     color: v.$background-color;
     background-color: #5C258D;
   }

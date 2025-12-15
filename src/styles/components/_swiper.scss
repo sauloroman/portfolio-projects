@@ -1,16 +1,30 @@
 .swiper {
-
-    padding: 5rem;
-    padding-bottom: 8rem;
+    width: 100%;
+    padding: 5rem 8rem;
 
     &__slide {
+        border: 2px solid #ddd;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
     &__img {
-        width: 80%;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
     }
 
+}
+
+.swiper-portfolio {
+    width: 100%;
+    padding: 0;
+
+    &__img {
+        border-radius: 2rem;
+        width: 100%;
+        height: 65rem;
+        object-fit: cover;
+    }
 }

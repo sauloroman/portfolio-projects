@@ -1,9 +1,12 @@
 import React from 'react'
 import { ProjectCard } from './ProjectCard'
-import { useProjects } from '../../../hooks/useProjects'
+import type { Project } from '../../../shared/interfaces/project.interface'
 
-export const ProjectList: React.FC = () => {
-  const { projects } = useProjects()
+interface Props {
+  projects: Project[]
+}
+
+export const ProjectList: React.FC<Props> = ({ projects }) => {
   return (
     <ul className='projects-list'>
       {

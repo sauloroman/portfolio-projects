@@ -1,9 +1,12 @@
 import React from 'react'
-import imgHero from '../../../assets/img/photo-2.jpg'
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { IoBriefcase  } from "react-icons/io5";
 import { MdFileDownload } from "react-icons/md";
 import { Title } from '../../project/components/Title';
+import { HeroSlice } from '../components/HeroSlice';
+import photo1 from '../../../assets/img/photo-1.jpg'
+import photo2 from '../../../assets/img/photo-2.jpg'
+import photo3 from '../../../assets/img/photo-3.jpg'
 
 export const HeroSection: React.FC = () => {
   return (
@@ -46,13 +49,9 @@ export const HeroSection: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="portfolio-hero__image-box">
-          <img 
-            className='portfolio-hero__image' 
-            src={imgHero} 
-            alt="Porfolio Image Saulo Román Santillán Nava" 
-          />
-        </div>
+        <>
+          <HeroSlice images={[ photo1, photo2, photo3 ]} />
+        </>
       </div>
     </section>
   )
