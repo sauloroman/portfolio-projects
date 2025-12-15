@@ -1,27 +1,17 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-
-export const ModalNames = {
-  noModal: '',
-  contact: 'contact',
-  showImage: 'show-image'
-} as const;
-
-export type ModalNames = typeof ModalNames[keyof typeof ModalNames];
-
-interface Modal {
-  isOpen: boolean,
-  name: ModalNames,
-}
+import { ModalNames, type Modal } from "../../shared/interfaces/ui.interface";
 
 interface InitialStateUI {
-  modal: Modal
+  modal: Modal,
+  imageSelected: string | null,
 }
 
 const initialState: InitialStateUI = {
   modal: {
     isOpen: false,
     name: ModalNames.noModal
-  }
+  },
+  imageSelected: null,
 }
 
 export const uiSlice = createSlice({
@@ -37,6 +27,10 @@ export const uiSlice = createSlice({
     closeModal: ( state ) => {
       state.modal.isOpen = false
       state.modal.name = ModalNames.noModal
+    },
+
+    setImageSelected: ( state, { payload }: PayloadAction<string | null> ) => {
+      state.imageSelected = payload
     }
 
   }
@@ -45,4 +39,5 @@ export const uiSlice = createSlice({
 export const {
   openModal,
   closeModal,
+  setImageSelected,
 } = uiSlice.actions

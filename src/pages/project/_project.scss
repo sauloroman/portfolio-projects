@@ -191,6 +191,16 @@
 
 }
 
+.project-modal {
+  &__image {
+    width: 90rem;
+  }
+  
+  &__mobile {
+    width: 50rem;
+  }
+}
+
 .project-images {
   margin-bottom: 8rem;
 

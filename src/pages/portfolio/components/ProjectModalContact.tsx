@@ -10,7 +10,7 @@ export const ProjectModalContact: React.FC = () => {
 
   return (
     <Modal title='🚀 Contact me'>
-      <form className='form'>
+      <form className='form contact'>
         <div className="form__field">
           <label htmlFor="name" className="form__label">Name</label>
           <input 

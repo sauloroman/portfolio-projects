@@ -2,7 +2,7 @@ import React from 'react'
 import { Logo } from '../../../shared/components'
 import { GrContact } from "react-icons/gr";
 import { useUI } from '../../../hooks';
-import { ModalNames } from '../../../store/ui/ui.slice';
+import { ModalNames } from '../../../shared/interfaces/ui.interface';
 
 export const HeaderSection: React.FC = () => {
   

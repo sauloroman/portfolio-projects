@@ -7,7 +7,7 @@ import { PortfolioSection } from './sections/PortfolioSection'
 import { useUI } from '../../hooks'
 import { Footer } from '../../shared/components/footer/Footer'
 import { ProjectModalContact } from './components/ProjectModalContact'
-import { ModalNames } from '../../store/ui/ui.slice'
+import { ModalNames } from '../../shared/interfaces/ui.interface'
 
 export const PortfolioPage: React.FC = () => {
 

@@ -42,7 +42,7 @@ export const HeroSection: React.FC = () => {
                 <a target='_blank' href='https://github.com/sauloroman' className="portfolio-hero__social">
                   <FaGithub />
                 </a>
-                <a target='_blank' href='mailto: romansantillan1998@outlook.com' className="portfolio-hero__social">
+                <a target='_blank' href='mailto: sauloroman20_santillan@outlook.com' className="portfolio-hero__social">
                   <FaEnvelope />
                 </a>
               </div>
