@@ -11,7 +11,7 @@ export const ProjectsHero: React.FC = () => {
                 </h1>
                 <p className='projects-hero__text'>Showcasing a selection of the projects I’ve built, combining clean architecture, solid performance, and thoughtful design.</p>
             </div>
-        </div>
+        </div>  
     </section>
   )
 }

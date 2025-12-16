@@ -10,3 +10,11 @@ export interface Modal {
   isOpen: boolean,
   name: ModalNames,
 }
+
+export interface Education {
+  name: string,
+  image: string,
+  career: string,
+  specialty: string,
+  date: string
+}

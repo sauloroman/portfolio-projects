@@ -12,7 +12,7 @@ export const HeroSection: React.FC = () => {
   return (
     <section id='hero' className='portfolio-hero'>
       <div className="portfolio-hero__cover"></div>
-      <div className="portfolio-hero__container">
+      <div className="portfolio-hero__container container">
         <div className="portfolio-hero__content">
           <div>
             <p className="portfolio-hero__name">Hi, My name is Roman Santillán 👋</p>

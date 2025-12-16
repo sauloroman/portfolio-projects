@@ -26,10 +26,12 @@ export const startGettingProjects = () => {
           descriptionCard: data.descriptionCard,
           githubRepository: data.githubRepository,
           url: data.url,
-          category: data.category,
+          categories: data.category,
           images: data.images,
           technologies: data.technologies,
-          noMobile: data.noMobile
+          noMobile: data.noMobile,
+          projectNumber: data.projectNumber,
+          isMainProject: data.isMainProject
         })
       })
 

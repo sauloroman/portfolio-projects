@@ -4,12 +4,12 @@ import { getProjectBadgeName } from '../../../shared/helpers/get-badge';
 
 interface ProjectAsideProps {
   image: string,
-  category: string,
+  categories: string[],
   technologies: string[]
 }
 
-export const ProjectAside: React.FC<ProjectAsideProps> = ({category, image, technologies}) => {
-  const badge = getProjectBadgeName(category)
+export const ProjectAside: React.FC<ProjectAsideProps> = ({categories, image, technologies}) => {
+  const badges = getProjectBadgeName(categories)
   return (
     <aside className="project-aside">
       <div className="project-aside__phone">
@@ -22,7 +22,13 @@ export const ProjectAside: React.FC<ProjectAsideProps> = ({category, image, tech
       <div className="project-aside__details">
         <div className="project-aside__type">
           <h3 className="project-aside__title">Category</h3>
-          <div className={`project-card__badge project-card__badge--${badge}`}>{category}</div>
+          <div className="project-card__name">
+            {
+              badges?.map( badge => (
+                <p className={`project-card__badge project-card__badge--${badge}`}>{badge}</p>
+              ))
+            }
+          </div>
         </div>
         <div className="project-aside__tech">
           <h3 className="project-aside__title">Technologies</h3>

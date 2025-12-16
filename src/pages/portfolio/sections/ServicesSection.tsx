@@ -5,7 +5,7 @@ import { MdOutlineDesignServices, MdOutlinePhoneAndroid } from "react-icons/md";
 export const ServicesSection: React.FC = () => {
   return (
     <section id='services' className="portfolio-services">
-      <div className="portolio-services__container">
+      <div className="portolio-services__container container">
 
         <div className="portfolio-services__top">
           <span className="portfolio-services__sub">Services</span>

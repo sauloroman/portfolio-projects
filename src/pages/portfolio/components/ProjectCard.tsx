@@ -17,16 +17,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const {
     coverImage,
     title,
-    category,
     technologies,
-    badge
+    badges
   } = useMemo(
     () => ({
-      category: project.category,
+      category: project.categories,
       coverImage: project.images[0],
       title: project.title,
       technologies: project.technologies,
-      badge: getProjectBadgeName(project.category)
+      badges: getProjectBadgeName(project.categories)
     }),
     [project]
   );
@@ -49,7 +48,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       </div>
       <div className="project-card__content">
         <div className="project-card__name">
-          <p className={`project-card__badge project-card__badge--${badge}`}>{category}</p>
+          {
+            badges?.map( badge => (
+              <p className={`project-card__badge project-card__badge--${badge}`}>{badge}</p>
+            ))
+          }
         </div>
         <h4 className="project-card__title">{title}</h4>
         <ProjectTechnologies technologies={technologies} />

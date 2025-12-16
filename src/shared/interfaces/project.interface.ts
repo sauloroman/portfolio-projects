@@ -4,9 +4,11 @@ export interface Project {
   description: string,
   descriptionCard: string,
   githubRepository: string,
-  category: string,
+  categories: string[],
+  projectNumber: number,
   url: string,
   images: string[],
   technologies: string[],
-  noMobile: boolean
+  noMobile: boolean,
+  isMainProject: boolean
 }

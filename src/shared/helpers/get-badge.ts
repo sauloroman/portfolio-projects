@@ -1,7 +1,4 @@
-export const getProjectBadgeName = ( badge: string ) => {
-  switch( badge ) {
-    case 'FrontEnd': return 'frontend'
-    case 'FullStack': return 'fullstack'
-    case 'Desktop': return 'desktop'
-  }
+export const getProjectBadgeName = ( badges: string[] ) => {
+  const badgesNames: string[] = badges.map( badge => badge.toLowerCase() )
+  return badgesNames
 }

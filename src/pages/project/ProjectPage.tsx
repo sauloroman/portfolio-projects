@@ -39,7 +39,7 @@ export const ProjectPage: React.FC = () => {
               title={project.title}
             />
             <ProjectAside 
-              category={ project.category }
+              categories={ project.categories }
               image={''}
               technologies={ project?.technologies }
             />

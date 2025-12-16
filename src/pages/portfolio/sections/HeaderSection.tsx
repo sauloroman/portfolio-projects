@@ -1,29 +1,62 @@
 import React from 'react'
 import { Logo } from '../../../shared/components'
-import { GrContact } from "react-icons/gr";
-import { useUI } from '../../../hooks';
-import { ModalNames } from '../../../shared/interfaces/ui.interface';
+
+interface NavItem {
+  label: string
+  href: string
+  icon: string
+}
+
+const navItems: NavItem[] = [
+  {
+    label: 'Home',
+    href: '#hero',
+    icon: 'bx-home'
+  },
+  {
+    label: 'Service',
+    href: '#services',
+    icon: 'bx-briefcase'
+  },
+  {
+    label: 'Skills',
+    href: '#tech',
+    icon: 'bx-code-alt'
+  },
+  {
+    label: 'Portfolio',
+    href: '#portfolio',
+    icon: 'bx-layout'
+  },
+  {
+    label: 'Education',
+    href: '#education',
+    icon: 'bx-book'
+  },
+  {
+    label: 'Contact',
+    href: '#contact',
+    icon: 'bx-envelope'
+  }
+]
 
 export const HeaderSection: React.FC = () => {
-  
-  const { onOpenModal } = useUI()
-  
   return (
-    <header className='portfolio-header'>
+    <header className="portfolio-header container">
       <Logo />
 
       <nav className="portfolio-header__nav">
-        <a className='portfolio-header__link' href="#hero">Home</a>
-        <a className='portfolio-header__link' href="#services">Service</a>
-        <a className='portfolio-header__link' href="#tech">Skills</a>
-        <a className='portfolio-header__link' href="#portfolio">Portfolio</a>
-        <a className='portfolio-header__link' href="#about">About</a>
+        {navItems.map(item => (
+          <a
+            key={item.href}
+            href={item.href}
+            className="portfolio-header__link"
+          >
+            <i className={`bx ${item.icon}`} />
+            <span>{item.label}</span>
+          </a>
+        ))}
       </nav>
-
-      <button onClick={() => onOpenModal( ModalNames.contact ) } className='portfolio-header__button btn btn--purple'>
-        <GrContact className='btn__icon' /> 
-        Contact me
-      </button>
     </header>
   )
 }

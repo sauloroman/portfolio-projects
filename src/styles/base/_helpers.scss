@@ -83,3 +83,23 @@
 .contact {
   width: 60rem;
 }
+
+.line {
+  height: 8rem;
+  width: 2px;
+  background-color: v.$purple-color;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: v.$purple-color;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

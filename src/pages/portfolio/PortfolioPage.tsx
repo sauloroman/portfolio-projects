@@ -4,6 +4,7 @@ import { HeaderSection } from './sections/HeaderSection'
 import { TechSection } from './sections/TechSection'
 import { ServicesSection } from './sections/ServicesSection'
 import { PortfolioSection } from './sections/PortfolioSection'
+import { EducationSection } from './sections/EducationSection'
 import { useUI } from '../../hooks'
 import { Footer } from '../../shared/components/footer/Footer'
 import { ProjectModalContact } from './components/ProjectModalContact'
@@ -15,12 +16,13 @@ export const PortfolioPage: React.FC = () => {
   
   return (
     <div className='portfolio'>
-      <div className="container">
+      <div>
         <HeaderSection />
         <HeroSection />
         <ServicesSection />
         <TechSection />
         <PortfolioSection />
+        <EducationSection />
       </div>
       <Footer />
       { modal.isOpen && modal.name === ModalNames.contact && <ProjectModalContact />}

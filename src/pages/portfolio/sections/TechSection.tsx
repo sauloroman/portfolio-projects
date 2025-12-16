@@ -3,7 +3,7 @@ import React from 'react'
 export const TechSection: React.FC = () => {
   return (
     <section id='tech' className='portfolio-tech'>
-      <div className="portfolio-tech__container">
+      <div className="portfolio-tech__container container">
         <div className="portfolio-tech__content">
           <span className='portfolio-tech__sub'>Technologies</span>
           <h2 className="heading-section portfolio-tech__title">

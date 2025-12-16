@@ -5,6 +5,7 @@ import { ProjectsHero } from './components/ProjectsHero'
 import { ProjectsFilter } from './components/ProjectsFilter'
 import { useProjects } from '../../hooks'
 import type { Project } from '../../shared/interfaces/project.interface'
+import { Footer } from '../../shared/components/footer/Footer'
 
 export const Projects: React.FC = () => {
 
@@ -16,7 +17,7 @@ export const Projects: React.FC = () => {
   const onApplyFilter = (filter: string) => {
     setActiveFilter(filter)
     if ( filter !== 'All') {
-      setFinalProjects(projects.filter(project => project.category.toLowerCase() === filter.toLowerCase()))
+      setFinalProjects(projects.filter(project => project.categories.map(cat => cat.toLowerCase()).includes(filter.toLowerCase())))
     } else {
       setFinalProjects(projects)
     }
@@ -34,6 +35,7 @@ export const Projects: React.FC = () => {
         />
         <ProjectList projects={finalProjects} />
       </div>
+      <Footer />
     </div>
   )
 }
