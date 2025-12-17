@@ -32,3 +32,16 @@ export interface ContactFormInfo {
   email: string,
   message: string
 }
+
+export type AlertType = 'success' | 'error' | 'warning'
+export const AlertType = {
+    success: 'success' as AlertType,
+    error: 'error' as AlertType,
+    warning: 'warning' as AlertType,
+}
+export interface Alert {
+    isOpen: boolean,
+    type: AlertType,
+    title: string,
+    text: string
+}

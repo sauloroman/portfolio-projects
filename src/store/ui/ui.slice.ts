@@ -1,8 +1,9 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import { ModalNames, type Modal } from "../../shared/interfaces/ui.interface";
+import { AlertType, ModalNames, type Alert, type Modal } from "../../shared/interfaces/ui.interface";
 
 interface InitialStateUI {
   modal: Modal,
+  alert: Alert,
   imageSelected: string | null,
   asideMenuOpen: boolean,
 }
@@ -11,6 +12,12 @@ const initialState: InitialStateUI = {
   modal: {
     isOpen: false,
     name: ModalNames.noModal
+  },
+  alert: {
+    isOpen: false,
+    text: '',
+    title: '',
+    type: AlertType.warning
   },
   imageSelected: null,
   asideMenuOpen: false,
@@ -21,23 +28,27 @@ export const uiSlice = createSlice({
   name: 'ui',
   reducers: {
 
-    openModal: ( state, { payload }: PayloadAction<ModalNames> ) => {
+    openModal: (state, { payload }: PayloadAction<ModalNames>) => {
       state.modal.isOpen = true
       state.modal.name = payload
     },
 
-    closeModal: ( state ) => {
+    closeModal: (state) => {
       state.modal.isOpen = false
       state.modal.name = ModalNames.noModal
     },
 
-    setImageSelected: ( state, { payload }: PayloadAction<string | null> ) => {
+    setImageSelected: (state, { payload }: PayloadAction<string | null>) => {
       state.imageSelected = payload
     },
 
-    setAsideMenuOpen: ( state, {payload}: PayloadAction<boolean>) => {
+    setAsideMenuOpen: (state, { payload }: PayloadAction<boolean>) => {
       state.asideMenuOpen = payload
-    }
+    },
+
+    setAlert: (state, { payload }: PayloadAction<Alert>) => {
+      state.alert = payload
+    },
 
   }
 })
@@ -47,4 +58,5 @@ export const {
   closeModal,
   setImageSelected,
   setAsideMenuOpen,
+  setAlert
 } = uiSlice.actions

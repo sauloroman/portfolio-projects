@@ -1,0 +1,71 @@
+@use '../abstracts/variables' as v;
+
+.alert-modal {
+  text-align: center;
+  padding: 2rem 1rem;
+
+  &__icon {
+    width: 6rem;
+    height: 6rem;
+    margin: 0 auto 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 2.8rem;
+      height: 2.8rem;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    &--success {
+      background-color: rgba(67, 137, 162, 0.15);
+
+      svg {
+        stroke: #4389A2;
+      }
+    }
+
+    &--error {
+      background-color: rgba(220, 53, 69, 0.15);
+
+      svg {
+        stroke: #dc3545;
+      }
+    }
+
+    &--warning {
+      background-color: rgba(245, 159, 0, 0.2);
+
+      svg {
+        stroke: #f59f00;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: v.$text-color;
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+
+  /* ===== Optional subtle animation ===== */
+  animation: alertFadeIn .35s ease-out;
+}
+
+@keyframes alertFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

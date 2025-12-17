@@ -809,4 +809,11 @@
     gap: 1rem;
     padding: 1.5rem 1rem;
   }
+
+  &__loader {
+    grid-column: 7 / 13;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

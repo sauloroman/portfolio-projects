@@ -7,6 +7,9 @@ import { HeroSlice } from '../components/HeroSlice';
 import photo1 from '../../../assets/img/photo-1.jpg'
 import photo2 from '../../../assets/img/photo-2.jpg'
 import photo3 from '../../../assets/img/photo-3.jpg'
+import { Link } from 'react-router-dom';
+
+import cv from '../../../assets/doc/cv-saulo-roman-santillan-nava.pdf'
 
 export const HeroSection: React.FC = () => {
   return (
@@ -26,11 +29,11 @@ export const HeroSection: React.FC = () => {
             </p>
             <div className="portfolio-hero__bottom">
               <div className="portfolio-hero__buttons">
-                <a href='#portfolio' className='btn btn--purple portfolio-hero__button'>
+                <Link to='/projects' className='btn btn--purple portfolio-hero__button'>
                   <IoBriefcase className='btn__icon' />
                   My Projects
-                </a>
-                <a href='#' className='btn btn--outline portfolio-hero__button'>
+                </Link>
+                <a href={cv} target='_blank' referrerPolicy='no-referrer' className='btn btn--outline portfolio-hero__button'>
                   <MdFileDownload className='btn__icon' />
                   Download CV
                 </a>

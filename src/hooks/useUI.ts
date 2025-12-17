@@ -1,13 +1,13 @@
 import { useDispatch, useSelector } from "react-redux"
 import type { RootState } from "../store/store"
-import { closeModal, openModal, setAsideMenuOpen, setImageSelected } from "../store/ui/ui.slice"
-import { ModalNames } from "../shared/interfaces/ui.interface"
+import { closeModal, openModal, setAlert, setAsideMenuOpen, setImageSelected } from "../store/ui/ui.slice"
+import { AlertType, ModalNames } from "../shared/interfaces/ui.interface"
 
 export const useUI = () => {
 
   const dispatch = useDispatch<any>()
 
-  const { modal, imageSelected, asideMenuOpen } = useSelector( (state: RootState) => state.ui )
+  const { modal, imageSelected, asideMenuOpen, alert } = useSelector( (state: RootState) => state.ui )
 
   const onOpenModal = ( modalName: ModalNames ) => {
     dispatch( openModal( modalName ) )
@@ -36,10 +36,29 @@ export const useUI = () => {
     dispatch(setAsideMenuOpen(false))
   }
 
+   const onShowAlert = ( title: string, text: string, type: AlertType ) => {
+        dispatch( setAlert({
+            isOpen: true,
+            title,
+            text,
+            type
+        }))
+    }
+
+    const onCloseAlert = () => {
+        dispatch(setAlert({
+            isOpen: false,
+            title: '',
+            text: '',
+            type: AlertType.warning
+        }))
+    }
+
   return {
     modal,
     imageSelected,
     asideMenuOpen,
+    alert,
 
     onOpenModal,
     onCloseModal,
@@ -47,6 +66,8 @@ export const useUI = () => {
     onRemoveImage,
     onOpenAsideMenu,
     onCloseAsideMenu,
+    onShowAlert,
+    onCloseAlert
   }
 
 }

@@ -11,10 +11,11 @@ import { ProjectModalContact } from './components/ProjectModalContact'
 import { ModalNames } from '../../shared/interfaces/ui.interface'
 import { Menu } from '../../shared/components/Menu'
 import { ContactSection } from './sections/ContactSection'
+import { AlertModal } from '../../shared/components/AlertModal'
 
 export const PortfolioPage: React.FC = () => {
 
-  const { modal } = useUI()
+  const { modal, alert } = useUI()
   
   return (
     <div className='portfolio'>
@@ -30,6 +31,7 @@ export const PortfolioPage: React.FC = () => {
       <Footer />
       <Menu /> 
       { modal.isOpen && modal.name === ModalNames.contact && <ProjectModalContact />}
+      { alert.isOpen && <AlertModal />}
     </div>
   )
 }

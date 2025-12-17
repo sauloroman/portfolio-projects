@@ -4,19 +4,25 @@ import { useUI } from '../../../hooks';
 
 interface ModalProps {
   children: React.ReactNode,
+  onCloseFn?: () => void,
   title: string,
 }
 
-export const Modal: React.FC<ModalProps> = ({ children, title }) => {
+export const Modal: React.FC<ModalProps> = ({ children, title, onCloseFn = () => {} }) => {
   
   const { onCloseModal } = useUI()
+
+  const closeModal = () => {
+    onCloseModal()
+    onCloseFn()
+  }
   
   return (
     <div className='modal'>
       <div className="modal__container">
         <header className="modal__header">
           <p>{title}</p>
-          <MdClose onClick={ onCloseModal } className='modal__close' />
+          <MdClose onClick={ closeModal } className='modal__close' />
         </header>
         { children }
       </div>

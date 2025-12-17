@@ -1,6 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { type ContactFormInfo } from '../../../shared/interfaces/ui.interface'
+import { useMessage } from '../../../hooks'
 
 export const ContactForm: React.FC = () => {
 
@@ -16,10 +17,8 @@ export const ContactForm: React.FC = () => {
     }
   })
 
-  const onSendMessage = (data: ContactFormInfo) => {
-    console.log(data) // TODO: Enviar el mensaje al backend
-  }
-
+  const { onSendMessage } = useMessage()
+  
   return (
     <div className='portfolio-contact__form'>
       <div className="portfolio-contact__form-top">
