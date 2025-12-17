@@ -21,7 +21,11 @@ export const ProjectContent: React.FC<ProjectContentProps> = ({ description, ima
         />
       </div>
       <div className="project-content__text">
-        <h2 className="project-content__subtitle">{title}</h2>
+        <div className='project-content__top'>
+          <div className="period period--medium"></div>
+          <h2 className="project-content__subtitle">{title}</h2>
+          <div className="period period--medium"></div>
+        </div>
         <div>
           {
             descriptionInParagraphs.map( para => (

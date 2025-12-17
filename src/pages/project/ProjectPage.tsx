@@ -53,6 +53,7 @@ export const ProjectPage: React.FC = () => {
               <div className="period period--medium"></div>
             </h2>
             <ProjectSwiper 
+              noMobile={project.noMobile}
               items={project.images ?? []}
               slidesPerView={project.noMobile ? 2 : 3} 
             />

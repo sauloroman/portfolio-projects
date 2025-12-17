@@ -7,7 +7,7 @@
   margin: 0 auto;
 
   @include m.responsiveDesign('laptop') {
-    
+    width: 120rem;
   }
 }
 

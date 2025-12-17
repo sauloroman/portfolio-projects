@@ -35,6 +35,7 @@ export const contacts: Contact[] = [
 export const ContactSocial: React.FC = () => {
   return (
     <div className="portfolio-contact__content">
+      
       <div className="portfolio-contact__top">
         <span className="portfolio-contact__sub">Contact</span>
         <h2 className="heading-section portfolio-contact__title">

@@ -8,21 +8,48 @@
   max-width: 380px;
   height: 100vh;
   z-index: 999;
-  background: linear-gradient(
-    180deg,
-    rgba(108, 63, 175, 0.95),
-    rgba(78, 36, 135, 0.95)
-  );
+  background: linear-gradient(180deg,
+      rgba(108, 63, 175, 0.95),
+      rgba(78, 36, 135, 0.95));
   backdrop-filter: blur(12px);
   box-shadow: 2rem 0 4rem rgba(0, 0, 0, 0.35);
   transition: all .4s ease;
 
+  @include m.responsiveDesign('horizontal-tablet') {
+    width: 50%;
+  }
+
+  @include m.responsiveDesign('big-phone') {
+    width: 70%;
+  }
+
+  &__sections {
+    display: none;
+
+    @include m.responsiveDesign('tablet') {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__subtitle {
+    display: flex;
+    align-items: center;
+    color: v.$white-color;
+    gap: 2rem;
+    text-transform: uppercase;
+
+    p {
+      width: 100%;
+    }
+  }
+
   &--open {
     transform: translateX(0%);
     opacity: 1;
-}
+  }
 
-&--close {
+  &--close {
     transform: translateX(-100%);
     opacity: 0;
   }
@@ -33,6 +60,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @include m.responsiveDesign('horizontal-tablet') {
+      padding: 2rem 4rem;
+    }
   }
 
   &__brand {
@@ -74,7 +105,6 @@
   &__nav {
     display: flex;
     flex-direction: column;
-    gap: 1.8rem;
   }
 
   &__link {
@@ -100,11 +130,9 @@
   }
 
   &__link--highlight {
-    background: linear-gradient(
-      135deg,
-      #00ffd1,
-      #6fffe9
-    );
+    background: linear-gradient(135deg,
+        #00ffd1,
+        #6fffe9);
     color: #2b134f;
     font-weight: 600;
 

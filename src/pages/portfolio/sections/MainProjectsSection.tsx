@@ -19,7 +19,7 @@ export const MainProjectsSection: React.FC<Props> = ({ mainProjects }) => {
 
   return (
     <section className="portfolio-projects">
-      <div className="container">
+      <div className="container portfolio-projects__list">
         {mainProjects.map((project, i) => (
           <HeroProjectCase
             isLeftSide={ i % 2 !== 0}

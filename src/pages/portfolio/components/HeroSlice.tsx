@@ -13,7 +13,7 @@ export const HeroSlice: React.FC<Props> = ({ images }) => {
             className='swiper-portfolio'
             modules={[Autoplay]}
             autoplay
-            spaceBetween={10}
+            spaceBetween={20}
             loop
             slidesPerView={1}
         >

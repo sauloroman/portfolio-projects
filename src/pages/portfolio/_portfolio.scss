@@ -14,6 +14,14 @@
     justify-content: center;
     gap: 5rem;
 
+    @include m.responsiveDesign('laptop') {
+      gap: 3rem;
+    }
+
+    @include m.responsiveDesign('tablet') {
+      display: none;
+    }
+
   }
   
   &__link {
@@ -38,10 +46,15 @@
       font-weight: 900;
       color: v.$purple-color;
     }
+
   }
 
   &__button {
     width: 18rem;
+  }
+
+  &__logo {
+    margin: 0;
   }
 
 }
@@ -49,22 +62,50 @@
 .portfolio-hero {
   padding: 5rem 0;
 
+   @include m.responsiveDesign('big-phone') {
+    padding-top: 2rem;
+   }
+
   &__container {
     display: grid;
     grid-template-columns: 3fr 2fr;
     place-items: center;
     gap: 10rem;
+
+    @include m.responsiveDesign('laptop') {
+      gap: 3rem;
+    }
+
+    @include m.responsiveDesign('horizontal-tablet') {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include m.responsiveDesign('big-phone') {
+      grid-template-columns: 1fr;
+    }
   }
   
   &__content {
     position: relative;
     display: flex;
     align-items: center;
+
+    @include m.responsiveDesign('big-phone') {
+      grid-row: 2 / 3;
+    }
   }
 
   &__title {
     font-size: 4.8rem;
     animation: fadeFromRight 2s ease;
+
+    @include m.responsiveDesign('horizontal-tablet') {
+      font-size: 4rem
+    }
+
+    @include m.responsiveDesign('big-phone') {
+      text-align: center
+    }
 
     span {
       @include m.createTextBackground(#5C258D, #4389A2); 
@@ -78,6 +119,10 @@
     margin-bottom: 2rem;
     display: flex;
     align-items: center;
+
+    @include m.responsiveDesign('big-phone') {
+      justify-content: center;
+    }    
   }
 
   &__text {
@@ -86,22 +131,57 @@
     margin-top: 5rem;
     width: 70%;
     color: v.$gray-color;
+
+    @include m.responsiveDesign('horizontal-tablet') {
+      width: 85%;
+    }
+
+    @include m.responsiveDesign('big-phone') {
+      margin: 0 auto;
+      margin-top: 2.5rem;
+      width: 95%;
+      text-align: center;
+    }
   }
 
   &__bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include m.responsiveDesign('horizontal-tablet') {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4rem;
+    }
+    
   }
 
   &__buttons {
     display: flex;
     gap: 4rem;
-    button { width: 18rem;}
+
+    @include m.responsiveDesign('horizontal-tablet') {
+      margin-top: 4rem;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    @include m.responsiveDesign('big-phone') {
+      width: 100%;
+    }
   }
 
   &__button {
     width: 20rem;
+    @include m.responsiveDesign('horizontal-tablet') {
+      width: 50rem;
+    }
+    
+    @include m.responsiveDesign('big-phone') {
+      width: 100%;
+      padding: 2rem;
+      font-size: 1.6rem;
+    }
   }
 
   &__dots {
@@ -110,6 +190,19 @@
     width: 30rem;
     right: -5%;
     top: 2%;
+  }
+
+  &__social-media {
+    @include m.responsiveDesign('horizontal-tablet') {
+      width: 100%;
+      display: flex;
+      gap: 4rem;
+      justify-content: flex-start;
+    }
+
+    @include m.responsiveDesign('big-phone') {
+      justify-content: center;
+    }
   }
 
   &__social {
@@ -139,6 +232,11 @@
     &:hover::after {
       opacity: 0.7;
     }
+
+    
+    @include m.responsiveDesign('big-phone') {
+      font-size: 4rem;
+    }
   }
   
 }
@@ -155,15 +253,43 @@
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 5rem;
+
+    @include m.responsiveDesign('tablet') {
+      grid-template-columns: 1fr;
+    }
   }
   
   &__text {
     width: 80%;
     font-weight: 500;
+
+    @include m.responsiveDesign('tablet') {
+      width: 70%;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    @include m.responsiveDesign('big-phone') {
+      width: 95%;
+    }
+  }
+
+  &__content {
+    @include m.responsiveDesign('tablet') {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 3.2rem;
+    }
   }
   
   &__title {
     margin-bottom: 3.2rem;
+
+    @include m.responsiveDesign('horizontal-tablet') {
+      margin-bottom: 2rem;
+    }
   }
   
   &__tech {
@@ -174,6 +300,15 @@
     font-size: 5rem;
     
     i{ transition: all .4s ease;}
+    
+    @include m.responsiveDesign('tablet') {
+      place-items: center;
+      row-gap: 5rem;
+    }
+
+    @include m.responsiveDesign('big-phone') {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
   
   &__sub {
@@ -211,6 +346,20 @@
     flex-wrap: wrap;
     gap: 2rem;
     position: relative;
+
+    @include m.responsiveDesign('tablet') {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      place-items: center;
+      row-gap: 5rem;
+    }
+
+    
+    @include m.responsiveDesign('big-phone') {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
   }
 
   &__icon {
@@ -228,6 +377,15 @@
     transition: .3s ease;
     position: relative;
 
+    @include m.responsiveDesign('horizontal-tablet') {
+      width: 90%;
+    }
+
+    @include m.responsiveDesign('big-phone') {
+      width: 95%;
+      padding: 4rem;
+    }
+
     &:hover {
       transform: translateY(-12px);
       box-shadow: 0 18px 34px rgba(0,0,0,0.12);
@@ -236,10 +394,18 @@
     &:nth-child(even) {
       top: -20px;
       background-color: #e7e1ed;
+
+      @include m.responsiveDesign('big-phone') {
+        top: 0;
+      }
     }
 
     &:nth-child(odd) {
       top: 20px;
+
+      @include m.responsiveDesign('big-phone') {
+        top: 0;
+      }
     }
 
     &::after {
@@ -265,6 +431,10 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 
       animation: float 3s ease-in-out infinite;
+
+      @include m.responsiveDesign('horizontal-tablet') {
+        left: 10%;
+      }
     }
 
     &:nth-child(odd)::after {
@@ -374,17 +544,21 @@
   padding: 3rem;
   border-radius: 2rem;
   margin-bottom: 4.8rem;
-
   background: linear-gradient(
     180deg,
     #ffffff,
     #f3f0f7
   );
-
   box-shadow: 0 30px 70px rgba(0,0,0,.2);
   cursor: pointer;
-
   transition: transform .4s ease;
+
+  &:nth-child(1) {
+    @include m.responsiveDesign('tablet') {
+      grid-template-columns: repeat(2, 1fr);
+      grid-column: 1 / 3;
+    }
+  }
 
   &:hover {
     transform: translateY(-6px);
@@ -424,11 +598,19 @@
     color: v.$purple-color-dark;
     font-size: 3rem;
     font-weight: 800;
+
+    @include m.responsiveDesign('horizontal-tablet') {
+      font-size: 2.4rem;
+    }
   }
 
   &__description {
     opacity: .85;
     line-height: 1.6;
+
+    @include m.responsiveDesign('tablet') {
+      display: none;
+    }
   }
 
   &__meta {
@@ -441,6 +623,10 @@
     margin-top: auto;
     display: flex;
     gap: 1.6rem;
+
+     @include m.responsiveDesign('horizontal-tablet') {
+      display: none;
+    }
   }
 }
 
@@ -562,18 +748,26 @@
 
 .portfolio-education {
   margin: 8rem 0;
-  padding: 10rem 0;
+  padding: 10rem;
   background: linear-gradient(
     180deg,
     #f3eff7 0%,
     #e7e1ed 100%
   );
 
+  @include m.responsiveDesign('horizontal-tablet') {
+    padding: 10rem 5rem;
+  }
+
   &__top {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @include m.responsiveDesign('horizontal-tablet') {
+      margin-bottom: 5rem;
+    }
   }
 
   &__sub {
@@ -590,6 +784,15 @@
     grid-template-columns: 1fr 1fr;
     gap: 6rem;
     align-items: center;
+
+    @include m.responsiveDesign('horizontal-tablet') {
+      grid-template-columns: 2fr 3fr;
+      gap: 1rem;
+    }
+
+    @include m.responsiveDesign('tablet') {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__image {
@@ -599,6 +802,14 @@
     img {
       max-width: 100%;
       filter: drop-shadow(0 20px 40px rgba(92, 37, 141, 0.25));
+
+      @include m.responsiveDesign('tablet') {
+        max-width: 60%;
+      }
+    }
+
+    @include m.responsiveDesign('tablet') {
+      grid-row: 2 / 3;
     }
   }
 
@@ -644,6 +855,11 @@
     &:hover {
       transform: translateY(-6px);
       box-shadow: 0 22px 55px rgba(92, 37, 141, 0.28);
+    }
+
+    @include m.responsiveDesign('tablet') {
+      width: 90%;
+      margin: 0 auto;
     }
   }
 
@@ -710,21 +926,40 @@
     grid-template-columns: repeat(12, 1fr);
     place-items: center;
     gap: 8rem;
+
+    @include m.responsiveDesign('tablet') {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__content {
     width: 100%;
     grid-column: 1 / 7;
+
+    @include m.responsiveDesign('tablet') {
+      grid-column: unset;
+    }
   }
   
   &__form {
     width: 100%;
     grid-column: 7 / 13;
+
+    @include m.responsiveDesign('tablet') {
+      grid-column: unset;
+    }
   }
 
   &__top {
     margin-bottom: 4rem;
     text-align: left;
+
+    @include m.responsiveDesign('tablet') {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   &__sub {
@@ -741,6 +976,12 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
+
+    @include m.responsiveDesign('tablet') {
+      grid-template-columns: repeat(2, 1fr);
+      width: 90%;
+      margin: 0 auto;
+    }
   }
 
   &__card {
@@ -791,6 +1032,20 @@
 
   &__form-top {
     margin-bottom: 3.2rem;
+
+    @include m.responsiveDesign('tablet') {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__form-form {
+    @include m.responsiveDesign('tablet') {
+      width: 90%;
+      margin: 0 auto;
+    }
   }
 
   &__form-sub {

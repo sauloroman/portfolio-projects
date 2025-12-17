@@ -21,9 +21,27 @@
 @mixin responsiveDesign( $bk ) {
 
   @if $bk == 'laptop' {
-    @media screen and (min-width: 1400px) {
+    @media screen and (max-width: 1200px) {
       @content;
     };
+  }
+
+  @if $bk == 'horizontal-tablet' {
+    @media screen and (max-width: 1000px) {
+      @content;
+    }
+  }
+
+  @if $bk == 'tablet' {
+    @media screen and (max-width: 800px) {
+      @content;
+    }
+  }
+
+  @if $bk == 'big-phone' {
+    @media screen and (max-width: 600px) {
+      @content;
+    }
   }
 
 }

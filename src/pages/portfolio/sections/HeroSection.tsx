@@ -28,6 +28,7 @@ export const HeroSection: React.FC = () => {
               <span className="period period--small u-ml-1"></span>
             </p>
             <div className="portfolio-hero__bottom">
+              
               <div className="portfolio-hero__buttons">
                 <Link to='/projects' className='btn btn--purple portfolio-hero__button'>
                   <IoBriefcase className='btn__icon' />
@@ -52,9 +53,7 @@ export const HeroSection: React.FC = () => {
             </div>
           </div>
         </div>
-        <>
-          <HeroSlice images={[ photo1, photo2, photo3 ]} />
-        </>
+        <HeroSlice images={[ photo1, photo2, photo3 ]} />
       </div>
     </section>
   )

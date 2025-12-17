@@ -5,10 +5,14 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+
+  @include m.responsiveDesign('laptop') {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .projects-hero {
-  padding: 4rem;
+  padding: 5rem 0;
   background-color: v.$cover-color;
 
   &__content {
@@ -22,6 +26,13 @@
 
     span {
       @include m.createTextBackground(#5C258D, #4389A2); 
+    }
+  }
+
+  &__text {
+    @include m.responsiveDesign('laptop') {
+      width: 80%;
+      margin: 0 auto;
     }
   }
 }

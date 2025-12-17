@@ -1,11 +1,6 @@
 import React from 'react'
 import { Logo, MenuButton } from '../../../shared/components'
-
-interface NavItem {
-  label: string
-  href: string
-  icon: string
-}
+import type { NavItem } from '../../../shared/interfaces/ui.interface'
 
 const navItems: NavItem[] = [
   {
@@ -43,7 +38,10 @@ const navItems: NavItem[] = [
 export const HeaderSection: React.FC = () => {
   return (
     <header className="portfolio-header container">
-      <Logo />
+      <div className="footer__logo portfolio-header__logo">
+        <Logo />
+        <p>oman</p>
+      </div>
 
       <nav className="portfolio-header__nav">
         {navItems.map(item => (

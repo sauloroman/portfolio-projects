@@ -2,10 +2,10 @@
 @use '../abstracts/mixins' as m;
 
 html {
-  font-size: 65.2%;
+  font-size: 56.5%;
 
-  @include m.responsiveDesign('laptop') {
-   font-size: 56.5%; 
+  @include m.responsiveDesign('horizontal-tablet') {
+    font-size: 50%;
   }
 }
 
@@ -16,7 +16,9 @@ body {
   line-height: 2;
 }
 
-button, input, textarea {
+button,
+input,
+textarea {
   font-family: inherit;
 }
 
@@ -34,4 +36,8 @@ button, input, textarea {
   display: flex;
   align-items: center;
   gap: 1.6rem;
+
+  @include m.responsiveDesign('horizontal-tablet') {
+    font-size: 3.6rem;
+  }
 }

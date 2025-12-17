@@ -3,189 +3,231 @@
 
 .project {
   &__name {
-    background-color: v.$cover-color;;
+    background-color: v.$cover-color;
+    ;
     height: 30rem;
   }
 }
 
 .project-header {
-    padding: 1.6rem 0;;
+  padding: 1.6rem 0;
+  ;
 
-    &__buttons {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-    }
+  &__buttons {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
 
-    &__container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    &__logo {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
 
-    &__name {
-      font-weight: bold;
-      color: v.$purple-color;
-      font-size: 2rem;
-    }
+  &__name {
+    font-weight: bold;
+    color: v.$purple-color;
+    font-size: 2rem;
+  }
 }
 
 .project-cover {
-    background-color: v.$cover-color;
-    padding: 5.8rem 0;
+  background-color: v.$cover-color;
+  padding: 5.8rem 0;
 
-    &__container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 1.6rem;
-        margin-bottom: 3rem;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+    margin-bottom: 3rem;
+  }
+
+  &__title {
+    font-weight: bolder;
+    text-align: center;
+    @include m.createTextBackground(#5C258D, #4389A2);
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+
+    @include m.responsiveDesign('tablet') {
+      font-size: 4.8rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__desc {
+    width: 65%;
+    margin: 0 auto;
+    text-align: center;
+
+      @include m.responsiveDesign('tablet') {
+       width: 90%;
+       margin-bottom: 2rem; 
+      }
+  }
+
+  &__breadcrumb {
+    display: flex;
+    gap: 2rem;
+    ;
+    color: v.$purple-color-dark;
+    font-weight: 700;
+    margin-bottom: 3rem;
+
+    span {
+      color: v.$background-color;
+      padding: 0 1rem;
+      transform: skewX(-5deg);
+      @include m.createBackgroundGradient(#5C258D, #4389A2);
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+    span {
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background-color: v.$success-color;
+      position: relative;
+      animation: pulse 1.5s infinite;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: v.$success-color;
+        transform: translate(-50%, -50%);
+        animation: ripple 1.5s infinite;
+        opacity: 0.6;
+      }
     }
 
-    &__title {
-        font-weight: bolder;
-        text-align: center;
-        @include m.createTextBackground(#5C258D, #4389A2); 
-        display: flex;
-        gap: 1.6rem;
-        align-items: center;
+    @include m.responsiveDesign('horizontal-tablet') {
+      width: 30rem;
+      font-size: 1.6rem;
     }
-
-    &__desc {
-        width: 65%;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    &__breadcrumb {
-        display: flex;
-        gap: 2rem;;
-        color: v.$purple-color-dark;
-        font-weight: 700;
-        margin-bottom: 3rem;
-
-        span {
-            color: v.$background-color;
-            padding: 0 1rem;
-            transform: skewX(-5deg);
-            @include m.createBackgroundGradient(#5C258D, #4389A2);
-        }
-    }
-
-    &__buttons {
-        display: flex;
-        gap: 2rem;
-    }
-
-    &__link {
-        display: flex;
-        align-items: center;
-        gap: .5rem;
-
-        span { 
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            background-color: v.$success-color;
-            position: relative;
-            animation: pulse 1.5s infinite;
-        
-            &::after {
-              content: '';
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              width: 100%;
-              height: 100%;
-              border-radius: 50%;
-              background-color: v.$success-color;
-              transform: translate(-50%, -50%);
-              animation: ripple 1.5s infinite;
-              opacity: 0.6;
-            }
-        }
-    }
+  }
 
 }
 
 .project-main {
-    padding: 4rem 0;
+  padding: 4rem 0;
 
-    &__container {
-        display: grid;
-        grid-template-columns: 2fr 1fr;   
-        gap: 2rem;
+  &__container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+
+    @include m.responsiveDesign('horizontal-tablet') {
+      grid-template-columns: 1fr;
+      padding: 4rem;
     }
+  }
 }
 
 .project-content {
-    background-color: #fff;
+  background-color: #fff;
+  border-radius: 10px;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    @include m.responsiveDesign('horizontal-tablet') {
+      width: 80%;
+    }
+  }
+
+  &__img {
+    max-width: 100%;
+    margin: 0 auto;
     border-radius: 10px;
 
-    &__img {
-        max-width: 100%;
-        margin: 0 auto;
-        border-radius: 10px;
+    @include m.responsiveDesign('horizontal-tablet') {
+      width: 80%;
     }
 
-    &__subtitle {
-        font-size: 3.2rem;
-        margin: 2rem 0;
-        color: v.$purple-color-dark;
+    @include m.responsiveDesign('tablet') {
+      width: 90%;
     }
+  }
+
+  &__subtitle {
+    font-size: 3.2rem;
+    margin: 2rem 0;
+    color: v.$purple-color-dark;
+  }
 }
 
 .project-aside {
-    height: fit-content;
-    background-color: #fff;
+  height: fit-content;
+  background-color: #fff;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  &__details {
     padding: 2rem;
-    border: 1px solid #ddd;
     border-radius: 10px;
+    background-color: v.$cover-color;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
 
-    &__details {
-        padding: 2rem;
-        border-radius: 10px;
-        background-color: v.$cover-color;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
+  &__title {
+    font-size: 1.6rem;
+    color: v.$purple-color-dark;
+  }
 
-    &__title {
-      font-size: 1.6rem;
-      color: v.$purple-color-dark;
-    }
+  &__type {
+    display: flex;
+    flex-direction: column;
 
-    &__type {
-      display: flex;
-      flex-direction: column;
-      span { 
-        padding: 0 1rem;
-        border-radius: 100px;
-        color: #F15A2C;
-        border: 1px solid currentColor;
-        font-size: 1.4rem;
-        background-color: #fbece7;
-      }
+    span {
+      padding: 0 1rem;
+      border-radius: 100px;
+      color: #F15A2C;
+      border: 1px solid currentColor;
+      font-size: 1.4rem;
+      background-color: #fbece7;
     }
+  }
 
-    &__tech {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
+  &__tech {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
 
-    &__imgPhone {
-        margin: 0 auto;
-        width: 80%;
-    }
+  &__imgPhone {
+    margin: 0 auto;
+    width: 80%;
+  }
 
 }
 
@@ -193,7 +235,7 @@
   &__image {
     width: 90rem;
   }
-  
+
   &__mobile {
     width: 50rem;
   }
@@ -243,12 +285,12 @@
     width: 100%;
     break-inside: avoid;
     border: 1px solid #ddd;
-    box-shadow: 0px 10px 24px rgba(0,0,0,0.08);
+    box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.08);
     transition: transform .4s ease, box-shadow .4s ease;
 
     &:hover {
       transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
     }
 
     &:hover img {
@@ -272,7 +314,7 @@
   padding: 2rem;
   box-shadow: 0 0 46px 0 rgba(0, 0, 0, 0.12);
   transition: all .5s ease;
-  
+
   &:hover {
     cursor: pointer;
     transform: translateY(-15px);
@@ -298,13 +340,13 @@
     border-top: none;
     overflow: hidden;
   }
-  
+
   &__figure {
     border-radius: 10px;
     height: 28rem;
     overflow: hidden;
   }
-  
+
   &__image {
     transition: all .4s ease;
     height: 100%;
@@ -326,7 +368,7 @@
     padding: 0 1rem;
     font-weight: 900;
   }
-  
+
   &__title::after {
     z-index: -1;
     transition: all .4s ease;
@@ -341,7 +383,7 @@
     transform: skew(-7deg);
     @include m.createBackgroundGradient(#5C258D, #4389A2);
   }
-  
+
   &__badge {
     display: inline-block;
     padding: .6rem 1.6rem;
@@ -354,7 +396,7 @@
     position: relative;
     overflow: hidden;
     z-index: 2;
-    box-shadow: 0 4px 12px rgba(0,0,0,.18);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .18);
     animation: badgeFade .6s ease forwards;
 
     &::after {
@@ -368,8 +410,15 @@
   }
 
   @keyframes badgeFade {
-    0% { transform: translateY(-8px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
+    0% {
+      transform: translateY(-8px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
   &__badge--frontend::after {

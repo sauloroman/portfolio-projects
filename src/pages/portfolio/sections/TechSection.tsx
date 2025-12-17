@@ -22,8 +22,11 @@ export const TechSection: React.FC = () => {
           <i title="SASS" className="devicon-sass-original colored"></i>
           <i title="TailwindCss" className="devicon-tailwindcss-original colored"></i>
           <i title="React" className="devicon-react-original colored"></i>
+          <i title="React" className="devicon-redux-original colored"></i>
           <i title="Node" className="devicon-nodejs-plain-wordmark colored"></i>
-          <i title='SQL' className="devicon-azuresqldatabase-plain colored"></i>
+          <i title='PostgreSQL' className="devicon-postgresql-plain colored"></i>
+          <i title='MySQL' className="devicon-mysql-plain colored"></i>
+          <i title='Mongoose' className="devicon-mongoose-original colored"></i>
           <i title="MongoDB" className="devicon-mongodb-plain colored"></i>
           <i title="Prisma" className="devicon-prisma-original"></i>
           <i title="Jest" className="devicon-jest-plain colored"></i>

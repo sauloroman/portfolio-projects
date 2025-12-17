@@ -6,11 +6,12 @@ import 'swiper/swiper-bundle.css'
 import { useUI } from '../../../hooks'
 
 interface Props {
+    noMobile?: boolean,
     slidesPerView?: number,
     items: string[]
 }
 
-export const ProjectSwiper: React.FC<Props> = ({ items, slidesPerView = 2 }) => {
+export const ProjectSwiper: React.FC<Props> = ({ items, noMobile = false, slidesPerView = 2 }) => {
 
     const { onWatchImage } = useUI()
     const imagesRender = items.filter( (item, i) =>  i > 0 && item )
@@ -23,7 +24,14 @@ export const ProjectSwiper: React.FC<Props> = ({ items, slidesPerView = 2 }) => 
             pagination
             spaceBetween={50}
             loop
-            slidesPerView={slidesPerView}
+            breakpoints={{
+                0: {
+                    slidesPerView: noMobile ? 1 : 2
+                },
+                801: {
+                    slidesPerView
+                }
+            }}
         >
             {imagesRender.map((item, i) => (
                 <SwiperSlide onClick={() => onWatchImage(item)} key={`${item}-${i}`}>
