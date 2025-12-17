@@ -27,12 +27,27 @@
     transition: all .5s ease;
   }
 
+  &--menu {
+    height: 4rem;
+    width: 4rem;
+    font-size: 2.4rem;
+    background-color: v.$purple-color;
+    color: #fff;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .15);
+    transition: all .4s ease;
+    border-radius: 50%;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
   &--purple {
     padding: 1rem 3rem;
     color: v.$background-color;
     background-color: #5C258D;
   }
-
+  
   &--golden {
     background: #CAC531;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #F3F9A7, #CAC531);  /* Chrome 10-25, Safari 5.1-6 */

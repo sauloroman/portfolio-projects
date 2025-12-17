@@ -9,6 +9,8 @@ import { useUI } from '../../hooks'
 import { Footer } from '../../shared/components/footer/Footer'
 import { ProjectModalContact } from './components/ProjectModalContact'
 import { ModalNames } from '../../shared/interfaces/ui.interface'
+import { Menu } from '../../shared/components/Menu'
+import { ContactSection } from './sections/ContactSection'
 
 export const PortfolioPage: React.FC = () => {
 
@@ -23,8 +25,10 @@ export const PortfolioPage: React.FC = () => {
         <TechSection />
         <PortfolioSection />
         <EducationSection />
+        <ContactSection />
       </div>
       <Footer />
+      <Menu /> 
       { modal.isOpen && modal.name === ModalNames.contact && <ProjectModalContact />}
     </div>
   )

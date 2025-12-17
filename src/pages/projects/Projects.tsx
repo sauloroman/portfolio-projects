@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ProjectList } from '../portfolio/components/ProjectList'
 import { ProjectHeader } from '../../shared/components/ProjectHeader'
 import { ProjectsHero } from './components/ProjectsHero'
@@ -9,7 +9,7 @@ import { Footer } from '../../shared/components/footer/Footer'
 
 export const Projects: React.FC = () => {
 
-  const { projects } = useProjects()
+  const { projects, onGetProjects } = useProjects()
 
   const [finalProjects, setFinalProjects] = useState<Project[]>(projects)
   const [activeFilter, setActiveFilter] = useState<string>('All')
@@ -22,6 +22,10 @@ export const Projects: React.FC = () => {
       setFinalProjects(projects)
     }
   }
+
+  useEffect(() => {
+    onGetProjects()
+  }, [])
 
   return (
     <div className='projects'>

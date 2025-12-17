@@ -1,0 +1,131 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.menu {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 30%;
+  max-width: 380px;
+  height: 100vh;
+  z-index: 999;
+  background: linear-gradient(
+    180deg,
+    rgba(108, 63, 175, 0.95),
+    rgba(78, 36, 135, 0.95)
+  );
+  backdrop-filter: blur(12px);
+  box-shadow: 2rem 0 4rem rgba(0, 0, 0, 0.35);
+  transition: all .4s ease;
+
+  &--open {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+&--close {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  &__container {
+    height: 100%;
+    padding: 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__brand {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    p {
+      margin-top: .5rem;
+      font-size: 1.4rem;
+      color: rgba(255, 255, 255, 0.75);
+    }
+  }
+
+  &__close {
+    cursor: pointer;
+    color: #fff;
+    font-size: 3.2rem;
+  }
+
+  &__dot {
+    width: 2rem;
+    height: 2rem;
+    background: #00ffd1;
+    border-radius: 50%;
+    box-shadow: 0 0 1.2rem #00ffd1;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    padding: 1.4rem 1.8rem;
+    border-radius: 1.2rem;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all .35s ease;
+
+    i {
+      font-size: 2.2rem;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateX(6px);
+    }
+  }
+
+  &__link--highlight {
+    background: linear-gradient(
+      135deg,
+      #00ffd1,
+      #6fffe9
+    );
+    color: #2b134f;
+    font-weight: 600;
+
+    i {
+      color: #2b134f;
+    }
+
+    &:hover {
+      color: #fff;
+      transform: translateX(10px) scale(1.02);
+      box-shadow: 0 0 2rem rgba(0, 255, 209, 0.5);
+
+      i {
+        color: #fff;
+      }
+    }
+  }
+
+  &__footer {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Logo } from '../../../shared/components'
+import { Logo, MenuButton } from '../../../shared/components'
 
 interface NavItem {
   label: string
@@ -57,6 +57,8 @@ export const HeaderSection: React.FC = () => {
           </a>
         ))}
       </nav>
+
+      <MenuButton />
     </header>
   )
 }

@@ -1,7 +1,6 @@
 import React from 'react'
 import type { Project } from '../../../shared/interfaces/project.interface'
 import { ProjectTechnologies } from './ProjectTechnologies'
-import { getProjectBadgeName } from '../../../shared/helpers/get-badge'
 
 interface Props {
     isLeftSide?: boolean,
@@ -11,8 +10,6 @@ interface Props {
 
 export const HeroProjectCase: React.FC<Props> = ({ isLeftSide = false, project, onOpen }) => {
     if (!project) return null
-    const badges = getProjectBadgeName(project.categories)
-
     if (isLeftSide) {
         return (
             <article className="hero-project" onClick={onOpen}>
@@ -20,18 +17,8 @@ export const HeroProjectCase: React.FC<Props> = ({ isLeftSide = false, project, 
                     <h3 className="hero-project__title">{project.title}</h3>
 
                     <p className="hero-project__description">
-                        {project.descriptionCard.substring(0, 250) + '...'}
+                        {project.descriptionCard.substring(0, 550) + '...'}
                     </p>
-
-                    <div className="hero-project__meta">
-                        <div className="project-card__name">
-                            {
-                                badges?.map(badge => (
-                                    <p className={`project-card__badge project-card__badge--${badge}`}>{badge}</p>
-                                ))
-                            }
-                        </div>
-                    </div>
 
                     <ProjectTechnologies technologies={project.technologies} />
 
@@ -71,18 +58,8 @@ export const HeroProjectCase: React.FC<Props> = ({ isLeftSide = false, project, 
                 <h3 className="hero-project__title">{project.title}</h3>
 
                 <p className="hero-project__description">
-                    {project.descriptionCard.substring(0, 250) + '...'}
+                    {project.descriptionCard.substring(0, 550) + '...'}
                 </p>
-
-                <div className="hero-project__meta">
-                    <div className="project-card__name">
-                            {
-                                badges?.map(badge => (
-                                    <p className={`project-card__badge project-card__badge--${badge}`}>{badge}</p>
-                                ))
-                            }
-                        </div>
-                </div>
 
                 <ProjectTechnologies technologies={project.technologies} />
 

@@ -4,6 +4,7 @@ import { ModalNames, type Modal } from "../../shared/interfaces/ui.interface";
 interface InitialStateUI {
   modal: Modal,
   imageSelected: string | null,
+  asideMenuOpen: boolean,
 }
 
 const initialState: InitialStateUI = {
@@ -12,6 +13,7 @@ const initialState: InitialStateUI = {
     name: ModalNames.noModal
   },
   imageSelected: null,
+  asideMenuOpen: false,
 }
 
 export const uiSlice = createSlice({
@@ -31,6 +33,10 @@ export const uiSlice = createSlice({
 
     setImageSelected: ( state, { payload }: PayloadAction<string | null> ) => {
       state.imageSelected = payload
+    },
+
+    setAsideMenuOpen: ( state, {payload}: PayloadAction<boolean>) => {
+      state.asideMenuOpen = payload
     }
 
   }
@@ -40,4 +46,5 @@ export const {
   openModal,
   closeModal,
   setImageSelected,
+  setAsideMenuOpen,
 } = uiSlice.actions

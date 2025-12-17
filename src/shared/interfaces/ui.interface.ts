@@ -18,3 +18,17 @@ export interface Education {
   specialty: string,
   date: string
 }
+
+export interface Contact {
+  icon: string,
+  concept: string,
+  value: string,
+  message: string,
+  link: string
+}
+
+export interface ContactFormInfo {
+  title: string,
+  email: string,
+  message: string
+}
