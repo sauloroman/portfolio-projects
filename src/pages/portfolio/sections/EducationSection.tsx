@@ -5,7 +5,7 @@ import type { Education } from '../../../shared/interfaces/ui.interface'
 const schools: Education[] = [
   {
     name: 'Universidad Tecnológica de Aguascalientes',
-    career: 'Information Technology Engineering and Digital Innovation',
+    career: 'Information Technology and Digital Innovation Engineering',
     specialty: 'Multiplatform Software Development',
     date: 'August 2024 - Today',
     image: ''
