@@ -8,7 +8,7 @@ export const ContactSection: React.FC = () => {
   const { isLoading } = useMessage()
 
   return (
-    <section className='portfolio-contact'>
+    <section id='contact' className='portfolio-contact'>
       <div className="portfolio-contact__container container">
         <ContactSocial />
         {

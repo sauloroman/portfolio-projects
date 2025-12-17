@@ -31,6 +31,7 @@ export const TechSection: React.FC = () => {
           <i title='Firebase' className="devicon-firebase-plain colored"></i>
           <i title="git" className="devicon-git-plain colored"></i>
           <i title="github" className="devicon-github-original colored"></i>
+          <i title="express" className="devicon-express-original colore"></i>
           
         </div>
       </div>

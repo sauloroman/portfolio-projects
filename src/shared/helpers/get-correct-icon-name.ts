@@ -29,6 +29,8 @@ export const getCorrectIconName = ( tech: string ) => {
       return 'devicon-firebase-plain colored'
     case 'css styled components':
       return 'devicon-styledcomponents-plain colored'
+    case 'express':
+      return 'devicon-express-original colored'
     case 'flatlaf':
       return 'https://res.cloudinary.com/dlamufioy/image/upload/v1765829631/portfolio/icons/12702749_n9nfsr.png'
     case 'mvc':
