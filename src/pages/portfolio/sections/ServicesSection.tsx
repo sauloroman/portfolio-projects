@@ -1,10 +1,39 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { FaCode, FaServer } from "react-icons/fa";
 import { MdOutlineDesignServices, MdOutlinePhoneAndroid } from "react-icons/md";
 
 export const ServicesSection: React.FC = () => {
+
+  const sectionRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const header = document.querySelector('.portfolio-header')
+    const section = sectionRef.current
+    if (!header || !section) return
+
+    const sectionTop = section.offsetTop
+
+    const onScroll = () => {
+      if (window.scrollY >= sectionTop) {
+        header.classList.add('portfolio-header--shadow')
+      } else {
+        header.classList.remove('portfolio-header--shadow')
+      }
+    }
+
+    onScroll() 
+    window.addEventListener('scroll', onScroll)
+
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+
   return (
-    <section id='services' className="portfolio-services">
+    <section
+      ref={sectionRef}
+      id="services"
+      className="portfolio-services"
+    >
       <div className="portolio-services__container container">
 
         <div className="portfolio-services__top">

@@ -2,11 +2,26 @@
 @use '../../styles/abstracts/mixins' as m;
 
 .portfolio-header {
-  padding: 3rem 0;
+  padding: 2rem 0;
   height: v.$header-height;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background-color: v.$white-color;
+  color: #fff;
+  transition: box-shadow .3s ease;
+
+  &--shadow {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   &__nav {
     display: flex;
@@ -30,7 +45,7 @@
     transition: all .4s ease;
     width: 12rem;
     font-size: 1.4rem;
-    color: v.$text-color;
+    color: v.$purple-color-dark;
     border-radius: 5px;
     font-weight: bold;
     display: flex;
@@ -61,9 +76,10 @@
 
 .portfolio-hero {
   padding: 5rem 0;
+  padding-top: calc( v.$header-height + 4rem );
 
    @include m.responsiveDesign('big-phone') {
-    padding-top: 2rem;
+    padding-top: calc( v.$header-height + 4rem );
    }
 
   &__container {

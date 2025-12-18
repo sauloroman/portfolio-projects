@@ -37,26 +37,28 @@ const navItems: NavItem[] = [
 
 export const HeaderSection: React.FC = () => {
   return (
-    <header className="portfolio-header container">
-      <div className="footer__logo portfolio-header__logo">
-        <Logo />
-        <p>oman</p>
+    <header className="portfolio-header">
+      <div className='container portfolio-header__container'>
+        <div className="footer__logo portfolio-header__logo">
+          <Logo />
+          <p>oman</p>
+        </div>
+
+        <nav className="portfolio-header__nav">
+          {navItems.map(item => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="portfolio-header__link"
+            >
+              <i className={`bx ${item.icon}`} />
+              <span>{item.label}</span>
+            </a>
+          ))}
+        </nav>
+
+        <MenuButton />
       </div>
-
-      <nav className="portfolio-header__nav">
-        {navItems.map(item => (
-          <a
-            key={item.href}
-            href={item.href}
-            className="portfolio-header__link"
-          >
-            <i className={`bx ${item.icon}`} />
-            <span>{item.label}</span>
-          </a>
-        ))}
-      </nav>
-
-      <MenuButton />
     </header>
   )
 }

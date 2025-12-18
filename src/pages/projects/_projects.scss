@@ -9,6 +9,10 @@
   @include m.responsiveDesign('laptop') {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  @include m.responsiveDesign('big-phone') {
+    grid-template-columns: 1fr;
+  }
 }
 
 .projects-hero {
@@ -27,12 +31,20 @@
     span {
       @include m.createTextBackground(#5C258D, #4389A2); 
     }
+
+    @include m.responsiveDesign('big-phone') {
+      font-size: 4rem;
+    }
   }
 
   &__text {
     @include m.responsiveDesign('laptop') {
       width: 80%;
       margin: 0 auto;
+    }
+
+    @include m.responsiveDesign('big-phone') {
+      width: 95%;
     }
   }
 }
@@ -44,6 +56,10 @@
 
 .projects-filter {
   margin-bottom: 5rem;
+
+  @include m.responsiveDesign('big-phone') {
+    display: none;
+  }
 
   &__container {
     display: flex;
@@ -68,6 +84,22 @@
   &__item:hover, &__item--active {
     background-color: v.$blue-dark-color;
     color: v.$white-color;
+  }
+}
+
+.projects-filter-select {
+  display: none;
+  width: 100%;
+  margin-bottom: 3.2rem;
+  padding: 1.5rem;
+  font-family: inherit;
+  border: 2px solid #ddd;
+  font-size: 1.8rem;
+  background-color: v.$white-color;
+  border-radius: 10px;
+
+  @include m.responsiveDesign('big-phone') {
+    display: block;
   }
 }
 

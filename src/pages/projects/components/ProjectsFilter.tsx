@@ -1,7 +1,6 @@
 import React from 'react'
 import type { Project } from '../../../shared/interfaces/project.interface'
-
-const filters: string[] = ['FrontEnd', 'BackEnd', 'FullStack', 'Desktop', 'All']
+import { filters } from '../../../shared/interfaces/ui.interface'
 
 interface Props {
     projects: Project[]

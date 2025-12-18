@@ -6,6 +6,7 @@ import { ProjectsFilter } from './components/ProjectsFilter'
 import { useProjects } from '../../hooks'
 import type { Project } from '../../shared/interfaces/project.interface'
 import { Footer } from '../../shared/components/footer/Footer'
+import { ProjectsFilterSelect } from './components/ProjectsFilterSelect'
 
 export const Projects: React.FC = () => {
 
@@ -36,6 +37,10 @@ export const Projects: React.FC = () => {
           onApplyFilter={onApplyFilter}
           activeFilter={activeFilter}
           projects={finalProjects} 
+        />
+        <ProjectsFilterSelect 
+          onApplyFilter={onApplyFilter}
+          activeFilter={activeFilter}
         />
         <ProjectList projects={finalProjects} />
       </div>

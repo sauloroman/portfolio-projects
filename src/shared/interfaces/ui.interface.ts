@@ -51,3 +51,5 @@ export interface NavItem {
   href: string
   icon: string
 }
+
+export const filters: string[] = ['FrontEnd', 'BackEnd', 'FullStack', 'Desktop', 'All']
