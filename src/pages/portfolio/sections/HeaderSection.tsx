@@ -1,6 +1,7 @@
 import React from 'react'
 import { Logo, MenuButton } from '../../../shared/components'
 import type { NavItem } from '../../../shared/interfaces/ui.interface'
+import { ChangeThemeButton } from '../../../shared/components/ChangeThemeButton'
 
 const navItems: NavItem[] = [
   {
@@ -39,7 +40,7 @@ export const HeaderSection: React.FC = () => {
   return (
     <header className="portfolio-header">
       <div className='container portfolio-header__container'>
-        <div className="footer__logo portfolio-header__logo">
+        <div className="portfolio-header__logo">
           <Logo />
           <p>oman</p>
         </div>
@@ -56,8 +57,11 @@ export const HeaderSection: React.FC = () => {
             </a>
           ))}
         </nav>
-
-        <MenuButton />
+        
+        <div className='portfolio-header__actions'>
+          <ChangeThemeButton />
+          <MenuButton />
+        </div>
       </div>
     </header>
   )

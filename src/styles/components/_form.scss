@@ -14,18 +14,27 @@
   }
 
   &__label {
-    color: v.$purple-color-dark;
+    color: v.$form-label-color;
     font-weight: 700;
     font-size: 1.4rem;
     text-transform: uppercase;
   }
 
-  &__input, &__textarea {
-    border: 1px solid #ddd;
+  &__input,
+  &__textarea {
+    border: 1px solid v.$form-input-border;
     padding: 1rem;
     border-radius: 10px;
-    background-color: transparent;
+    background-color: v.$form-input-bg;
+    color: v.$form-input-text;
     font-size: 1.6rem;
+    transition: border-color .25s ease, box-shadow .25s ease;
+
+    &:focus {
+      outline: none;
+      border-color: v.$form-input-focus-border;
+      box-shadow: 0 0 0 2px rgba(139, 124, 246, 0.15);
+    }
 
     @include m.responsiveDesign('big-phone') {
       font-size: 1.8rem;
@@ -35,12 +44,6 @@
   
   &__textarea {
     height: 15rem;
-    font-size: 1.6rem;
-    
-    @include m.responsiveDesign('big-phone') {
-      font-size: 1.8rem;
-      padding: 1.5rem;
-    }
   }
 
   &__buttons {
@@ -61,7 +64,6 @@
     text-align: right;
     font-size: 1.2rem;
     font-weight: bold;
-    color: #e12727;
+    color: v.$form-error-color;
   }
-
 }

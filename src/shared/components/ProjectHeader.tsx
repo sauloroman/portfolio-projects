@@ -3,6 +3,7 @@ import { Logo } from '.'
 import { ButtonReturn } from './ButtonReturn'
 import { ButtonProjects } from './ButtonProjects'
 import { useNavPage } from '../../hooks'
+import { ChangeThemeButton } from './ChangeThemeButton'
 
 interface Props {
   title: string
@@ -22,6 +23,7 @@ export const ProjectHeader: React.FC<Props> = ({ title }) => {
         <div className='project-header__logo'>
           <p className='project-header__name'>{title}</p>
           <Logo />
+          <ChangeThemeButton />
         </div>
       </div>
     </div>

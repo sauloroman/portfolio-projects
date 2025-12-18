@@ -51,7 +51,7 @@
   &--purple {
     padding: 1rem 3rem;
     color: v.$background-color;
-    background-color: #5C258D;
+    background-color: v.$purple-color;
   }
   
   &--golden {
@@ -79,7 +79,8 @@
       bottom: -10px;
       background: linear-gradient(
         to right,
-        #5C258D,#4389A2
+        v.$purple-color, 
+        v.$blue-color
       );
       z-index: -1;
       filter: blur(8px);
@@ -90,6 +91,7 @@
 
   &--black {
     background: v.$purple-color-dark;
+    color: #fff;
   }
   
   &--purple-online {
@@ -100,8 +102,22 @@
     border: 1px solid currentColor;
     color: v.$purple-color;
     background-color: transparent;
+
+    display: flex;
+    gap: .5rem;
+    align-items: center;
   }
   
+  &--theme {
+    background-color: transparent;
+    color: v.$text-color;
+    font-size: 2.2rem;
+    padding: 1rem;
+    border-radius: 50%;
 
+    @include m.responsiveDesign('big-phone') {
+      font-size: 3rem;
+    }
+  }
 
 }

@@ -1,11 +1,12 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import { AlertType, ModalNames, type Alert, type Modal } from "../../shared/interfaces/ui.interface";
+import { AlertType, ModalNames, ThemeNames, type Alert, type Modal } from "../../shared/interfaces/ui.interface";
 
 interface InitialStateUI {
   modal: Modal,
   alert: Alert,
   imageSelected: string | null,
   asideMenuOpen: boolean,
+  theme: ThemeNames
 }
 
 const initialState: InitialStateUI = {
@@ -21,6 +22,7 @@ const initialState: InitialStateUI = {
   },
   imageSelected: null,
   asideMenuOpen: false,
+  theme: ThemeNames.light
 }
 
 export const uiSlice = createSlice({
@@ -50,6 +52,10 @@ export const uiSlice = createSlice({
       state.alert = payload
     },
 
+    setTheme: ( state, { payload }: PayloadAction<ThemeNames>) => {
+      state.theme = payload
+    }
+
   }
 })
 
@@ -58,5 +64,6 @@ export const {
   closeModal,
   setImageSelected,
   setAsideMenuOpen,
-  setAlert
+  setAlert,
+  setTheme
 } = uiSlice.actions

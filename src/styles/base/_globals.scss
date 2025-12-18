@@ -14,10 +14,10 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
-
 body {
   overflow-x: hidden;
   background-color: v.$background-color;
+  color: v.$text-color;
 }
 
 a {

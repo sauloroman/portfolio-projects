@@ -45,7 +45,7 @@
     transition: all .4s ease;
     width: 12rem;
     font-size: 1.4rem;
-    color: v.$purple-color-dark;
+    color: v.$text-color;
     border-radius: 5px;
     font-weight: bold;
     display: flex;
@@ -70,6 +70,22 @@
 
   &__logo {
     margin: 0;
+    color: v.$text-color;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    p {
+      font-weight: bold;
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
   }
 
 }
@@ -261,8 +277,6 @@
   margin: 10rem 0;
   background-color: v.$cover-color;
   padding: 15rem 0;
-  border-top: 1px solid #ddd;
-  border-radius: 1.5rem;
   
   &__container {
     display: grid;
@@ -353,7 +367,10 @@
     font-size: 1.8rem;
     letter-spacing: 1px;
     font-weight: 900;
-    @include m.createTextBackground(#5C258D, #4389A2);
+    @include m.createTextBackground(
+      v.$purple-color,
+      v.$blue-color
+    );
   }
 
   &__icons {
@@ -370,7 +387,6 @@
       row-gap: 5rem;
     }
 
-    
     @include m.responsiveDesign('big-phone') {
       display: flex;
       flex-direction: column;
@@ -383,9 +399,9 @@
     padding: 3rem;
     width: 30rem;
     border-radius: 14px;
-    background: #fff;
-    border: 2px solid #ddd;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+    background: v.$service-card-bg;
+    border: 2px solid v.$service-card-border;
+    box-shadow: v.$service-card-shadow;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -404,12 +420,12 @@
 
     &:hover {
       transform: translateY(-12px);
-      box-shadow: 0 18px 34px rgba(0,0,0,0.12);
+      box-shadow: v.$service-card-shadow-hover;
     }
 
     &:nth-child(even) {
       top: -20px;
-      background-color: #e7e1ed;
+      background-color: v.$service-card-bg-alt;
 
       @include m.responsiveDesign('big-phone') {
         top: 0;
@@ -443,8 +459,8 @@
       font-weight: 700;
       color: #fff;
 
-      background: #5C258D;  
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      background: v.$service-number-bg;
+      box-shadow: v.$service-number-shadow;
 
       animation: float 3s ease-in-out infinite;
 
@@ -454,11 +470,19 @@
     }
 
     &:nth-child(odd)::after {
-      background: linear-gradient(135deg, #5C258D, #4389A2);
+      background: linear-gradient(
+        135deg,
+        v.$purple-color,
+        v.$blue-color
+      );
     }
 
     &:nth-child(even)::after {
-      background: linear-gradient(135deg, #4389A2, #5C258D);
+      background: linear-gradient(
+        135deg,
+        v.$blue-color,
+        v.$purple-color
+      );
     }
 
     @keyframes float {
@@ -468,7 +492,7 @@
 
     h3 {
       line-height: 1.4;
-      color: v.$blue-dark-color;
+      color: v.$service-title-color;
       margin-top: 1rem;
       font-size: 2rem;
       font-weight: 700;
@@ -484,20 +508,23 @@
   }
 
   &__icon:nth-child(1) &__box {
-    background-color: #fbe8ee;
-    color: #9561AA;
+    background-color: v.$service-icon-1-bg;
+    color: v.$service-icon-1-color;
   }
+
   &__icon:nth-child(2) &__box {
-    background-color: #fbece7;
-    color: #F15A2C;
+    background-color: v.$service-icon-2-bg;
+    color: v.$service-icon-2-color;
   }
+
   &__icon:nth-child(3) &__box {
-    background-color: #fbf0cf;
-    color: #FDCE42;
+    background-color: v.$service-icon-3-bg;
+    color: v.$service-icon-3-color;
   }
+
   &__icon:nth-child(4) &__box {
-    background-color: #e9f3ff;
-    color: #4287f5;
+    background-color: v.$service-icon-4-bg;
+    color: v.$service-icon-4-color;
   }
 
   &__box {
@@ -515,6 +542,7 @@
     font-size: 3.8rem;
   }
 }
+
 
 .portfolio-projects {
   padding: 5rem 0;
@@ -560,12 +588,14 @@
   padding: 3rem;
   border-radius: 2rem;
   margin-bottom: 4.8rem;
+
   background: linear-gradient(
     180deg,
-    #ffffff,
-    #f3f0f7
+    v.$hero-project-bg-start,
+    v.$hero-project-bg-end
   );
-  box-shadow: 0 30px 70px rgba(0,0,0,.2);
+
+  box-shadow: v.$hero-project-shadow;
   cursor: pointer;
   transition: transform .4s ease;
 
@@ -608,8 +638,8 @@
     border-radius: 2rem;
     font-weight: 700;
     font-size: 1.2rem;
-    background: v.$purple-color;
-    color: #fff;
+    background: v.$hero-project-badge-bg;
+    color: v.$hero-project-badge-color;
   }
 
   &__content {
@@ -619,7 +649,7 @@
   }
 
   &__title {
-    color: v.$purple-color-dark;
+    color: v.$hero-project-title-color;
     font-size: 3rem;
     font-weight: 800;
 
@@ -648,11 +678,12 @@
     display: flex;
     gap: 1.6rem;
 
-     @include m.responsiveDesign('horizontal-tablet') {
+    @include m.responsiveDesign('horizontal-tablet') {
       display: none;
     }
   }
 }
+
 
 .support-project {
   border-radius: 1.6rem;
@@ -775,8 +806,8 @@
   padding: 10rem;
   background: linear-gradient(
     180deg,
-    #f3eff7 0%,
-    #e7e1ed 100%
+    v.$education-bg-start 0%,
+    v.$education-bg-end 100%
   );
 
   @include m.responsiveDesign('horizontal-tablet') {
@@ -804,7 +835,10 @@
     font-size: 1.6rem;
     font-weight: 900;
     letter-spacing: 1px;
-    @include m.createTextBackground(#5C258D, #4389A2);
+    @include m.createTextBackground(
+      v.$purple-color,
+      v.$blue-color
+    );
   }
 
   &__grid {
@@ -829,7 +863,7 @@
 
     img {
       max-width: 100%;
-      filter: drop-shadow(0 20px 40px rgba(92, 37, 141, 0.25));
+      filter: drop-shadow(v.$education-image-shadow);
 
       @include m.responsiveDesign('tablet') {
         max-width: 60%;
@@ -861,7 +895,7 @@
       width: 2px;
       background: linear-gradient(
         180deg,
-        #5C258D,
+        v.$education-line-color,
         transparent
       );
       opacity: 0.4;
@@ -883,18 +917,17 @@
     padding: 2.5rem 3rem;
     border-radius: 1.6rem;
 
-    background: rgba(255, 255, 255, 0.6);
+    background: v.$education-card-bg;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
 
-    border: 1px solid rgba(149, 97, 170, 0.35);
-
-    box-shadow: 0 12px 35px rgba(92, 37, 141, 0.15);
+    border: 1px solid v.$education-card-border;
+    box-shadow: v.$education-card-shadow;
     transition: all 0.35s ease;
 
     &:hover {
       transform: translateY(-6px);
-      box-shadow: 0 22px 55px rgba(92, 37, 141, 0.28);
+      box-shadow: v.$education-card-shadow-hover;
     }
 
     @include m.responsiveDesign('tablet') {
@@ -916,9 +949,13 @@
     justify-content: center;
 
     border-radius: 1.2rem;
-    background: linear-gradient(135deg, #5C258D, #4389A2);
+    background: linear-gradient(
+      135deg,
+      v.$purple-color,
+      v.$blue-color
+    );
 
-    box-shadow: 0 8px 20px rgba(92, 37, 141, 0.4);
+    box-shadow: v.$education-icon-shadow;
 
     i {
       font-size: 2.6rem;
@@ -947,7 +984,7 @@
     font-size: 1.8rem;
     font-weight: 700;
     line-height: 1.5;
-    color: #2e1b47;
+    color: v.$education-school-color;
   }
 
   &__date {
@@ -959,7 +996,7 @@
   &__career {
     margin-top: 0.6rem;
     font-weight: 600;
-    color: #3d2a5c;
+    color: v.$education-career-color;
 
     @include m.responsiveDesign('big-phone') {
       line-height: 1.5;
@@ -1051,22 +1088,24 @@
     padding: 1rem 2rem;
     height: 100%;
     border-radius: 1.2rem;
-    border: 2px solid #d9d9e3;
-    background-color: #ffffff;
+
+    background-color: v.$contact-card-bg;
+    border: 2px solid v.$contact-card-border;
     color: v.$text-color;
+
     text-decoration: none;
     transition: all .3s ease;
 
     &:hover {
-      border-color: #5C258D;
+      border-color: v.$purple-color;
       transform: translateY(-6px);
-      box-shadow: 0 1.2rem 2.4rem rgba(92, 37, 141, 0.15);
+      box-shadow: v.$contact-card-shadow-hover;
     }
   }
 
   &__card i {
     font-size: 3.2rem;
-    color: #5C258D;
+    color: v.$contact-icon-color;
     flex-shrink: 0;
   }
 
@@ -1078,7 +1117,7 @@
 
   &__value {
     font-weight: 600;
-    color: #4389A2;
+    color: v.$contact-value-color;
     margin-bottom: .4rem;
     word-break: break-word;
   }
@@ -1098,13 +1137,11 @@
       align-items: center;
     }
 
-    
     @include m.responsiveDesign('big-phone') {
       font-size: 1.8rem;
       text-align: center;
       width: 90%;
-      margin: 0 auto;
-      margin-bottom: 4rem;
+      margin: 0 auto 4rem;
     }
   }
 
@@ -1124,7 +1161,6 @@
     letter-spacing: 1px;
     @include m.createTextBackground(#5C258D, #4389A2);
 
-    
     @include m.responsiveDesign('big-phone') {
       font-size: 1.8rem;
     }

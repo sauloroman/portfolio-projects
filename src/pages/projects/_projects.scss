@@ -73,17 +73,28 @@
   }
 
   &__item {
-    border-radius: .5rem;
+    border-radius: 2rem;
     cursor: pointer;
-    font-weight: bold;
-    padding: 0 1rem;
-    border: 2px solid #ddd;
-    transition: all .4s ease;
+    font-weight: 800;
+    padding: .6rem 1.8rem;
+    border: 2px solid v.$projects-filter-border;
+    background-color: v.$projects-filter-bg;
+    color: v.$projects-filter-text;
+    transition: all .35s ease;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: v.$projects-filter-hover-shadow;
+    }
   }
 
-  &__item:hover, &__item--active {
-    background-color: v.$blue-dark-color;
-    color: v.$white-color;
+  &__item:hover,
+  &__item--active {
+    background: v.$projects-filter-active-bg;
+    color: v.$projects-filter-active-text;
+    border-color: transparent;
   }
 }
 
@@ -91,15 +102,24 @@
   display: none;
   width: 100%;
   margin-bottom: 3.2rem;
-  padding: 1.5rem;
+  padding: 1.5rem 2rem;
   font-family: inherit;
-  border: 2px solid #ddd;
+  border: 2px solid v.$projects-filter-border;
   font-size: 1.8rem;
-  background-color: v.$white-color;
-  border-radius: 10px;
+  background-color: v.$projects-filter-select-bg;
+  color: v.$projects-filter-text;
+  border-radius: 2rem;
+  font-weight: 700;
+  transition: all .3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: transparent;
+    background: v.$projects-filter-active-bg;
+    color: v.$projects-filter-active-text;
+  }
 
   @include m.responsiveDesign('big-phone') {
     display: block;
   }
 }
-

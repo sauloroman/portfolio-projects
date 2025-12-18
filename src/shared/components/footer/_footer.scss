@@ -3,7 +3,7 @@
 
 .footer {
   padding: 12rem 0;
-  background-color: v.$cover-color;
+  background-color: v.$footer-bg;
 
   @include m.responsiveDesign('big-phone') {
     padding: 4rem 2rem;
@@ -16,13 +16,14 @@
     gap: 1rem;
 
     @include m.responsiveDesign('big-phone') {
-      grid-template-columns: repeat(1, 1fr);
+      grid-template-columns: 1fr;
     }
   }
 
   &__item:not(:last-child) {
     padding: 2rem 4rem 4rem 0;
-    border-right: 2px solid #ddd;
+    border-right: 2px solid v.$footer-border-color;
+
     @include m.responsiveDesign('big-phone') {
       border: none;
       padding: 2rem;
@@ -31,7 +32,6 @@
 
   &__item {
     @include m.responsiveDesign('big-phone') {
-      border: none;
       padding: 2rem;
     }
   }
@@ -39,9 +39,10 @@
   &__item-title {
     text-align: right;
     font-size: 2rem;
-    color: v.$purple-color-dark;
+    color: v.$footer-title-color;
     margin-bottom: 2rem;
     text-transform: uppercase;
+
     @include m.responsiveDesign('big-phone') {
       text-align: left;
     }
@@ -55,10 +56,11 @@
   }
 
   &__option {
-    color: v.$purple-color-dark;
+    color: v.$footer-text-color;
     text-align: right;
-    span { 
-      font-weight: 500; 
+
+    span {
+      font-weight: 500;
     }
 
     @include m.responsiveDesign('big-phone') {
@@ -67,14 +69,14 @@
   }
 
   &__link {
-    color: v.$purple-color-dark;
+    color: v.$footer-link-color;
     text-align: right;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 1rem;
     font-weight: 500;
-    
+
     &-icon {
       font-size: 2rem;
     }
@@ -94,14 +96,14 @@
     p {
       font-size: 2rem;
       text-transform: uppercase;
-      color: v.$purple-color-dark;
+      color: v.$footer-title-color;
       font-weight: 900;
       letter-spacing: 1px;
     }
   }
 
   &__author {
-
+    color: v.$footer-author-color;
     font-weight: 500;
 
     cite {
@@ -110,5 +112,4 @@
       font-weight: 700;
     }
   }
-
 }

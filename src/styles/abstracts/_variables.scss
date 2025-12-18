@@ -1,20 +1,104 @@
-$background-color: #fffdf9;
-$purple-color: #5C258D;
-$purple-color-dark: #0d1b20;
-$white-color: #ffffff;
-$orange-color: #b35840;
-$green-color: #3E534C;
-$success-color: #51cf66;
-$blue-dark-color: #08282a;
-$blue-color: #4389A2;
-$cover-color: #EDF2F8;
-$service-card-color: #f5f5f5;
-$yellow-color: #f59f00;
-$menu-navigation-color: #fff; 
-$aqua-color: #00ffd1;
+$background-color: var(--background-color);
+$purple-color: var(--purple-color);
+$purple-color-dark: var(--purple-color-dark);
+$white-color: var(--white-color);
+$orange-color: var(--orange-color);
+$green-color: var(--green-color);
+$success-color: var(--success-color);
+$blue-dark-color: var(--blue-dark-color);
+$blue-color: var(--blue-color);
+$cover-color: var(--cover-color);
+$service-card-color: var(--service-card-color);
+$yellow-color: var(--yellow-color);
+$menu-navigation-color: var(--menu-navigation-color);
+$aqua-color: var(--aqua-color);
 
-$text-color: #585858;
-$gray-color: #666;
-$text-muted: #6b7280;
+$text-color: var(--text-color);
+$gray-color: var(--gray-color);
+$text-muted: var(--text-muted);
 
 $header-height: 8rem;
+
+$service-card-bg: var(--service-card-bg);
+$service-card-bg-alt: var(--service-card-bg-alt);
+$service-card-border: var(--service-card-border);
+$service-card-shadow: var(--service-card-shadow);
+$service-card-shadow-hover: var(--service-card-shadow-hover);
+
+$service-title-color: var(--service-title-color);
+
+$service-number-bg: var(--service-number-bg);
+$service-number-shadow: var(--service-number-shadow);
+
+$service-icon-1-bg: var(--service-icon-1-bg);
+$service-icon-1-color: var(--service-icon-1-color);
+$service-icon-2-bg: var(--service-icon-2-bg);
+$service-icon-2-color: var(--service-icon-2-color);
+$service-icon-3-bg: var(--service-icon-3-bg);
+$service-icon-3-color: var(--service-icon-3-color);
+$service-icon-4-bg: var(--service-icon-4-bg);
+$service-icon-4-color: var(--service-icon-4-color);
+
+$hero-project-bg-start: var(--hero-project-bg-start);
+$hero-project-bg-end: var(--hero-project-bg-end);
+
+$hero-project-shadow: var(--hero-project-shadow);
+
+$hero-project-title-color: var(--hero-project-title-color);
+
+$hero-project-badge-bg: var(--hero-project-badge-bg);
+$hero-project-badge-color: var(--hero-project-badge-color);
+
+$education-bg-start: var(--education-bg-start);
+$education-bg-end: var(--education-bg-end);
+
+$education-image-shadow: var(--education-image-shadow);
+
+$education-line-color: var(--education-line-color);
+
+$education-card-bg: var(--education-card-bg);
+$education-card-border: var(--education-card-border);
+$education-card-shadow: var(--education-card-shadow);
+$education-card-shadow-hover: var(--education-card-shadow-hover);
+
+$education-icon-shadow: var(--education-icon-shadow);
+
+$education-school-color: var(--education-school-color);
+$education-career-color: var(--education-career-color);
+
+$contact-card-bg: var(--contact-card-bg);
+$contact-card-border: var(--contact-card-border);
+$contact-card-shadow-hover: var(--contact-card-shadow-hover);
+
+$contact-icon-color: var(--contact-icon-color);
+$contact-value-color: var(--contact-value-color);
+
+$form-label-color: var(--form-label-color);
+
+$form-input-bg: var(--form-input-bg);
+$form-input-border: var(--form-input-border);
+$form-input-text: var(--form-input-text);
+
+$form-input-focus-border: var(--form-input-focus-border);
+
+$form-error-color: var(--form-error-color);
+
+$footer-bg: var(--footer-bg);
+$footer-border-color: var(--footer-border-color);
+
+$footer-title-color: var(--footer-title-color);
+$footer-text-color: var(--footer-text-color);
+$footer-link-color: var(--footer-link-color);
+
+$footer-author-color: var(--footer-author-color);
+
+$projects-filter-border: var(--projects-filter-border);
+$projects-filter-bg: var(--projects-filter-bg);
+$projects-filter-text: var(--projects-filter-text);
+
+$projects-filter-active-bg: var(--projects-filter-active-bg);
+$projects-filter-active-text: var(--projects-filter-active-text);
+$projects-filter-hover-shadow: var(--projects-filter-hover-shadow);
+
+$projects-filter-select-bg: var(--projects-filter-select-bg);
+

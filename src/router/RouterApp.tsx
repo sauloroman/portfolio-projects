@@ -1,12 +1,20 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { PortfolioPage, ProjectPage, Projects } from '../pages'
-import { useProjects } from '../hooks';
+import { useProjects, useUI } from '../hooks';
 
 export const RouterApp: React.FC = () => {
 
+  const { isDarkMode } = useUI()
   const { onGetProjects } = useProjects();
 
+  useEffect(() => {
+    document.documentElement.setAttribute(
+      'data-theme',
+      isDarkMode ? 'dark' : 'light'
+    )
+  }, [isDarkMode])
+  
   useEffect(() => {
     onGetProjects()
   }, [])

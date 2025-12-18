@@ -3,13 +3,17 @@ export const ModalNames = {
   contact: 'contact',
   showImage: 'show-image'
 } as const;
-
 export type ModalNames = typeof ModalNames[keyof typeof ModalNames];
-
 export interface Modal {
   isOpen: boolean,
   name: ModalNames,
 }
+
+export const ThemeNames = {
+  light: 'light',
+  dark: 'dark'
+} as const
+export type ThemeNames = typeof ThemeNames[keyof typeof ThemeNames]
 
 export interface Education {
   name: string,

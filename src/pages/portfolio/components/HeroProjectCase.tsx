@@ -35,7 +35,7 @@ export const HeroProjectCase: React.FC<Props> = ({ isLeftSide = false, project, 
                     <ProjectTechnologies technologies={project.technologies} />
 
                     <div className="hero-project__actions">
-                        <button className="btn btn--black">
+                        <button className="btn btn--purple">
                             View Case Study →
                         </button>
 
@@ -46,6 +46,7 @@ export const HeroProjectCase: React.FC<Props> = ({ isLeftSide = false, project, 
                             className="btn btn--outline"
                             onClick={e => e.stopPropagation()}
                         >
+                            <i className="devicon-github-original"></i>
                             GitHub
                         </a>
                     </div>
@@ -84,7 +85,7 @@ export const HeroProjectCase: React.FC<Props> = ({ isLeftSide = false, project, 
                 <ProjectTechnologies technologies={project.technologies} />
 
                 <div className="hero-project__actions">
-                    <button className="btn btn--black">
+                    <button className="btn btn--purple">
                         View Case Study →
                     </button>
 
@@ -95,6 +96,7 @@ export const HeroProjectCase: React.FC<Props> = ({ isLeftSide = false, project, 
                         className="btn btn--outline"
                         onClick={e => e.stopPropagation()}
                     >
+                        <i className="devicon-github-original"></i>
                         GitHub
                     </a>
                 </div>

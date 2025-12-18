@@ -360,6 +360,7 @@
   padding: 2rem;
   box-shadow: 0 0 46px 0 rgba(0, 0, 0, 0.12);
   transition: all .5s ease;
+  background-color: v.$white-color;
 
   &:hover {
     cursor: pointer;
@@ -373,7 +374,7 @@
   }
 
   &:hover &__title {
-    color: v.$background-color;
+    color: #fff;
   }
 
   &:hover &__title::after {
@@ -413,6 +414,7 @@
     transition: all .4s ease;
     padding: 0 1rem;
     font-weight: 900;
+    margin: 1.5rem 0;
   }
 
   &__title::after {
