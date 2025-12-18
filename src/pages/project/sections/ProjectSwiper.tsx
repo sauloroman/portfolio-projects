@@ -11,7 +11,7 @@ interface Props {
     items: string[]
 }
 
-export const ProjectSwiper: React.FC<Props> = ({ items, noMobile = false, slidesPerView = 2 }) => {
+export const ProjectSwiper: React.FC<Props> = ({ items, slidesPerView = 2 }) => {
 
     const { onWatchImage } = useUI()
     const imagesRender = items.filter( (item, i) =>  i > 0 && item )
@@ -22,11 +22,11 @@ export const ProjectSwiper: React.FC<Props> = ({ items, noMobile = false, slides
             modules={[Autoplay, Pagination]}
             autoplay
             pagination
-            spaceBetween={50}
+            spaceBetween={40}
             loop
             breakpoints={{
                 0: {
-                    slidesPerView: noMobile ? 1 : 2
+                    slidesPerView: 1
                 },
                 801: {
                     slidesPerView

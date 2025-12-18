@@ -10,7 +10,6 @@ export const RouterApp: React.FC = () => {
   useEffect(() => {
     onGetProjects()
   }, [])
-
   return (
     <BrowserRouter>
       <Routes>

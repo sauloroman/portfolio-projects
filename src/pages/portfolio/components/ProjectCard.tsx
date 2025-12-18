@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import type { Project } from '../../../shared/interfaces/project.interface';
 import { ProjectTechnologies } from './ProjectTechnologies';
-import { useNavPage, useProjects } from '../../../hooks';
+import { useNavPage } from '../../../hooks';
 import { getProjectBadgeName } from '../../../shared/helpers/get-badge';
 
 interface ProjectCardProps {
@@ -12,7 +12,6 @@ interface ProjectCardProps {
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
   const { onNavigatePage } = useNavPage()
-  const { onSetProjectPage } = useProjects()
 
   const {
     coverImage,
@@ -32,8 +31,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
   const onGoProjectPage = () => {
     onNavigatePage(`/project/${project.id}`)
-    localStorage.setItem('projectOnPagePortfolio', JSON.stringify(project));
-    onSetProjectPage(project)
   }
 
   return (

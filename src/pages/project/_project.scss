@@ -17,6 +17,10 @@
     display: flex;
     gap: 2rem;
     align-items: center;
+
+    @include m.responsiveDesign('laptop') {
+      gap: .5rem;
+    }
   }
 
   &__container {
@@ -35,6 +39,10 @@
     font-weight: bold;
     color: v.$purple-color;
     font-size: 2rem;
+
+    @include m.responsiveDesign('laptop') {
+      display: none;
+    }
   }
 }
 
@@ -63,6 +71,10 @@
       font-size: 4.8rem;
       margin-bottom: 2rem;
     }
+
+    @include m.responsiveDesign('laptop') {
+      font-size: 2.4rem;
+    }
   }
 
   &__desc {
@@ -70,16 +82,20 @@
     margin: 0 auto;
     text-align: center;
 
-      @include m.responsiveDesign('tablet') {
-       width: 90%;
-       margin-bottom: 2rem; 
-      }
+    @include m.responsiveDesign('tablet') {
+      width: 90%;
+      margin-bottom: 2rem;
+    }
+
+    @include m.responsiveDesign('laptop') {
+      width: 100%;
+      font-size: 1.6rem;
+    }
   }
 
   &__breadcrumb {
     display: flex;
     gap: 2rem;
-    ;
     color: v.$purple-color-dark;
     font-weight: 700;
     margin-bottom: 3rem;
@@ -90,11 +106,20 @@
       transform: skewX(-5deg);
       @include m.createBackgroundGradient(#5C258D, #4389A2);
     }
+
+    @include m.responsiveDesign('laptop') {
+      font-size: 1.4rem;
+    }
   }
 
   &__buttons {
     display: flex;
     gap: 2rem;
+
+    @include m.responsiveDesign('laptop') {
+      width: 90%;
+      flex-direction: column;
+    }
   }
 
   &__link {
@@ -129,6 +154,10 @@
       width: 30rem;
       font-size: 1.6rem;
     }
+
+    @include m.responsiveDesign('laptop') {
+      width: 100%;
+    }
   }
 
 }
@@ -144,6 +173,10 @@
     @include m.responsiveDesign('horizontal-tablet') {
       grid-template-columns: 1fr;
       padding: 4rem;
+    }
+
+    @include m.responsiveDesign('big-phone') {
+      padding: 1rem;
     }
   }
 }
@@ -174,12 +207,21 @@
     @include m.responsiveDesign('tablet') {
       width: 90%;
     }
+
+    @include m.responsiveDesign('big-phone') {
+      width: 100%;
+    }
+    
   }
 
   &__subtitle {
     font-size: 3.2rem;
     margin: 2rem 0;
     color: v.$purple-color-dark;
+
+    @include m.responsiveDesign('big-phone') {
+      font-size: 1.8rem;
+    }
   }
 }
 
@@ -189,6 +231,10 @@
   padding: 2rem;
   border: 1px solid #ddd;
   border-radius: 10px;
+  
+  @include m.responsiveDesign('big-phone') {
+    margin-bottom: 4rem;
+  }
 
   &__details {
     padding: 2rem;
@@ -226,7 +272,7 @@
 
   &__imgPhone {
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
   }
 
 }
@@ -490,4 +536,13 @@
     width: 12rem;
   }
 
+}
+
+.project-subtitle {
+  @include m.responsiveDesign('big-phone') {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }

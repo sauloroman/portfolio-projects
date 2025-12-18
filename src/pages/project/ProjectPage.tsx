@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useProjects, useUI } from '../../hooks'
+import { useNavPage, useProjects, useUI } from '../../hooks'
 import { ProjectHeader } from '../../shared/components/ProjectHeader';
 import { ProjectCover } from './sections/ProjectCover';
 import { ProjectContent } from './sections/ProjectContent';
@@ -8,54 +8,67 @@ import { Footer } from '../../shared/components/footer/Footer';
 import { ProjectSwiper } from './sections/ProjectSwiper';
 import { ModalNames } from '../../shared/interfaces/ui.interface';
 import { ModalImage } from './components/ModalImage';
+import { Loader } from '../../shared/components/Loader';
 
 export const ProjectPage: React.FC = () => {
 
   const { modal } = useUI()
-  const { projectOnPage, onSetProjectPage } = useProjects();
-  const project = projectOnPage!! ?? {}
+  const { projectOnPage, onGetProjectById, isLoading } = useProjects();
+  const { params } = useNavPage()
 
   useEffect(() => {
-    const project = JSON.parse(localStorage.getItem('projectOnPagePortfolio') || '{}');
-    onSetProjectPage(project);
+    const projectId = params.pathname.split('/').at(-1)
+    onGetProjectById(projectId!)
   }, [])
+
+  if ( isLoading ) {
+    return (
+      <div className='project-loader'>
+        <Loader />
+      </div>
+    )
+  }
 
   return (
     <> 
       <div className='project'>
-        <ProjectHeader title={project.title} />
+        <ProjectHeader title={projectOnPage?.title ?? ''} />
         <ProjectCover 
-          github={project.githubRepository}
-          url={project.url}
-          title={project.title} 
-          description={project.descriptionCard}
+          github={projectOnPage?.githubRepository ?? ''}
+          url={projectOnPage?.url ?? ''}
+          title={projectOnPage?.title ?? ''} 
+          description={projectOnPage?.descriptionCard ?? ''}
         />
 
         <main className='project-main container'>
           <div className="project-main__container">
             <ProjectContent  
-              description={project.description}
-              image={project.images?.[0]}
-              title={project.title}
+              description={projectOnPage?.description ?? ''}
+              image={projectOnPage?.images?.[0] ?? ''}
+              title={projectOnPage?.title ?? ''}
             />
             <ProjectAside 
-              categories={ project.categories }
-              image={''}
-              technologies={ project?.technologies }
+              categories={ projectOnPage?.categories ?? [] }
+              image={projectOnPage?.images?.[0] ?? ''}
+              technologies={ projectOnPage?.technologies ?? [] }
             />
           </div>
 
           <section>
-            <span className="portfolio-services__sub">Media</span>
-            <h2 className="heading-section project-images__title">
-              <div className="period period--medium"></div>
-                Project Images
-              <div className="period period--medium"></div>
-            </h2>
+
+            <div className="project-subtitle">
+              <span className="portfolio-services__sub">Media</span>
+              <h2 className="heading-section project-images__title">
+                <div className="period period--medium"></div>
+                  Project Images
+                <div className="period period--medium"></div>
+              </h2>
+            </div>
+
             <ProjectSwiper 
-              noMobile={project.noMobile}
-              items={project.images ?? []}
-              slidesPerView={project.noMobile ? 2 : 3} 
+              noMobile={projectOnPage?.noMobile ?? false}
+              items={projectOnPage?.images ?? []}
+              slidesPerView={projectOnPage?.noMobile ? 2 : 3} 
             />
           </section>
         </main>

@@ -7,17 +7,18 @@ import { useProjects } from '../../hooks'
 import type { Project } from '../../shared/interfaces/project.interface'
 import { Footer } from '../../shared/components/footer/Footer'
 import { ProjectsFilterSelect } from './components/ProjectsFilterSelect'
+import { Loader } from '../../shared/components/Loader'
 
 export const Projects: React.FC = () => {
 
-  const { projects, onGetProjects } = useProjects()
+  const { projects, onGetProjects, isLoading } = useProjects()
 
   const [finalProjects, setFinalProjects] = useState<Project[]>(projects)
   const [activeFilter, setActiveFilter] = useState<string>('All')
 
   const onApplyFilter = (filter: string) => {
     setActiveFilter(filter)
-    if ( filter !== 'All') {
+    if (filter !== 'All') {
       setFinalProjects(projects.filter(project => project.categories.map(cat => cat.toLowerCase()).includes(filter.toLowerCase())))
     } else {
       setFinalProjects(projects)
@@ -28,17 +29,29 @@ export const Projects: React.FC = () => {
     onGetProjects()
   }, [])
 
+  useEffect(() => {
+    setFinalProjects(projects)
+  }, [projects])
+
+  if (isLoading) {
+    return (
+      <div className='project-loader'>
+        <Loader />
+      </div>
+    )
+  }
+
   return (
     <div className='projects'>
       <ProjectHeader title='My Latest Work' />
       <ProjectsHero />
       <div className="projects-container container">
-        <ProjectsFilter 
+        <ProjectsFilter
           onApplyFilter={onApplyFilter}
           activeFilter={activeFilter}
-          projects={finalProjects} 
+          projects={finalProjects}
         />
-        <ProjectsFilterSelect 
+        <ProjectsFilterSelect
           onApplyFilter={onApplyFilter}
           activeFilter={activeFilter}
         />

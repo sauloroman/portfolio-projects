@@ -52,7 +52,6 @@ export const HeroProjectCase: React.FC<Props> = ({ isLeftSide = false, project, 
                 </div>
                 <div className="hero-project__image">
                     <img src={project.images[0]} alt={project.title} />
-                    <span className="hero-project__badge">REAL PROJECT</span>
                 </div>
             </article>
         )
@@ -63,7 +62,6 @@ export const HeroProjectCase: React.FC<Props> = ({ isLeftSide = false, project, 
 
             <div className="hero-project__image">
                 <img src={project.images[0]} alt={project.title} />
-                <span className="hero-project__badge">REAL PROJECT</span>
             </div>
 
             <div className="hero-project__content">
