@@ -1,11 +1,13 @@
 @use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as v;
 
 .swiper {
     width: 100%;
     padding: 5rem 8rem;
 
     &__slide {
-        border: 2px solid #ddd;
+        border-radius: 1.5rem;
+        border: 2px solid v.$white-color;
         display: flex;
         justify-content: center;
         align-items: center;

@@ -1,7 +1,7 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import type { Project } from '../../../shared/interfaces/project.interface';
 import { ProjectTechnologies } from './ProjectTechnologies';
-import { useNavPage } from '../../../hooks';
+import { useNavPage, useUI } from '../../../hooks';
 import { getProjectBadgeName } from '../../../shared/helpers/get-badge';
 
 interface ProjectCardProps {
@@ -12,16 +12,21 @@ interface ProjectCardProps {
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
   const { onNavigatePage } = useNavPage()
+  const { isDarkMode } = useUI()
+  const [coverImage, setCoverImage] = useState<string>('')
+
+  useEffect(() => {
+    setCoverImage(isDarkMode ? project.imagesDark[0] : project.images[0])
+  }, [isDarkMode])
 
   const {
-    coverImage,
     title,
     technologies,
     badges
   } = useMemo(
     () => ({
       category: project.categories,
-      coverImage: project.images[0],
+      coverImage: isDarkMode ? project.imagesDark[0] : project.images[0],
       title: project.title,
       technologies: project.technologies,
       badges: getProjectBadgeName(project.categories)

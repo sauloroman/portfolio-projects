@@ -24,8 +24,8 @@
   --service-card-bg: #ffffff;
   --service-card-bg-alt: #e7e1ed;
   --service-card-border: #dddddd;
-  --service-card-shadow: 0 8px 16px rgba(0,0,0,0.06);
-  --service-card-shadow-hover: 0 18px 34px rgba(0,0,0,0.12);
+  --service-card-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+  --service-card-shadow-hover: 0 18px 34px rgba(0, 0, 0, 0.12);
 
   --service-title-color: #08282a;
 
@@ -49,7 +49,7 @@
   --hero-project-bg-start: #ffffff;
   --hero-project-bg-end: #f3f0f7;
 
-  --hero-project-shadow: 0 30px 70px rgba(0,0,0,.2);
+  --hero-project-shadow: 0 30px 70px rgba(0, 0, 0, .2);
 
   --hero-project-title-color: #0d1b20;
 
@@ -82,7 +82,7 @@
   --contact-icon-color: #5C258D;
   --contact-value-color: #4389A2;
 
-   /* Form */
+  /* Form */
   --form-label-color: #0d1b20;
 
   --form-input-bg: transparent;
@@ -115,12 +115,25 @@
 
   --projects-filter-select-bg: #ffffff;
 
+  --projects-fulter-item-border: #aaa;
+
+  /* CTA Button */
+  --btn-cta-bg: #a61e4d;
+  /* rose-600 */
+  --btn-cta-text: #ffffff;
+  --btn-cta-border: transparent;
+
+  --btn-cta-bg-hover: #be123c;
+  /* rose-700 */
+  --btn-cta-text-hover: #ffffff;
+
+
 }
 
 [data-theme='dark'] {
-  --background-color: #0f1115;     // fondo principal
-  --cover-color: #16181d;          // secciones
-  --service-card-color: #1b1e24;   // cards
+  --background-color: #0f1115; // fondo principal
+  --cover-color: #16181d; // secciones
+  --service-card-color: #1b1e24; // cards
   --menu-navigation-color: #16181d;
 
   /* Text */
@@ -129,7 +142,7 @@
   --gray-color: #a1a1aa;
 
   /* Neutrals */
-  --white-color: #1c1f26;         
+  --white-color: #1c1f26;
   --border-color: #2a2e37;
 
   /* Brand / Accent (desaturado) */
@@ -145,36 +158,36 @@
 
   --aqua-color: #5eead4;
 
-    /* Services section */
+  /* Services section */
   --service-card-bg: #1b1e24;
   --service-card-bg-alt: #21242c;
   --service-card-border: #2a2e37;
-  --service-card-shadow: 0 10px 28px rgba(0,0,0,0.35);
-  --service-card-shadow-hover: 0 18px 42px rgba(0,0,0,0.55);
+  --service-card-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  --service-card-shadow-hover: 0 18px 42px rgba(0, 0, 0, 0.55);
 
   --service-title-color: #e5e7eb;
 
   --service-number-bg: #8b7cf6;
-  --service-number-shadow: 0 6px 16px rgba(0,0,0,0.5);
+  --service-number-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
 
   /* Icon box colors (desaturados) */
-  --service-icon-1-bg: rgba(139,124,246,0.15);
+  --service-icon-1-bg: rgba(139, 124, 246, 0.15);
   --service-icon-1-color: #c4b5fd;
 
-  --service-icon-2-bg: rgba(245,158,11,0.15);
+  --service-icon-2-bg: rgba(245, 158, 11, 0.15);
   --service-icon-2-color: #fbbf24;
 
-  --service-icon-3-bg: rgba(250,204,21,0.15);
+  --service-icon-3-bg: rgba(250, 204, 21, 0.15);
   --service-icon-3-color: #fde68a;
 
-  --service-icon-4-bg: rgba(96,165,250,0.15);
+  --service-icon-4-bg: rgba(96, 165, 250, 0.15);
   --service-icon-4-color: #93c5fd;
 
   // Hero Section
   --hero-project-bg-start: #16181d;
   --hero-project-bg-end: #1b1e24;
 
-  --hero-project-shadow: 0 32px 80px rgba(0,0,0,.55);
+  --hero-project-shadow: 0 32px 80px rgba(0, 0, 0, .55);
 
   --hero-project-title-color: #f3f4f6;
 
@@ -185,16 +198,16 @@
   --education-bg-start: #12141a;
   --education-bg-end: #16181d;
 
-  --education-image-shadow: 0 24px 55px rgba(0,0,0,0.6);
+  --education-image-shadow: 0 24px 55px rgba(0, 0, 0, 0.6);
 
   --education-line-color: #8b7cf6;
 
   --education-card-bg: rgba(28, 31, 38, 0.75);
   --education-card-border: rgba(139, 124, 246, 0.35);
-  --education-card-shadow: 0 18px 45px rgba(0,0,0,0.45);
-  --education-card-shadow-hover: 0 28px 70px rgba(0,0,0,0.65);
+  --education-card-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+  --education-card-shadow-hover: 0 28px 70px rgba(0, 0, 0, 0.65);
 
-  --education-icon-shadow: 0 10px 28px rgba(0,0,0,0.6);
+  --education-icon-shadow: 0 10px 28px rgba(0, 0, 0, 0.6);
 
   --education-school-color: #e5e7eb;
   --education-career-color: #c7d2fe;
@@ -202,7 +215,7 @@
   /* Contact section */
   --contact-card-bg: #1b1e24;
   --contact-card-border: #2a2e37;
-  --contact-card-shadow-hover: 0 1.2rem 2.4rem rgba(0,0,0,0.55);
+  --contact-card-shadow-hover: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.55);
 
   --contact-icon-color: #8b7cf6;
   --contact-value-color: #5fa8d3;
@@ -228,7 +241,7 @@
 
   --footer-author-color: #9ca3af;
 
-    /* Projects filter */
+  /* Projects filter */
   --projects-filter-border: #2a2e37;
   --projects-filter-bg: #16181d;
   --projects-filter-text: #e5e7eb;
@@ -240,5 +253,14 @@
 
   --projects-filter-select-bg: #0f1115;
 
-}
+  --projects-fulter-item-border: transparent;
 
+  /* CTA Button – Pink */
+  --btn-cta-bg: #a61e4d;
+  --btn-cta-text: #fff;
+  --btn-cta-border: transparent;
+
+  --btn-cta-bg-hover: #f43f5e;
+  --btn-cta-text-hover: #fff;
+
+}

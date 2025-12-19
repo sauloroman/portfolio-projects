@@ -11,7 +11,6 @@
 
 .project-header {
   padding: 1.6rem 0;
-  ;
 
   &__buttons {
     display: flex;
@@ -19,7 +18,7 @@
     align-items: center;
 
     @include m.responsiveDesign('laptop') {
-      gap: .5rem;
+      gap: 1rem;
     }
   }
 
@@ -73,7 +72,7 @@
     }
 
     @include m.responsiveDesign('laptop') {
-      font-size: 2.4rem;
+      font-size: 3rem;
     }
   }
 
@@ -96,12 +95,12 @@
   &__breadcrumb {
     display: flex;
     gap: 2rem;
-    color: v.$purple-color-dark;
+    color: v.$text-color;
     font-weight: 700;
     margin-bottom: 3rem;
 
     span {
-      color: v.$background-color;
+      color: #fff;
       padding: 0 1rem;
       transform: skewX(-5deg);
       @include m.createBackgroundGradient(#5C258D, #4389A2);
@@ -182,7 +181,7 @@
 }
 
 .project-content {
-  background-color: #fff;
+  background-color: v.$background-color;
   border-radius: 10px;
 
   &__top {
@@ -217,19 +216,20 @@
   &__subtitle {
     font-size: 3.2rem;
     margin: 2rem 0;
-    color: v.$purple-color-dark;
+    color: v.$text-color;
 
     @include m.responsiveDesign('big-phone') {
-      font-size: 1.8rem;
+      font-size: 2.4rem;
+      line-height: 1.5;
     }
   }
 }
 
 .project-aside {
   height: fit-content;
-  background-color: #fff;
+  background-color: v.$white-color;
   padding: 2rem;
-  border: 1px solid #ddd;
+  border: 1px solid v.$footer-border-color;
   border-radius: 10px;
   
   @include m.responsiveDesign('big-phone') {
@@ -238,7 +238,6 @@
 
   &__details {
     padding: 2rem;
-    border-radius: 10px;
     background-color: v.$cover-color;
     display: flex;
     flex-direction: column;
@@ -247,7 +246,7 @@
 
   &__title {
     font-size: 1.6rem;
-    color: v.$purple-color-dark;
+    color: v.$text-color;
   }
 
   &__type {
@@ -272,7 +271,8 @@
 
   &__imgPhone {
     margin: 0 auto;
-    width: 100%;
+    max-width: 100%;
+    border-radius: 1rem;
   }
 
 }
@@ -291,7 +291,7 @@
   margin-bottom: 8rem;
 
   &__title {
-    color: v.$purple-color-dark;
+    color: v.$text-color;
     font-size: 3.2rem;
     margin-bottom: 3rem;
   }
@@ -446,6 +446,7 @@
     z-index: 2;
     box-shadow: 0 4px 12px rgba(0, 0, 0, .18);
     animation: badgeFade .6s ease forwards;
+    @include m.createBackgroundGradient(#7F00FF, #E100FF);
 
     &::after {
       content: "";
@@ -469,29 +470,28 @@
     }
   }
 
-  &__badge--frontend::after {
-    @include m.createBackgroundGradient(#7F00FF, #E100FF);
-  }
+  // &__badge--frontend::after {
+  // }
 
-  &__badge--fullstack::after {
-    @include m.createBackgroundGradient(#005C97, #363795);
-  }
+  // &__badge--fullstack::after {
+  //   @include m.createBackgroundGradient(#005C97, #363795);
+  // }
 
-  &__badge--desktop::after {
-    @include m.createBackgroundGradient(#fc4a1a, #f7b733);
-  }
+  // &__badge--desktop::after {
+  //   @include m.createBackgroundGradient(#fc4a1a, #f7b733);
+  // }
 
-  &__badge--backend::after {
-    @include m.createBackgroundGradient(#000428, #004e92);
-  }
+  // &__badge--backend::after {
+  //   @include m.createBackgroundGradient(#000428, #004e92);
+  // }
 
-  &__badge--dashboard::after {
-    @include m.createBackgroundGradient(#11998e, #38ef7d);
-  }
+  // &__badge--dashboard::after {
+  //   @include m.createBackgroundGradient(#11998e, #38ef7d);
+  // }
 
-  &__badge--database::after {
-    @include m.createBackgroundGradient(#1e3c72, #2a5298);
-  }
+  // &__badge--database::after {
+  //   @include m.createBackgroundGradient(#1e3c72, #2a5298);
+  // }
 
   &__text {
     color: v.$gray-color;
@@ -509,7 +509,7 @@
   &__item {
     background-color: v.$background-color;
     color: v.$text-color;
-    border: 1px solid #bbb;
+    border: 1px solid v.$projects-fulter-item-border;
     font-size: 1.2rem;
     font-weight: bold;
     display: flex;

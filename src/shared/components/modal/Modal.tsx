@@ -21,7 +21,7 @@ export const Modal: React.FC<ModalProps> = ({ children, title, onCloseFn = () =>
     <div className='modal'>
       <div className="modal__container">
         <header className="modal__header">
-          <p>{title}</p>
+          <p className='modal__title'>{title}</p>
           <MdClose onClick={ closeModal } className='modal__close' />
         </header>
         { children }

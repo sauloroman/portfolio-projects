@@ -7,7 +7,7 @@ export const ButtonReturn: React.FC = () => {
   const { onNavigateHomePage } = useNavPage();
 
   return (
-    <button className='btn btn--purple' onClick={onNavigateHomePage}>
+    <button className='btn btn--outline' onClick={onNavigateHomePage}>
         <MdKeyboardReturn className='btn__icon' />
         <p>Home</p>
     </button>

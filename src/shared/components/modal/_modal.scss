@@ -18,7 +18,7 @@
     max-width: 95%;
     border-radius: 10px;
     padding: 2rem;
-    background-color: v.$background-color;
+    background-color: v.$white-color;
   }
 
   &__header {
@@ -28,15 +28,19 @@
     font-size: 2rem;
     font-weight: 700;
     color: v.$purple-color-dark;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid v.$text-muted;
     margin-bottom: 2rem;
     padding-bottom: 2rem;
   }
   
   &__close {
     font-size: 3rem;
-    color: v.$purple-color-dark;
+    color: v.$text-color;
     cursor: pointer;
+  }
+
+  &__title {
+    color: v.$text-color;
   }
 
 }

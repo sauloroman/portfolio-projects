@@ -8,6 +8,7 @@ export interface Project {
   projectNumber: number,
   url: string,
   images: string[],
+  imagesDark: string[],
   technologies: string[],
   noMobile: boolean,
   isMainProject: boolean

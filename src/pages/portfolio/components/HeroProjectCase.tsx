@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import type { Project } from '../../../shared/interfaces/project.interface'
 import { ProjectTechnologies } from './ProjectTechnologies'
 import { getProjectBadgeName } from '../../../shared/helpers/get-badge'
+import { useUI } from '../../../hooks'
 
 interface Props {
     isLeftSide?: boolean,
@@ -10,7 +11,16 @@ interface Props {
 }
 
 export const HeroProjectCase: React.FC<Props> = ({ isLeftSide = false, project, onOpen }) => {
+    const { isDarkMode } = useUI()
+    
     const badges = getProjectBadgeName(project.categories)
+    
+    const [image, setImage] = useState('')
+
+    useEffect(() => {
+        setImage(isDarkMode ? project.imagesDark[0] : project.images[0])
+    }, [isDarkMode])
+
     if (!project) return null
     if (isLeftSide) {
         return (
@@ -52,7 +62,7 @@ export const HeroProjectCase: React.FC<Props> = ({ isLeftSide = false, project, 
                     </div>
                 </div>
                 <div className="hero-project__image">
-                    <img src={project.images[0]} alt={project.title} />
+                    <img src={image} alt={project.title} />
                 </div>
             </article>
         )
@@ -62,7 +72,7 @@ export const HeroProjectCase: React.FC<Props> = ({ isLeftSide = false, project, 
         <article className="hero-project" onClick={onOpen}>
 
             <div className="hero-project__image">
-                <img src={project.images[0]} alt={project.title} />
+                <img src={image} alt={project.title} />
             </div>
 
             <div className="hero-project__content">

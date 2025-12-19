@@ -12,7 +12,7 @@
   justify-content: center;
   font-size: 1.2rem;
   text-transform: uppercase;
-  
+
   &:hover &__icon {
     gap: 2rem;
     opacity: 1;
@@ -53,11 +53,11 @@
     color: v.$background-color;
     background-color: v.$purple-color;
   }
-  
+
   &--golden {
-    background: #CAC531;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #F3F9A7, #CAC531);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #F3F9A7, #CAC531); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #CAC531;
+    background: -webkit-linear-gradient(to right, #F3F9A7, #CAC531);
+    background: linear-gradient(to right, #F3F9A7, #CAC531);
     color: #fff;
   }
 
@@ -66,34 +66,35 @@
     color: v.$background-color;
   }
 
-  &--black, &--purple-online {
-    letter-spacing: 1px;
-    color: v.$white-color;
+  &--black,
+  &--purple-online {
+    background-color: v.$btn-cta-bg;
+    color: v.$btn-cta-text;
+    border: 2px solid v.$btn-cta-border;
+    font-weight: 800;
+    letter-spacing: .5px;
+    transition:
+      background-color .25s ease,
+      transform .2s ease,
+      box-shadow .2s ease;
 
-    &::before {
-      content: '';
-      position: absolute;
-      top: 5px;
-      left: 5px;
-      right: -10px;
-      bottom: -10px;
-      background: linear-gradient(
-        to right,
-        v.$purple-color, 
-        v.$blue-color
-      );
-      z-index: -1;
-      filter: blur(8px);
-      opacity: 0.7;
-      border-radius: inherit;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .18);
+
+    &:hover {
+      background-color: v.$btn-cta-bg-hover;
+      color: v.$btn-cta-text-hover;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .28);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .22);
     }
   }
 
-  &--black {
-    background: v.$purple-color-dark;
-    color: #fff;
-  }
-  
+
+
   &--purple-online {
     background: v.$purple-color;
   }
@@ -107,7 +108,7 @@
     gap: .5rem;
     align-items: center;
   }
-  
+
   &--theme {
     background-color: transparent;
     color: v.$text-color;

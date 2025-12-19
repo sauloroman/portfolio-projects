@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavPage, useProjects, useUI } from '../../hooks'
 import { ProjectHeader } from '../../shared/components/ProjectHeader';
 import { ProjectCover } from './sections/ProjectCover';
@@ -12,9 +12,21 @@ import { Loader } from '../../shared/components/Loader';
 
 export const ProjectPage: React.FC = () => {
 
-  const { modal } = useUI()
+  const { modal, isDarkMode } = useUI()
   const { projectOnPage, onGetProjectById, isLoading } = useProjects();
   const { params } = useNavPage()
+  const [image, setImage] = useState('')
+  const [images, setImages] = useState<string[]>([])
+
+  useEffect(() => {
+    setImage( isDarkMode ? projectOnPage?.imagesDark[0] ?? '' : projectOnPage?.images[0] ?? '' )
+    setImages(isDarkMode ? projectOnPage?.imagesDark ?? [] : projectOnPage?.images ?? [] )
+  }, [projectOnPage])
+  
+  useEffect(() => {
+    setImage( isDarkMode ? projectOnPage?.imagesDark[0] ?? '' : projectOnPage?.images[0] ?? '' )
+    setImages(isDarkMode ? projectOnPage?.imagesDark ?? [] : projectOnPage?.images ?? [] )
+  }, [isDarkMode])
 
   useEffect(() => {
     const projectId = params.pathname.split('/').at(-1)
@@ -44,12 +56,13 @@ export const ProjectPage: React.FC = () => {
           <div className="project-main__container">
             <ProjectContent  
               description={projectOnPage?.description ?? ''}
-              image={projectOnPage?.images?.[0] ?? ''}
+              image={image ?? ''}
               title={projectOnPage?.title ?? ''}
             />
+            
             <ProjectAside 
               categories={ projectOnPage?.categories ?? [] }
-              image={projectOnPage?.images?.[0] ?? ''}
+              image={image ?? ''}
               technologies={ projectOnPage?.technologies ?? [] }
             />
           </div>
@@ -67,7 +80,7 @@ export const ProjectPage: React.FC = () => {
 
             <ProjectSwiper 
               noMobile={projectOnPage?.noMobile ?? false}
-              items={projectOnPage?.images ?? []}
+              items={images}
               slidesPerView={projectOnPage?.noMobile ? 2 : 3} 
             />
           </section>
