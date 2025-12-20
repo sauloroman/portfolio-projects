@@ -13,7 +13,7 @@ export const ModalImage: React.FC = () => {
     <Modal title='Imagen Seleccionada'>
       <img
         className={`${!noMobile ? 'project-modal__mobile' : 'project-modal__image'}`}
-        src={imageSelected} 
+        src={imageSelected}   
         alt="Imagen de proyecto o sistema" 
       />
     </Modal>
