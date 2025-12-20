@@ -194,6 +194,16 @@
     }
   }
 
+  &__imgBox {
+    background-color: v.$cover-color;
+    padding: 2rem;
+    border-radius: 10px;
+
+     @include m.responsiveDesign('big-phone') {
+      padding: 0;
+    }
+  }
+
   &__img {
     max-width: 100%;
     margin: 0 auto;
@@ -231,9 +241,17 @@
   padding: 2rem;
   border: 1px solid v.$footer-border-color;
   border-radius: 10px;
+
+  &:not(:last-child) {
+    margin-bottom: 4rem;
+  }
   
   @include m.responsiveDesign('big-phone') {
     margin-bottom: 4rem;
+  }
+
+  &__title {
+    margin-bottom: 2rem;
   }
 
   &__details {
@@ -273,6 +291,11 @@
     margin: 0 auto;
     max-width: 100%;
     border-radius: 1rem;
+    cursor: pointer;
+  }
+
+  &__buttonDB {
+    margin-top: 3rem;
   }
 
 }
@@ -283,7 +306,7 @@
   }
 
   &__mobile {
-    width: 50rem;
+    width: 45rem;
   }
 }
 

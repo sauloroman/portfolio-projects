@@ -5,8 +5,17 @@ import { useProjects, useUI } from '../hooks';
 
 export const RouterApp: React.FC = () => {
 
-  const { isDarkMode } = useUI()
+  const { isDarkMode, onActiveDarkMode, onActiveLightMode } = useUI()
   const { onGetProjects } = useProjects();
+
+  useEffect(() => {
+    const theme = localStorage.getItem('theme-portfolio') ?? 'dark'
+    if ( theme === 'dark' ) {
+      onActiveDarkMode()
+    } else {
+      onActiveLightMode()
+    }
+  }, [])
 
   useEffect(() => {
     document.documentElement.setAttribute(

@@ -2,23 +2,24 @@ import React from 'react'
 import { getParagraphsFromTxt } from '../../../shared/helpers/get-paragraphs'
 
 interface ProjectContentProps {
-  image: string,
+  video: string,
   title: string,
   description: string,
 }
 
-export const ProjectContent: React.FC<ProjectContentProps> = ({ description, image, title }) => {
+export const ProjectContent: React.FC<ProjectContentProps> = ({ description, video, title }) => {
   
   const descriptionInParagraphs = getParagraphsFromTxt( description )
 
   return (
     <section className='project-content'>
-      <div>
-        <img 
+      <div className='project-content__imgBox'>
+        <video 
+          loop={true}
+          controls={true}
           className='project-content__img' 
-          src={image}
-          alt={title}
-        />
+          src={video}
+        ></video>
       </div>
       <div className="project-content__text">
         <div className='project-content__top'>

@@ -56,10 +56,12 @@ export const useUI = () => {
 
   const onActiveLightMode = () => {
     dispatch( setTheme( ThemeNames.light ))
+    localStorage.setItem('theme-portfolio', 'light')
   }
-
+  
   const onActiveDarkMode = () => {
     dispatch( setTheme( ThemeNames.dark ))
+    localStorage.setItem('theme-portfolio', 'dark')
   }
 
   return {

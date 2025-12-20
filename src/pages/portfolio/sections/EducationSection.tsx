@@ -1,5 +1,5 @@
 import React from 'react'
-import programming from '../../../assets/img/icon-programming.webp'
+import programming from '../../../assets/img/icon-computer.webp'
 import type { Education } from '../../../shared/interfaces/ui.interface'
 
 const schools: Education[] = [

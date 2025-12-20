@@ -9,6 +9,8 @@ export interface Project {
   url: string,
   images: string[],
   imagesDark: string[],
+  video: string,
+  databaseDiagram: string[];
   technologies: string[],
   noMobile: boolean,
   isMainProject: boolean
