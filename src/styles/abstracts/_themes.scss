@@ -127,6 +127,21 @@
   /* rose-700 */
   --btn-cta-text-hover: #ffffff;
 
+  /* Alert modal */
+  --alert-modal-bg: #ffffff;
+  --alert-modal-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.18);
+
+  --alert-success-main: #4389A2;
+  --alert-success-gradient: linear-gradient(#4389A2, #5C258D);
+  --alert-success-soft: rgba(67, 137, 162, 0.15);
+
+  --alert-error-main: #dc3545;
+  --alert-error-gradient: linear-gradient(#dc3545, #8b0000);
+  --alert-error-soft: rgba(220, 53, 69, 0.15);
+
+  --alert-warning-main: #f59f00;
+  --alert-warning-gradient: linear-gradient(#f59f00, #ff7b00);
+  --alert-warning-soft: rgba(245, 159, 0, 0.2);
 
 }
 
@@ -255,12 +270,19 @@
 
   --projects-fulter-item-border: transparent;
 
-  /* CTA Button – Pink */
+
   --btn-cta-bg: #a61e4d;
   --btn-cta-text: #fff;
   --btn-cta-border: transparent;
 
   --btn-cta-bg-hover: #f43f5e;
   --btn-cta-text-hover: #fff;
+
+
+  --alert-modal-bg: #181b22;
+  --alert-modal-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.55);
+  --alert-success-soft: rgba(67, 137, 162, 0.25);
+  --alert-error-soft: rgba(220, 53, 69, 0.25);
+  --alert-warning-soft: rgba(245, 159, 0, 0.3);
 
 }
