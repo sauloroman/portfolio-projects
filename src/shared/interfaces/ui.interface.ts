@@ -23,6 +23,14 @@ export interface Education {
   date: string
 }
 
+export interface Job {
+  company: string,
+  image: string,
+  project: string,
+  date: string,
+  type: string
+}
+
 export interface Contact {
   icon: string,
   concept: string,

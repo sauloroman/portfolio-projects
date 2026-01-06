@@ -13,6 +13,7 @@ import { Menu } from '../../shared/components/Menu'
 import { ContactSection } from './sections/ContactSection'
 import { AlertModal } from '../../shared/components/AlertModal'
 import { Loader } from '../../shared/components/Loader'
+import { ExperienceSection } from './sections/ExperienceSection'
 
 export const PortfolioPage: React.FC = () => {
 
@@ -36,6 +37,7 @@ export const PortfolioPage: React.FC = () => {
         <TechSection />
         <PortfolioSection />
         <EducationSection />
+        <ExperienceSection />
         <ContactSection />
       </div>
       <Footer />

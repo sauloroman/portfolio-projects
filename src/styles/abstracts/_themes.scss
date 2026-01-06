@@ -143,6 +143,14 @@
   --alert-warning-gradient: linear-gradient(#f59f00, #ff7b00);
   --alert-warning-soft: rgba(245, 159, 0, 0.2);
 
+  --experience-bg-start: #f2f0f6;   
+  --experience-bg-end: #e9e4ef;
+
+  --experience-line-color: #4c5fd7; 
+
+  --experience-icon-start: #5c6ac4;
+  --experience-icon-end: #4fa3b8;
+
 }
 
 [data-theme='dark'] {
@@ -284,5 +292,13 @@
   --alert-success-soft: rgba(67, 137, 162, 0.25);
   --alert-error-soft: rgba(220, 53, 69, 0.25);
   --alert-warning-soft: rgba(245, 159, 0, 0.3);
+
+  --experience-bg-start: #12151b; 
+  --experience-bg-end: #161a22;
+
+  --experience-line-color: #818cf8;
+
+  --experience-icon-start: #6366f1;
+  --experience-icon-end: #38bdf8;
 
 }

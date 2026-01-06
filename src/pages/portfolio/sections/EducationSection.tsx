@@ -35,7 +35,6 @@ export const EducationSection: React.FC = () => {
     >
       <div className="portfolio-education__container container">
 
-        {/* Top */}
         <motion.div
           className="portfolio-education__top"
           variants={itemVariants}
@@ -48,10 +47,8 @@ export const EducationSection: React.FC = () => {
           </h2>
         </motion.div>
 
-        {/* Grid */}
         <div className="portfolio-education__grid">
 
-          {/* Image */}
           <motion.div
             className="portfolio-education__image"
             variants={itemVariants}
@@ -59,7 +56,6 @@ export const EducationSection: React.FC = () => {
             <img src={programming} alt="Programming illustration" />
           </motion.div>
 
-          {/* List */}
           <motion.ul
             className="portfolio-education__list"
             variants={containerVariants}

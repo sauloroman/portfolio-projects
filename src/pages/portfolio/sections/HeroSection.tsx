@@ -9,7 +9,7 @@ import photo2 from '../../../assets/img/photo-2.jpg'
 import photo3 from '../../../assets/img/photo-3.jpg'
 import { Link } from 'react-router-dom';
 
-import cv from '../../../assets/doc/cv-saulo-roman-santillan-nava.pdf'
+import cv from '../../../assets/doc/CV English. Saulo Román Santillán Nava.pdf'
 
 export const HeroSection: React.FC = () => {
   return (

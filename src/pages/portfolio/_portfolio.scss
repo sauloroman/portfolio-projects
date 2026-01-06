@@ -544,7 +544,7 @@
 }
 
 .portfolio-projects {
-  padding: 15rem 0;
+  padding: 10rem 0;
   padding-bottom: 5rem;
 
   &__top {
@@ -805,6 +805,7 @@
   margin-top: 20rem;
   margin-bottom: 0;
   padding: 20rem 0;
+  padding-bottom: 15rem;
   background: linear-gradient(
     180deg,
     v.$education-bg-start 0%,
@@ -824,10 +825,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    @include m.responsiveDesign('horizontal-tablet') {
-      margin-bottom: 5rem;
-    }
+    margin-bottom: 5rem;
   }
 
   &__sub {
@@ -871,7 +869,8 @@
       }
 
       @include m.responsiveDesign('big-phone') {
-        max-width: 100%;
+        margin-top: 3rem;
+        max-width: 70%;
       }
     }
 
@@ -1011,8 +1010,215 @@
   }
 }
 
+.portfolio-experience {
+  padding: 20rem 0;
+  padding-top: 0;
+  background: linear-gradient(180deg, var(--education-bg-end) 0%, var(--education-bg-start) 100%);
+
+  @include m.responsiveDesign('horizontal-tablet') {
+    padding: 10rem 5rem;
+  }
+
+  @include m.responsiveDesign('big-phone') {
+    padding: 10rem 2rem;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10rem;
+  }
+
+  &__sub {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    @include m.createTextBackground(
+      v.$purple-color,
+      v.$blue-color
+    );
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+
+    @include m.responsiveDesign('horizontal-tablet') {
+      grid-template-columns: 2fr 3fr;
+      gap: 1rem;
+    }
+
+    @include m.responsiveDesign('tablet') {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 70%;
+      filter: drop-shadow(v.$education-image-shadow);
+
+      @include m.responsiveDesign('tablet') {
+        max-width: 60%;
+      }
+
+      @include m.responsiveDesign('big-phone') {
+        margin-top: 3rem;
+        max-width: 70%;
+      }
+    }
+
+    @include m.responsiveDesign('tablet') {
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-left: 4rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 2.6rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+
+      background: linear-gradient(
+        180deg,
+        v.$experience-line-color,
+        transparent
+      );
+
+      opacity: 0.35;
+
+      @include m.responsiveDesign('big-phone') {
+        left: -1rem;
+      }
+    }
+
+    @include m.responsiveDesign('big-phone') {
+      padding-left: 0;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    gap: 2.5rem;
+    padding: 2.5rem 3rem;
+    border-radius: 1.6rem;
+
+    background: v.$education-card-bg;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border: 1px solid v.$education-card-border;
+    box-shadow: v.$education-card-shadow;
+    transition: all 0.35s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: v.$education-card-shadow-hover;
+    }
+
+    @include m.responsiveDesign('tablet') {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    @include m.responsiveDesign('big-phone') {
+      width: 100%;
+    }
+  }
+
+  &__icon {
+    min-width: 5.2rem;
+    height: 5.2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 1.2rem;
+
+    background: linear-gradient(
+      135deg,
+      v.$experience-icon-start,
+      v.$experience-icon-end
+    );
+
+    box-shadow: v.$education-icon-shadow;
+
+    i {
+      font-size: 2.6rem;
+      color: #fff;
+    }
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+
+    @include m.responsiveDesign('big-phone') {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }
+
+  &__company {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: v.$education-school-color;
+  }
+
+  &__date {
+    font-size: 1.3rem;
+    opacity: 0.7;
+    white-space: nowrap;
+  }
+
+  &__project {
+    margin-top: 0.6rem;
+    font-weight: 600;
+    color: v.$education-career-color;
+
+    @include m.responsiveDesign('big-phone') {
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__type {
+    font-size: 1.4rem;
+    opacity: 0.75;
+  }
+}
+
 .portfolio-contact {
-  padding: 15rem;
+  padding: 15rem 0;
 
   &__container {
     display: grid;
