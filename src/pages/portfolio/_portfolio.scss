@@ -815,9 +815,10 @@
   @include m.responsiveDesign('horizontal-tablet') {
     padding: 10rem 5rem;
   }
-
+  
   @include m.responsiveDesign('big-phone') {
     padding: 10rem 2rem;
+    padding-bottom: 0;
   }
 
   &__top {
