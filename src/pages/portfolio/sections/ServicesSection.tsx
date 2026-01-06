@@ -1,10 +1,13 @@
-import React, { useEffect, useRef } from 'react';
-import { FaCode, FaServer } from "react-icons/fa";
-import { MdOutlineDesignServices, MdOutlinePhoneAndroid } from "react-icons/md";
+import React, { useEffect, useRef } from 'react'
+import { motion } from 'framer-motion'
+import { FaCode, FaServer } from "react-icons/fa"
+import { MdOutlineDesignServices, MdOutlinePhoneAndroid } from "react-icons/md"
+import { useScrollReveal } from '../../../hooks'
 
 export const ServicesSection: React.FC = () => {
 
-  const sectionRef = useRef<HTMLElement | null>(null);
+  const sectionRef = useRef<HTMLElement | null>(null)
+  const { containerVariants, itemVariants, viewport } = useScrollReveal()
 
   useEffect(() => {
     const header = document.querySelector('.portfolio-header')
@@ -21,67 +24,63 @@ export const ServicesSection: React.FC = () => {
       }
     }
 
-    onScroll() 
+    onScroll()
     window.addEventListener('scroll', onScroll)
-
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-
   return (
-    <section
+    <motion.section
       ref={sectionRef}
       id="services"
       className="portfolio-services"
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewport}
+      variants={containerVariants}
     >
       <div className="portolio-services__container container">
 
-        <div className="portfolio-services__top">
+        <motion.div
+          className="portfolio-services__top"
+          variants={itemVariants}
+        >
           <span className="portfolio-services__sub">Services</span>
           <h2 className="heading-section portfolio-services__title">
             <div className="period period--medium"></div>
             Expertise Service
             <div className="period period--medium"></div>
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="portfolio-services__icons">
-
-          <div data-number="1" className="portfolio-services__icon">
-            <div className="portfolio-services__box">
-              <FaCode className='portfolio-services__figure' />
-            </div>
-            <h3>Web Development</h3>
-            <p>High-quality, scalable web applications using clean, modern code practices.</p>
-          </div>
-
-          <div data-number="2" className="portfolio-services__icon">
-            <div className="portfolio-services__box">
-              <MdOutlineDesignServices className='portfolio-services__figure' />
-            </div>
-            <h3>Web Design</h3>
-            <p>Clean, aesthetic and user-focused layouts designed to elevate brand identity.</p>
-          </div>
-
-          <div data-number="3" className="portfolio-services__icon">
-            <div className="portfolio-services__box">
-              <MdOutlinePhoneAndroid className='portfolio-services__figure' />
-            </div>
-            <h3>Responsive Design</h3>
-            <p>Adaptive, seamless experiences across every screen and device.</p>
-          </div>
-
-          <div data-number="4" className="portfolio-services__icon">
-            <div className="portfolio-services__box">
-              <FaServer className='portfolio-services__figure' />
-            </div>
-            <h3>API & Backend Development</h3>
-            <p>Secure, fast and scalable APIs built with modern backend technologies.</p>
-          </div>
-
-        </div>
+        <motion.div
+          className="portfolio-services__icons"
+          variants={containerVariants}
+        >
+          {[ 
+            { id: 1, icon: <FaCode />, title: "Web Development", desc: "High-quality, scalable web applications using clean, modern code practices." },
+            { id: 2, icon: <MdOutlineDesignServices />, title: "Web Design", desc: "Clean, aesthetic and user-focused layouts designed to elevate brand identity." },
+            { id: 3, icon: <MdOutlinePhoneAndroid />, title: "Responsive Design", desc: "Adaptive, seamless experiences across every screen and device." },
+            { id: 4, icon: <FaServer />, title: "API & Backend Development", desc: "Secure, fast and scalable APIs built with modern backend technologies." }
+          ].map(service => (
+            <motion.div
+              key={service.id}
+              data-number={service.id}
+              className="portfolio-services__icon"
+              variants={itemVariants}
+            >
+              <div className="portfolio-services__box">
+                {React.cloneElement(service.icon, {
+                  className: 'portfolio-services__figure'
+                })}
+              </div>
+              <h3>{service.title}</h3>
+              <p>{service.desc}</p>
+            </motion.div>
+          ))}
+        </motion.div>
 
       </div>
-    </section>
-  );
-};
+    </motion.section>
+  )
+}

@@ -1,6 +1,8 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import programming from '../../../assets/img/icon-computer.webp'
 import type { Education } from '../../../shared/interfaces/ui.interface'
+import { useScrollReveal } from '../../../hooks'
 
 const schools: Education[] = [
   {
@@ -20,27 +22,54 @@ const schools: Education[] = [
 ]
 
 export const EducationSection: React.FC = () => {
+  const { containerVariants, itemVariants, viewport } = useScrollReveal()
+
   return (
-    <section id='education' className="portfolio-education">
+    <motion.section
+      id="education"
+      className="portfolio-education"
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewport}
+      variants={containerVariants}
+    >
       <div className="portfolio-education__container container">
 
-        <div className="portfolio-education__top">
+        {/* Top */}
+        <motion.div
+          className="portfolio-education__top"
+          variants={itemVariants}
+        >
           <span className="portfolio-education__sub">School</span>
           <h2 className="heading-section portfolio-education__title">
             <span className="period period--medium" />
             Education
             <span className="period period--medium" />
           </h2>
-        </div>
+        </motion.div>
 
+        {/* Grid */}
         <div className="portfolio-education__grid">
-          <div className="portfolio-education__image">
-            <img src={programming} alt="Programming illustration" />
-          </div>
 
-          <ul className="portfolio-education__list">
+          {/* Image */}
+          <motion.div
+            className="portfolio-education__image"
+            variants={itemVariants}
+          >
+            <img src={programming} alt="Programming illustration" />
+          </motion.div>
+
+          {/* List */}
+          <motion.ul
+            className="portfolio-education__list"
+            variants={containerVariants}
+          >
             {schools.map(item => (
-              <li className="portfolio-education__item" key={item.name}>
+              <motion.li
+                key={item.name}
+                className="portfolio-education__item"
+                variants={itemVariants}
+              >
                 <div className="portfolio-education__icon">
                   <i className="devicon-codepen-original"></i>
                 </div>
@@ -62,12 +91,13 @@ export const EducationSection: React.FC = () => {
                     {item.specialty}
                   </p>
                 </div>
-              </li>
+              </motion.li>
             ))}
-          </ul>
+          </motion.ul>
+
         </div>
 
       </div>
-    </section>
+    </motion.section>
   )
 }

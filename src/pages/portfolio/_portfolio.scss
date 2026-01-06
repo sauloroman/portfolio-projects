@@ -121,6 +121,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    animation: fadeFromRight 1s ease-out;
 
     @include m.responsiveDesign('big-phone') {
       grid-row: 2 / 3;
@@ -129,7 +130,6 @@
 
   &__title {
     font-size: 4.8rem;
-    animation: fadeFromRight 2s ease;
 
     @include m.responsiveDesign('horizontal-tablet') {
       font-size: 4rem
@@ -352,7 +352,7 @@
 }
 
 .portfolio-services {
-  padding: 8rem 0;
+  padding: 15rem 0;
 
   &__top {
     display: flex;
@@ -543,9 +543,9 @@
   }
 }
 
-
 .portfolio-projects {
-  padding: 5rem 0;
+  padding: 15rem 0;
+  padding-bottom: 5rem;
 
   &__top {
     display: flex;
@@ -686,7 +686,6 @@
   }
 }
 
-
 .support-project {
   border-radius: 1.6rem;
   overflow: hidden;
@@ -724,8 +723,6 @@
     }
   }
 }
-
-
 
 .portfolio-main-grid {
   display: grid;
@@ -804,8 +801,10 @@
 }
 
 .portfolio-education {
-  margin: 8rem 0;
-  padding: 10rem;
+  margin: 10rem 0;
+  margin-top: 20rem;
+  margin-bottom: 0;
+  padding: 20rem 0;
   background: linear-gradient(
     180deg,
     v.$education-bg-start 0%,
@@ -1013,7 +1012,7 @@
 }
 
 .portfolio-contact {
-  padding-bottom: 8rem;
+  padding: 15rem;
 
   &__container {
     display: grid;

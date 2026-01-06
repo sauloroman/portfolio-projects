@@ -19,14 +19,14 @@ const menuItems: MenuItem[] = [
     {
         label: 'Projects',
         href: '/projects',
-        icon: 'bx-layout'
-    },
-    {
-        label: 'Digital Invitations',
-        href: '/digital-invitations',
-        icon: 'bx-party',
+        icon: 'bx-layout',
         highlight: true
-    }
+    },
+    // {
+    //     label: 'Digital Invitations',
+    //     href: '/digital-invitations',
+    //     icon: 'bx-party',
+    // }
 ]
 
 const navItems: NavItem[] = [

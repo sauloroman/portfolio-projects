@@ -1,5 +1,7 @@
 import React from 'react'
 import type { Contact } from '../../../shared/interfaces/ui.interface'
+import { useScrollReveal } from '../../../hooks'
+import { motion } from 'framer-motion'
 
 export const contacts: Contact[] = [
   {
@@ -33,9 +35,16 @@ export const contacts: Contact[] = [
 ]
 
 export const ContactSocial: React.FC = () => {
+  const { itemVariants, viewport } = useScrollReveal()
+
   return (
-    <div className="portfolio-contact__content">
-      
+    <motion.div
+      className="portfolio-contact__content"
+      variants={itemVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewport}
+    >
       <div className="portfolio-contact__top">
         <span className="portfolio-contact__sub">Contact</span>
         <h2 className="heading-section portfolio-contact__title">
@@ -71,6 +80,6 @@ export const ContactSocial: React.FC = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </motion.div>
   )
 }
