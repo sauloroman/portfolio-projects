@@ -4,13 +4,15 @@ import type { Project } from "../../shared/interfaces/project.interface";
 interface InitialStateProjectSlice {
   isLoading: boolean,
   projects: Project[],
-  projectOnPage: Project | null
+  projectOnPage: Project | null,
+  projectImage: string | null
 }
 
 const initialState: InitialStateProjectSlice = {
   isLoading: false,
   projects: [],
-  projectOnPage: null
+  projectOnPage: null,
+  projectImage: null
 }
 
 export const projectsSlice = createSlice({
@@ -20,6 +22,10 @@ export const projectsSlice = createSlice({
 
     setIsLoading: ( state, { payload }: PayloadAction<boolean> ) => {
       state.isLoading = payload
+    },
+
+    setProjectImage: ( state, {payload}: PayloadAction<string> ) => {
+      state.projectImage = payload
     },
 
     setProjects: ( state, { payload }: PayloadAction<Project[]> ) => {
@@ -37,4 +43,5 @@ export const {
   setIsLoading,
   setProjects,
   setProjectOnPage,
+  setProjectImage,
 } = projectsSlice.actions

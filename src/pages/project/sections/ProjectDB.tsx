@@ -1,5 +1,6 @@
 import React from 'react'
-import { useUI } from '../../../hooks'
+import { useProjects, useUI } from '../../../hooks'
+import { ModalNames } from '../../../shared/interfaces/ui.interface'
 
 interface Props {
     imageDB: string,
@@ -7,14 +8,20 @@ interface Props {
 }
 
 export const ProjectDB: React.FC<Props> = ({ imageDB, link }) => {
-    const { onWatchImage } = useUI()
-    
+    const { onSetProjectImage } = useProjects()
+    const { onOpenModal } = useUI()
+
+     const onOpenImage = () => {
+        onOpenModal(ModalNames.projectImage)
+        onSetProjectImage(imageDB)
+      }
+
     return (
         <aside className="project-aside">
             <h3 className='project-aside__title'>Database Design</h3>
             <div className="project-aside__phone">
                 <img
-                    onClick={() => onWatchImage(imageDB)}
+                    onClick={onOpenImage}
                     className="project-aside__imgPhone"
                     src={imageDB}
                     alt="Project design phone"

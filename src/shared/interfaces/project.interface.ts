@@ -3,7 +3,7 @@ export interface Project {
   title: string,
   description: string,
   descriptionCard: string,
-  githubRepository: string,
+  githubRepositories: string[],
   categories: string[],
   projectNumber: number,
   url: string,

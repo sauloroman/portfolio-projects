@@ -1,7 +1,8 @@
 import React from 'react';
 import { ProjectTechnologies } from '../../portfolio/components/ProjectTechnologies';
 import { getProjectBadgeName } from '../../../shared/helpers/get-badge';
-import { useUI } from '../../../hooks';
+import { useProjects, useUI } from '../../../hooks';
+import { ModalNames } from '../../../shared/interfaces/ui.interface';
 
 interface ProjectAsideProps {
   image: string,
@@ -11,14 +12,20 @@ interface ProjectAsideProps {
 
 export const ProjectAside: React.FC<ProjectAsideProps> = ({categories, image, technologies}) => {
   const badges = getProjectBadgeName(categories)
-  const { onWatchImage } = useUI()
+  const { onOpenModal } = useUI()
+  const { onSetProjectImage } = useProjects()
     
+  const onOpenImage = () => {
+    onOpenModal(ModalNames.projectImage)
+    onSetProjectImage(image)
+  }
+
   return (
     <aside className="project-aside">
       <h3 className='project-aside__title'>General Information</h3>
       <div className="project-aside__phone">
         <img
-          onClick={() => onWatchImage(image)}
+          onClick={onOpenImage}
           className="project-aside__imgPhone"
           src={image}
           alt="Project design phone"

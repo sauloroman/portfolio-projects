@@ -7,9 +7,11 @@ import { ProjectAside } from './sections/ProjectAside'
 import { Footer } from '../../shared/components/footer/Footer'
 import { ProjectSwiper } from './sections/ProjectSwiper'
 import { ModalNames } from '../../shared/interfaces/ui.interface'
-import { ModalImage } from './components/ModalImage'
 import { Loader } from '../../shared/components/Loader'
 import { ProjectDB } from './sections/ProjectDB'
+import { ProjectVideoModal } from './sections/ProjectVideoModal'
+import { ProjectGithubLinks } from './sections/ProjectGithubLinks'
+import { ProjectImageModal } from './sections/ProjectImageModal'
 
 export const ProjectPage: React.FC = () => {
 
@@ -22,7 +24,7 @@ export const ProjectPage: React.FC = () => {
     if (projectId) {
       onGetProjectById(projectId)
     }
-  }, []) // ← intencionalmente vacío
+  }, [])
 
   const { image, imageDB, images } = useMemo(() => {
     if (!projectOnPage) {
@@ -58,7 +60,6 @@ export const ProjectPage: React.FC = () => {
         <ProjectHeader title={projectOnPage?.title ?? ''} />
 
         <ProjectCover
-          github={projectOnPage?.githubRepository ?? ''}
           url={projectOnPage?.url ?? ''}
           title={projectOnPage?.title ?? ''}
           description={projectOnPage?.descriptionCard ?? ''}
@@ -110,7 +111,9 @@ export const ProjectPage: React.FC = () => {
         <Footer />
       </div>
 
-      {modal.isOpen && modal.name === ModalNames.showImage && <ModalImage />}
+      {modal.isOpen && modal.name === ModalNames.projectVideo && <ProjectVideoModal  title={projectOnPage?.title ?? ''} video={projectOnPage?.video ?? ''} />}
+      {modal.isOpen && modal.name === ModalNames.projectGithubLinks && <ProjectGithubLinks title={projectOnPage?.title ?? ''} links={projectOnPage?.githubRepositories ?? []} />}
+      {modal.isOpen && modal.name === ModalNames.projectImage && <ProjectImageModal title={projectOnPage?.title ?? ''} />}
     </>
   )
 }

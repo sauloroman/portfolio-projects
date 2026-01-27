@@ -1,7 +1,10 @@
 export const ModalNames = {
   noModal: '',
   contact: 'contact',
-  showImage: 'show-image'
+  showImage: 'show-image',
+  projectVideo: 'projectVideo',
+  projectGithubLinks: 'projectGithubLinks',
+  projectImage: 'projectImage'
 } as const;
 export type ModalNames = typeof ModalNames[keyof typeof ModalNames];
 export interface Modal {

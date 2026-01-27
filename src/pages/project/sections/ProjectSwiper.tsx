@@ -3,7 +3,8 @@ import { Autoplay, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'swiper/swiper-bundle.css'
-import { useUI } from '../../../hooks'
+import { useProjects, useUI } from '../../../hooks'
+import { ModalNames } from '../../../shared/interfaces/ui.interface'
 
 interface Props {
     noMobile?: boolean,
@@ -13,8 +14,14 @@ interface Props {
 
 export const ProjectSwiper: React.FC<Props> = ({ items, slidesPerView = 2 }) => {
 
-    const { onWatchImage } = useUI()
-    const imagesRender = items.filter( (item, i) =>  i > 0 && item )
+    const { onSetProjectImage } = useProjects()
+    const { onOpenModal } = useUI()
+    const imagesRender = items.filter((item, i) => i > 0 && item)
+
+    const onOpenImage = (image: string) => {
+        onOpenModal(ModalNames.projectImage)
+        onSetProjectImage(image)
+    }
 
     return (
         <Swiper
@@ -34,7 +41,7 @@ export const ProjectSwiper: React.FC<Props> = ({ items, slidesPerView = 2 }) => 
             }}
         >
             {imagesRender.map((item, i) => (
-                <SwiperSlide onClick={() => onWatchImage(item)} key={`${item}-${i}`}>
+                <SwiperSlide onClick={() => onOpenImage(item)} key={`${item}-${i}`}>
                     <div className='swiper__slide'>
                         <img
                             src={item}

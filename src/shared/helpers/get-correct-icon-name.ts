@@ -31,6 +31,14 @@ export const getCorrectIconName = ( tech: string ) => {
       return 'devicon-styledcomponents-plain colored'
     case 'express':
       return 'devicon-express-original colored'
+    case 'nodejs':
+      return 'devicon-nodejs-plain colored'
+    case 'postgresql':
+      return 'devicon-postgresql-plain colored'
+    case 'prisma':
+      return 'devicon-prisma-original colored'
+    case 'clean architecture':
+      return 'https://res.cloudinary.com/dlamufioy/image/upload/v1768772867/portfolio/icons/1_JWzL8VcHl13x0J5rDUZWzA_ehzqjg.png'
     case 'flatlaf':
       return 'https://res.cloudinary.com/dlamufioy/image/upload/v1765829631/portfolio/icons/12702749_n9nfsr.png'
     case 'mvc':

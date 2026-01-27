@@ -1,13 +1,16 @@
 import React from 'react'
+import { useUI } from '../../../hooks';
+import { ModalNames } from '../../../shared/interfaces/ui.interface';
 
 interface ProjectCoverProps {
     title: string; 
     description: string;  
-    github: string;
     url: string;
 }
 
-export const ProjectCover: React.FC<ProjectCoverProps> = ({ title, description, github, url }) => {
+export const ProjectCover: React.FC<ProjectCoverProps> = ({ title, description, url }) => {    
+    const { onOpenModal } = useUI()
+
     return (
         <section className="project-cover">
             <div className="container">
@@ -21,30 +24,14 @@ export const ProjectCover: React.FC<ProjectCoverProps> = ({ title, description, 
                     <div className='project-cover__breadcrumb'>
                         <p>Home </p>
                         <p>&rarr;</p>
-                        <p>Portfolio</p>
+                        <p>Projects</p>
                         <p>&rarr;</p>
                         <span>{title}</span>
                     </div>
                     <div className="project-cover__buttons">
-                        {
-                            url === ''
-                            ? (
-                                <a target='_blank' className='project-cover__link btn btn--purple'>
-                                    <span></span>
-                                    Video
-                                </a>
-                            )
-                            : (
-                                <a target='_blank' href={url} className='project-cover__link btn btn--purple'>
-                                    <span></span>
-                                    Online
-                                </a>
-                            )
-                        }
-                        <a target='_blank' href={github} className='project-cover__link btn btn--purple'>
-                            <i className="devicon-github-original"></i>
-                            GitHub
-                        </a>
+                        <a target='_blank' onClick={() => onOpenModal(ModalNames.projectVideo)} className='project-cover__link btn btn--purple'><span></span>Video</a>
+                        {url && <a target='_blank' href={url} className='project-cover__link btn btn--purple'><span></span>Online</a>}
+                        <a target='_blank' onClick={() => onOpenModal(ModalNames.projectGithubLinks)} className='project-cover__link btn btn--purple'><i className="devicon-github-original"></i>GitHub</a>
                     </div>
                 </div>
             </div>
