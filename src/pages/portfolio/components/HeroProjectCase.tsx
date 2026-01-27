@@ -80,17 +80,6 @@ export const HeroProjectCase: React.FC<Props> = ({
               <button className="btn btn--purple">
                 View Case Study →
               </button>
-
-              <a
-                href={project.githubRepository}
-                target="_blank"
-                rel="noreferrer"
-                className="btn btn--outline"
-                onClick={e => e.stopPropagation()}
-              >
-                <i className="devicon-github-original"></i>
-                GitHub
-              </a>
             </div>
           </div>
 
@@ -132,17 +121,6 @@ export const HeroProjectCase: React.FC<Props> = ({
               <button className="btn btn--purple">
                 View Case Study →
               </button>
-
-              <a
-                href={project.githubRepository}
-                target="_blank"
-                rel="noreferrer"
-                className="btn btn--outline"
-                onClick={e => e.stopPropagation()}
-              >
-                <i className="devicon-github-original"></i>
-                GitHub
-              </a>
             </div>
           </div>
         </>
