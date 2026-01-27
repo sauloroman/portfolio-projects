@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
           <h3 className='footer__item-title'>Contact</h3>
           <nav className='footer__nav'>
             <li className="footer__option">Phone: <span>+524496548073</span></li>
-            <li className='footer__option'><span>romansantillan1998@outlook.com</span></li>
+            <li className='footer__option'><span>sauloroman20_santillan@outlook.com</span></li>
           </nav>
         </div>
 
